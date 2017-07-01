@@ -1,0 +1,463 @@
+/* ===============================
+    Custom CSS
+    By: Levi Villarreal
+    For: Trivium
+    Completed: 
+=============================== */
+
+
+
+/* ===============================
+    General
+   =============================== */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* ===============================
+    Typography
+=============================== */
+
+a {
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;  
+}
+
+a:hover {
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;    
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+    background: none !important;
+}
+
+/* ===============================
+    Global
+=============================== */
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.row, .col-sm-6 {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+h2 > a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+h2 > a:hover {
+    color: #000;
+}
+
+h2 > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #959595;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+h2 > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/* ===============================
+    Nav
+=============================== */
+
+.navbar {
+    background: #fff !important;
+}
+
+ul.navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+#navbar li {
+    color: #000;
+    padding: 0 5px;
+}
+
+nav {
+    z-index: 999999999999999999999999;
+}
+
+#navbar {
+    background: #fff;
+    top: 0;
+    width: 100%;
+    z-index: 999999999999999999999999;
+}
+
+#navbar ul {
+    margin: 0 auto;
+    padding: 0px 0;
+}
+
+li h2 {
+    font-size: 20px;
+    color: #000;
+}
+
+.navbar-custom a {
+    color: #000;
+}
+
+ul {
+    text-align: center;
+}
+
+.navbar-header img {
+    margin: 15px 0 0 110px;;
+    display: none;
+    text-align: center;
+}
+
+
+
+
+
+/* Hamburge Icon transitions */
+.cmn-toggle-switch {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 108px;
+    height: 56px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.cmn-toggle-switch:focus {
+    outline: none;
+}
+
+.cmn-toggle-switch span {
+    display: block;
+    position: absolute;
+    top: 26px;
+    left: 60px;
+    height: 2px;
+    width: 20%;
+    background: #000000;
+    float: right;
+}
+
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    content: "";
+}
+
+.cmn-toggle-switch span::before {
+    top: -8px;
+}
+
+.cmn-toggle-switch span::after {
+    bottom: -8px;
+}
+
+@media(min-width:767px) {
+    nav button {
+        display: none !important;
+    }
+}
+
+.cmn-toggle-switch__htx {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.cmn-toggle-switch__htx span {
+    -webkit-transition: background 0 0.3s;
+    transition: background 0 0.3s;
+}
+
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after {
+    -webkit-transition-duration: 0.3s, 0.3s;
+    transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s, 0;
+    transition-delay: 0.3s, 0;
+}
+
+.cmn-toggle-switch__htx span::before {
+    -webkit-transition-property: top, -webkit-transform;
+    transition-property: top, transform;
+}
+
+.cmn-toggle-switch__htx span::after {
+    -webkit-transition-property: bottom, -webkit-transform;
+    transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.cmn-toggle-switch__htx.active {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.cmn-toggle-switch__htx.active span {
+    background: none;
+}
+
+.cmn-toggle-switch__htx.active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cmn-toggle-switch__htx.active span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.cmn-toggle-switch__htx.active span::before,
+.cmn-toggle-switch__htx.active span::after {
+    -webkit-transition-delay: 0, 0.3s;
+    transition-delay: 0, 0.3s;
+}
+
+/* ===============================
+    Nav
+=============================== */
+
+.hero-nav {
+    height: 100vh !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/nav6.JPG') no-repeat center center fixed; 
+    border: 50px solid #fff;
+    top: 0
+}
+
+.hero-nav h1 {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.hero-nav ul h2 {
+    text-align: center;
+    width: 100%;
+}
+
+.hero-text {
+    color: #fff;
+    font-weight: 900;
+    position: relative;
+    text-align: center;
+}
+
+.nav-bot {
+    position: relative;
+    bottom: 12px;
+    font-size: 20px;
+}
+
+/* ===============================
+    About
+=============================== */
+
+#about .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me {
+    border-right: 2px solid #747373;
+}
+
+h1.big-text {
+    font-size: 65px;
+    text-align: left
+}
+
+#about p {
+    line-height: 2em;
+    font-size: 1.2em;
+    padding-left: 15px;
+}
+
+/* ===============================
+    About
+=============================== */
+
+.work1 {
+    background: url('../img/trivium.png') no-repeat top center; 
+    height: 80vh;
+    background-size: cover;
+    border: 1.5px solid #eee;
+}
+
+.work2 {
+    background: url('../img/2016.png') no-repeat top center; 
+    height: 80vh;
+    background-size: cover;
+    border: 1.5px solid #eee;
+}
+
+.work3 {
+    background: url('../img/2017.png') no-repeat top center; 
+    height: 80vh;
+    background-size: cover;
+    border: 1.5px solid #eee;
+}
+
+.work4 {
+    background: url('../img/2016.png') no-repeat top center; 
+    height: 80vh;
+    background-size: cover;
+    border: 1.5px solid #eee;
+}
+
+.w-s {
+    padding-top: 50px;
+}
+
+#work {
+    position: relative;
+}
+
+#work .container-fluid {
+    margin: 0 40px
+}
+
+#work h3 {
+    font-size: 25px;
+    position: absolute;
+    bottom: 30px !important;
+    background: #fff;
+    border: 2px solid #747373;
+}
+
+#work .left h3 {
+    right: 0%;
+}
+
+#work .right h3 {
+    left: 0%;
+}
+
+.work-title a h2 {
+    border: 2px solid #747373;
+    color: #000;
+    font-size: 20px;
+    padding: 15px 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+}
+
+.work-title a h2:hover {
+    background: #747373;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;
+}
+
+h1.leader {
+    font-weight: 2em;
+    border-bottom: 2px solid #747373;
+    padding-bottom: 5px;
+}
+
+#footer .container-fluid, #footer .col-sm-12 {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+footer {
+    background: #747373;
+    padding: 35px 0;
+}
+
+footer p {
+    font-size: 25px;
+    text-align: center;
+}
+
+footer 
+
+#footer .icons h3 {
+    text-align: center !important;
+}
+
+.icons {
+    padding: 50px 0;
+}
