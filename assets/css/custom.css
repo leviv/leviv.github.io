@@ -333,6 +333,14 @@ ul {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    #about .row {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .about-me {
     border-right: 2px solid #747373;
 }
@@ -347,6 +355,7 @@ h1.big-text {
     font-size: 1.2em;
     padding-left: 15px;
 }
+
 
 /* ===============================
     About
@@ -374,7 +383,7 @@ h1.big-text {
 }
 
 .work4 {
-    background: url('../img/2016.png') no-repeat top center; 
+    background: url('../img/driving.png') no-repeat top center; 
     height: 80vh;
     background-size: cover;
     border: 1.5px solid #eee;
