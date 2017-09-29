@@ -1,8 +1,6 @@
 'use strict';
 
 (function () {
-    
-    localStorage.clear();
     function TreeLoader() {
         var _rootURL, _treeSlug, _treeStyle, _loaderScript, _treeContainer;
 
