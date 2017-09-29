@@ -1,0 +1,30 @@
+// Global Variables and mixins
+
+$primary-color: #fef200
+$secondary-color: #333
+$third-color: #fff
+
+
+=transition($transition-property, $transition-timing)
+    transition: $transition-property $transition-timing
+    -webkit-transition: $transition-property $transition-timing
+    -ms-transition: $transition-property $transition-timing
+    -moz-transition: $transition-property $transition-timing
+    -o-transition: $transition-property $transition-timing
+    
+=border-radius($radius)
+    border-radius: $radius
+    -webkit-border-radius: $radius
+    -ms-border-radius: $radius
+    -moz-border-radius: $radius
+    -o-border-radius: $radius
+    
+=outlined-text($outline-thickness, $outline-color)
+    text-shadow: -$outline-thickness -$outline-thickness 0 $outline-color, $outline-thickness -$outline-thickness 0 $outline-color, -$outline-thickness $outline-thickness 0 $outline-color, $outline-thickness $outline-thickness 0 $outline-color
+    
+=rotate($rotate-degree)
+    -webkit-transform: rotate($rotate-degree)
+    -moz-transform: rotate($rotate-degree)
+    -o-transform: rotate($rotate-degree)
+    -ms-transform: rotate($rotate-degree)
+    transform: rotate($rotate-degree)
