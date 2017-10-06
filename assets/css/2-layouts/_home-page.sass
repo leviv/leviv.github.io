@@ -18,8 +18,8 @@
     background: $secondary-color
     cursor: pointer
     +transition(all, .5s)
-    &::hover
-        background: $primary-color !important
+    &:hover
+        background-color: $primary-color !important
     h1
         background: $primary-color
         color: $secondary-color
@@ -57,27 +57,14 @@
     
 .home-headshot
     position: absolute
-    top: calc(50% - 50px)
+    top: calc(50% - 40px)
     .one
         position: relative
         right: 65px
-        
-.image-holder
-    position: relative
-    height: 260px
-    width: 100%
-    text-align: center
-    padding: 20px
     img
-        +border-radius(50%)
-        display: block
-        margin-left: auto
-        margin-right: auto
-        border: 3px solid $primary-color
-        height: 100px
-        overflow: hidden
-        cursor: pointer
-        +transition(all, .5s)
+        border-radius: 50%
+        -webkit-border-radius: 50%
+        border: 5px solid $primary-color;
 
 .head-image
     position: absolute
@@ -86,6 +73,8 @@
     left: 0
     margin: auto
     display: block
+    height: 100px
+    width: 100px
     
 .circle
     z-index: 2
@@ -294,7 +283,7 @@ h1.vertical-text
     .col-sm-4
         height: 100% !important
         display: table
-        h1
+    h1
             display: table-cell
             vertical-align: middle
             text-align: center
@@ -311,12 +300,14 @@ h1.vertical-text
             font-size: 24px
             display: table-cell
             padding-bottom: 4px
+            background: rgb(255, 255, 255)
+            padding: 5px
             &:hover
-                +outlined-text(1px, $secondary-color)
+                +outlined-text(.5px, $secondary-color)
             cursor: pointer
             
 .award-click 
-    +outlined-text(1px, $secondary-color)
+    +outlined-text(.5px, $secondary-color)
     color: $primary-color
     background-position: 0% -195%
     text-decoration: none
@@ -356,26 +347,11 @@ p.award-description
     font-size: 1.1em
     
 p.award-description span
-    color: #333;
-    line-height: 1.9em;
-    background: -webkit-linear-gradient(bottom, $primary-color 100%, transparent 90%, transparent);
-    background: linear-gradient(to top, $primary-color 100%, transparent 100%, transparent);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    color: #333
+    line-height: 1.9em
+    background: -webkit-linear-gradient(bottom, $third-color 100%, transparent 90%, transparent)
+    background: linear-gradient(to top, $third-color 100%, transparent 100%, transparent)
+    
+    
+    
+    

@@ -162,8 +162,10 @@ h1
         background-color: shade($secondary-color, 60%) 
         span
             background: $primary-color
-    .is-active
+    &.is-active
         span
+            background: none
+            transition-delay: 0s, .3s
             &::before, &::after
                 transition-delay: 0s, .3s
             &::before
@@ -171,7 +173,7 @@ h1
                 +rotate(45deg)
             &::after
                 bottom: 0
-                +rotate(45deg) 
+                +rotate(-45deg) 
 
 .c-hamburger--htra
     span
@@ -181,6 +183,7 @@ h1
             +transition(all, .2s)
     &:hover
         span
+            background: $primary-color
             &::before
                 transform-origin: top left !important
                 top: 0 !important
