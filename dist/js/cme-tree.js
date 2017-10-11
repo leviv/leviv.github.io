@@ -2102,9 +2102,16 @@ this["TreeTemplates"]["tree"] = Handlebars.template({"1":function(container,dept
         }
 
         var data = JSON.parse(request.response);
+
+        var cssPriority = '';
+        if (this.cssPriority) {
+            cssPriority = this.cssPriority;
+        }
+
         // the TreeView needs a container to display into
         var treeView = new TreeView({
-            container: this.container
+            container: this.container,
+            cssPriority: cssPriority
         });
         // Manages TreeHistory feature and TreeHistoryView
         var treeHistory = new TreeHistory({});
@@ -2387,7 +2394,11 @@ TreeHistory.prototype = {
                 // get the container
                 var treeView = data;
                 var cWindow = treeView.getContentWindow();
-                var historyView = new TreeHistoryView({ TreeHistory: this, contentWindow: cWindow });
+                var historyView = new TreeHistoryView({
+                    TreeHistory: this,
+                    contentWindow: cWindow,
+                    cssPriority: treeView.getCSSPriority()
+                });
                 // add this to the observers
                 this.addObserver(historyView);
                 break;
@@ -2553,7 +2564,7 @@ TreeHistory.prototype = {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function TreeHistoryView(options) {
-    var _TreeHistory, _contentWindow, _container, _list, _resumeBtn, _progressbar, _indicator;
+    var _TreeHistory, _contentWindow, _container, _list, _resumeBtn, _progressbar, _indicator, _cssPriority;
 
     if (_typeof(options.contentWindow) !== 'object') {
         console.error('Tree History View container must be a valid object. Try `container: document.getElementById(your-id)`.');
@@ -2586,6 +2597,9 @@ function TreeHistoryView(options) {
     };
     this.getTreeHistory = function () {
         return _TreeHistory;
+    };
+    this.getCSSPriority = function () {
+        return _cssPriority;
     };
 
     // setters
@@ -2647,12 +2661,23 @@ function TreeHistoryView(options) {
         return _indicator;
     };
 
+    this.setCSSPriority = function (cssPriority) {
+        // only let it be set once
+        if (_cssPriority === undefined && (cssPriority === 'important' || cssPriority === '!important')) {
+            _cssPriority = cssPriority;
+        } else {
+            _cssPriority = '';
+        }
+        return _cssPriority;
+    };
+
     var _setTreeHistory = function _setTreeHistory(TreeHistory) {
         _TreeHistory = TreeHistory;
     };
 
     _setTreeHistory(options.TreeHistory);
     this.setContentWindow(options.contentWindow);
+    this.setCSSPriority(options.cssPriority);
     this.setContainer();
     this.templateRender(this.getTreeHistory().getHistory(), this.getTreeHistory().getCurrentIndex());
     // add click listener on container
@@ -2946,7 +2971,7 @@ TreeHistoryView.prototype = {
         progressbar.style.height = progressbarHeight + 'px';
 
         indicator = this.getIndicator();
-        indicator.style.transform = 'translate3d(0,' + progressbarHeight + 'px, 0)';
+        this.setTransform(indicator, 'translate3d(0,' + progressbarHeight + 'px, 0)');
         indicator.classList.add('cme-tree__history-current-indicator--gooify');
         setTimeout(function () {
             indicator.classList.remove('cme-tree__history-current-indicator--gooify');
@@ -2974,7 +2999,7 @@ TreeHistoryView.prototype = {
             }
         }
 
-        container.style.transform = 'translate3d(0,' + containerMoveUp + 'px,0)';
+        this.setTransform(container, 'translate3d(0,' + containerMoveUp + 'px,0)');
     },
 
     templateUl: function templateUl() {
@@ -3042,6 +3067,10 @@ TreeHistoryView.prototype = {
         button.data = data;
 
         return li;
+    },
+
+    setTransform: function setTransform(element, transform) {
+        element.setAttribute('style', 'transform: ' + transform + this.getCSSPriority() + ';');
     }
 };
 'use strict';
@@ -3597,7 +3626,7 @@ TreePostMessage.prototype = {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function TreeView(options) {
-    var _Tree, _container, _treeEl, _contentWindow, _contentPane, _activeEl;
+    var _Tree, _container, _treeEl, _contentWindow, _contentPane, _activeEl, _cssPriority;
 
     if (_typeof(options.container) !== 'object') {
         console.error('Tree container must be a valid object. Try `container: document.getElementById(your-id)`.');
@@ -3622,6 +3651,9 @@ function TreeView(options) {
     };
     this.getContentPane = function () {
         return _contentPane;
+    };
+    this.getCSSPriority = function () {
+        return _cssPriority;
     };
 
     // setters
@@ -3657,6 +3689,16 @@ function TreeView(options) {
             _contentPane = _contentWindow.firstElementChild;
         }
         return _contentPane;
+    };
+
+    this.setCSSPriority = function (cssPriority) {
+        // only let it be set once
+        if (_cssPriority === undefined && (cssPriority === 'important' || cssPriority === '!important')) {
+            _cssPriority = '!important';
+        } else {
+            _cssPriority = '';
+        }
+        return _cssPriority;
     };
 
     // Pass a state for it to set to be active
@@ -3702,6 +3744,9 @@ function TreeView(options) {
     this.windowWidth = window.innerWidth;
     // set the el
     _container = options.container;
+    // set the priority
+    this.setCSSPriority(options.cssPriority);
+
     // attach event listeners to the tree element with
     // bound `this` so we get our reference to this element
     _container.addEventListener("click", this.click.bind(this));
@@ -4041,8 +4086,6 @@ TreeView.prototype = {
                     cWindowHeight = groupsHeight;
                 }
 
-                cWindow.style.height = cWindowHeight + 'px';
-
                 // reset the transform origin
                 cPanelTransform = '';
             } else {
@@ -4050,9 +4093,10 @@ TreeView.prototype = {
             }
 
         // set the transforms
-        cWindow.style.height = cWindowHeight + 'px';
-        cPanel.style.transform = cPanelTransform;
-
+        // cWindow.style.height = cWindowHeight+'px'
+        // cPanel.style.transform = cPanelTransform
+        cWindow.setAttribute('style', 'height: ' + cWindowHeight + 'px' + this.getCSSPriority() + ';');
+        this.setTransform(cPanel, cPanelTransform);
         // emit to let everyone know we finished updating the height
         this.emit('viewChange', 'viewHeightUpdate', { cWindowHeight: cWindowHeight, questionOffsetTop: questionOffsetTop });
     },
@@ -4065,14 +4109,6 @@ TreeView.prototype = {
         if (!classes.contains('cme-tree__state--' + state.type)) {
             classes.add('cme-tree__state--' + state.type);
         }
-    },
-
-    setTransform: function setTransform(el, prop) {
-        el.style.webkitTransform = prop;
-        el.style.MozTransform = prop;
-        el.style.msTransform = prop;
-        el.style.OTransform = prop;
-        el.style.transform = prop;
     },
 
     removeContainerState: function removeContainerState(state) {
@@ -4481,16 +4517,18 @@ TreeView.prototype = {
         var groups = void 0,
             groupStyles = void 0,
             groupsOffsetLeft = void 0,
-            treeEl = void 0;
+            treeEl = void 0,
+            cssPriority = void 0;
 
         // get the groups
         groups = this.getGroups();
         // get the treeEl for our groupsOffsetLeft data
         treeEl = this.getTreeEl();
         groupsOffsetLeft = treeEl.data.groupsOffsetLeft;
+        cssPriority = this.getCSSPriority();
 
         for (var i = 0; i < groups.length; i++) {
-            this.addStylesheetRule('.cme-tree__state--overview #' + groups[i].id + ', .cme-tree__state--intro #' + groups[i].id, [['transform', 'translate3d(' + groupsOffsetLeft + 'px,' + groups[i].data.offsetTop + 'px, 0)']]);
+            this.addStylesheetRule('.cme-tree__state--overview #' + groups[i].id + ', .cme-tree__state--intro #' + groups[i].id, [['transform', 'translate3d(' + groupsOffsetLeft + 'px,' + groups[i].data.offsetTop + 'px, 0)' + cssPriority + '']]);
         }
     },
 
@@ -4632,6 +4670,7 @@ TreeView.prototype = {
                     }
                     // ok, they're in different columns, figure out what direction it needs to go
                     arrow = this.getDestinationIcon(options[o].data.option_id);
+
                     arrowPosition = this.getAbsoluteBoundingRect(arrow);
                     destinationPosition = this.getAbsoluteBoundingRect(destination);
 
@@ -4660,11 +4699,11 @@ TreeView.prototype = {
                     else if (arrowAngleNormalized < 10 || 350 < arrowAngleNormalized) {
                             // straight to the right (since we start with a down arrow)
                             this.templateArrow(arrow, 'arrow');
-                            arrow.style.transform = 'rotate(180deg)';
+                            this.setTransform(arrow, 'rotate(180deg)');
                         } else if (170 < arrowAngleNormalized && arrowAngleNormalized < 190) {
                             // straight to the left (since we start with a down arrow)
                             this.templateArrow(arrow, 'arrow');
-                            arrow.style.transform = 'rotate(-180deg)';
+                            this.setTransform(arrow, 'rotate(-180deg)');
                         }
                         // down and to the right
                         else if (270 < arrowAngleNormalized && arrowAngleNormalized < 280) {
@@ -4675,7 +4714,7 @@ TreeView.prototype = {
                                 this.templateArrowDownLeft(arrow);
                             } else {
                                 this.templateArrow(arrow, 'arrow');
-                                arrow.style.transform = 'rotate(' + arrowAngle + 'deg)';
+                                this.setTransform(arrow, 'rotate(' + arrowAngle + 'deg)');
                             }
                 }
             }
@@ -4684,22 +4723,24 @@ TreeView.prototype = {
 
     templateArrowUpRight: function templateArrowUpRight(svg) {
         this.templateArrow(svg, 'arrow-turn');
-        svg.style.transform = 'rotateX(-180deg)';
+        this.setTransform(svg, 'rotateX(-180deg)');
     },
     templateArrowUpLeft: function templateArrowUpLeft(svg) {
         this.templateArrow(svg, 'arrow-turn');
-        svg.style.transform = 'rotate(180deg)';
+        this.setTransform(svg, 'rotateX(180deg)');
     },
     templateArrowDownRight: function templateArrowDownRight(svg) {
         this.templateArrow(svg, 'arrow-turn');
-        svg.style.transform = 'rotate(0deg)';
+        this.setTransform(svg, 'rotateX(0deg)');
     },
     templateArrowDownLeft: function templateArrowDownLeft(svg) {
         this.templateArrow(svg, 'arrow-turn');
-        svg.style.transform = 'rotateX(-180deg)';
+        this.setTransform(svg, 'rotateX(-180deg)');
     },
     templateArrow: function templateArrow(svg, iconName) {
-        svg.children[0].setAttribute('xlink:href', '#icon-' + iconName);
+        // Use childNodes for IE Edge
+        svg.childNodes[0].setAttribute('xlink:href', '#icon-' + iconName);
+
         return svg;
     },
     findAncestor: function findAncestor(el, theNodeName) {
@@ -4711,6 +4752,11 @@ TreeView.prototype = {
         }
 
         return el;
+    },
+
+
+    setTransform: function setTransform(element, transform) {
+        element.setAttribute('style', 'transform: ' + transform + this.getCSSPriority() + ';');
     }
 };
 'use strict';

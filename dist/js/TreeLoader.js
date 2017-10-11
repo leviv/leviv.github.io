@@ -1,8 +1,9 @@
 'use strict';
 
 (function () {
+
     function TreeLoader() {
-        var _rootURL, _treeSlug, _treeStyle, _loaderScript, _treeContainer;
+        var _rootURL, _treeSlug, _treeStyle, _loaderScript, _treeContainer, _cssPriority;
 
         /**
         * Private functions
@@ -41,6 +42,17 @@
             return _treeStyle;
         };
 
+        var _setCSSPriority = function _setCSSPriority(style) {
+            // Test string for a match where we'll need to set !important
+            var re = /.+(important|clean-slate)$/;
+            if (re.test(style)) {
+                _cssPriority = 'important';
+            } else {
+                _cssPriority = '';
+            }
+            return _cssPriority;
+        };
+
         var _setLoaderScript = function _setLoaderScript(script) {
             // Set the script
             _loaderScript = script;
@@ -56,6 +68,9 @@
         };
         this.getTreeStyle = function () {
             return _treeStyle;
+        };
+        this.getCSSPriority = function () {
+            return _cssPriority;
         };
         this.getLoaderScript = function () {
             return _loaderScript;
@@ -73,6 +88,7 @@
         _setRootURL(this.getLoaderScript().src);
         _setTreeSlug(this.getParameterByName('tree', this.getLoaderScript().src));
         _setTreeStyle(this.getParameterByName('style', this.getLoaderScript().src));
+        _setCSSPriority(this.getTreeStyle());
 
         // create our tree container
         _treeContainer = this.createTreeContainer(this.getTreeSlug(), this.getLoaderScript());
@@ -106,6 +122,7 @@
             var treeContainer = document.createElement('div');
             // set the ID
             treeContainer.id = 'cme-tree__' + treeSlug;
+            treeContainer.classList.add('cme-tree__loader-container');
             // insert the container after this
             insertItAfter.parentNode.insertBefore(treeContainer, insertItAfter.nextSibling);
 
@@ -172,7 +189,8 @@
         runCreateTree: function runCreateTree() {
             var treeOptions = {
                 slug: this.getTreeSlug(),
-                container: this.getTreeContainer()
+                container: this.getTreeContainer(),
+                cssPriority: this.getCSSPriority()
             };
             window.createTree(treeOptions);
         }
