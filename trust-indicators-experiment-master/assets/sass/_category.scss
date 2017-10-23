@@ -1,0 +1,27 @@
+@include accordion('category');
+
+.category__type {
+    font-size: 1rem;
+}
+
+.category__button {
+    @include no-button;
+    font-size: 0.8rem;
+}
+
+.category__content {
+    text-align: left;
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    h4 {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+}

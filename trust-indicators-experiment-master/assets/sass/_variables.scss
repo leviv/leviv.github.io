@@ -1,0 +1,29 @@
+$font : #333;
+$font--light: lighten($font, 12.5);
+$title : #333;
+$primary : #333;
+$secondary : #0A3348;
+$link : #007ab8;
+$link_hover: darken($link, 10%);
+
+$spacing__base: 1.6rem;
+
+$fontBody : "adobe-text-pro", georgia, times, serif;
+$fontTitle : "adobe-text-pro", georgia, times, serif;
+$sansSerif : Arial, Helvetica, sans-serif;
+
+.primary {
+    color: $primary;
+}
+
+.primary-bg {
+    background: $primary;
+}
+
+.secondary {
+    color: $secondary;
+}
+
+.secondary-bg {
+    background: $secondary;
+}

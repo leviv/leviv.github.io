@@ -1,0 +1,11 @@
+.Skin #SkinContent {
+    max-width: 100%!important;
+}
+
+.Skin .QuestionText {
+    padding: 0!important;
+}
+
+iframe {
+    border: none;
+}

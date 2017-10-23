@@ -1,0 +1,104 @@
+
+@include accordion('author');
+
+.author {
+    display: block;
+    margin-bottom: $spacing__base / 2;
+    @extend %clearfix;
+}
+
+.author__image {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-right: $spacing__base * 0.4;
+    margin-bottom: $spacing__base * 0.2;
+    float: left;
+}
+
+.author__name,
+.author__job,
+.author__button {
+    line-height: 1.4;
+}
+
+.author__name {
+    font-size: 0.8rem;
+    margin: 0;
+    position: relative;
+    padding-top: 0.4rem;
+}
+
+.author__job {
+    font-size: 0.725rem;
+    color: $font--light;
+    margin-bottom: 0;
+}
+
+.author__button {
+    @include no-button;
+    font-size: 0.8rem;
+    display: block;
+    padding: 0;
+}
+
+.author--open {
+    .icon--close {
+        position: absolute;
+        width: 1.15rem;
+        height: 1.15rem;
+        top: -0.05rem;
+    }
+}
+
+.author__content {
+
+    margin-top: $spacing__base * 0.6;
+
+    p, ul {
+        font-size: 0.85rem;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    h4 {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+
+    .accordion__second-close {
+        margin-top: $spacing__base/2;
+    }
+}
+
+.author__facts {
+    margin-top: $spacing__base;
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+
+    @include media($tablet) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        margin-bottom: $spacing__base/2;
+
+        @include media($tablet) {
+            width: 47%;
+
+            &:nth-child(2n+0) {
+                margin-right: 6%;
+            }
+        }
+    }
+
+
+}
+
+.author__bio {
+    margin-bottom: $spacing__base / 2;
+}

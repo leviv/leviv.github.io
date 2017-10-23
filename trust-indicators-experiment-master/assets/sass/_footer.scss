@@ -1,0 +1,14 @@
+.colophon {
+    margin-top: $spacing__base;
+    padding-bottom: 1rem;
+
+    .row {
+        border-top: 1px solid #333;
+        padding: 1rem 0 0;
+    }
+
+    .copyright {
+        margin-bottom: 0;
+        font-size: .85rem;
+    }
+}

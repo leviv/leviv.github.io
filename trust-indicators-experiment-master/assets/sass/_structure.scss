@@ -1,0 +1,84 @@
+// IF NEED IE ONLY STYLESHEET
+// SeT THIS IN IE.SCSS
+$fix-mqs: false !default;
+$desktop: 48rem;
+$tablet: 34rem;
+$mobile: 24rem;
+
+@mixin media($width) {
+    // If we're outputting for a fixed media query set...
+    @if $fix-mqs {
+        // ...and if we should apply these rules...
+        @if $fix-mqs >= $width {
+            // ...output the content the user gave us.
+            @content;
+        }
+    }
+    @else {
+        // Otherwise, output it using a regular media query
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin mobile-only {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: $tablet) and (max-width: $desktop - .01rem) {
+    @content;
+  }
+}
+
+@mixin everything-but-desktop {
+  @media (max-width: $desktop - .01rem) {
+    @content;
+  }
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%container {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%row,
+.row,
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    @extend %clearfix;
+    @extend %container;
+}
+
+.container--wide,
+.row--wide {
+    @include media($tablet) {
+      max-width: 840px;
+    }
+
+}
+
+/*  SELF CLEARING FLOATS - CLEARFIX METHOD */
+.container,
+.clr,
+.group {
+  @extend %clearfix;
+}
+
+
+body {
+    padding-top: 1rem;
+}

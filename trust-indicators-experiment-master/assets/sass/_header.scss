@@ -1,0 +1,22 @@
+header[role="banner"] {
+    margin-bottom: $spacing__base * 0.5;
+}
+
+.site-title {
+    font-size: 1.15rem;
+    border-bottom: 2px solid $font;
+}
+
+.about-trust-project {
+    .article__header {
+        margin-top: $spacing__base;
+    }
+
+    .icon--trust-project {
+        font-size: 2.8rem;
+    }
+
+    .trust-project__title {
+        font-size: 0.9rem;
+    }
+}

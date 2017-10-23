@@ -1,0 +1,17 @@
+@keyframes slideInTop {
+    0% {
+        opacity: 0;
+        height: auto;
+        max-height: 0;
+    }
+    50% {
+        height: auto;
+        max-height: 200px;
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

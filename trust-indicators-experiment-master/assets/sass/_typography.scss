@@ -1,0 +1,201 @@
+html {
+    font-size: 19px;
+}
+
+body {
+    color: $font;
+    font-family: $fontBody;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 400;
+
+    @include media($tablet) {
+        font-size: 1.3rem;
+    }
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+    font-family: $fontTitle;
+    color: $title;
+    clear: both;
+    margin: 0 0 .2rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.8rem;
+
+    @include media($tablet) {
+        font-size: 3.2rem;
+    }
+}
+
+h2 {
+    font-size: 1.9rem;
+
+    @include media($tablet) {
+        font-size: 2.2rem;
+    }
+}
+
+h3 {
+    font-size: 1.475rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p+h1, ul+h1,
+p+h2, ul+h2,
+p+h3, ul+h3,
+p+h4, ul+h4,
+p+h5, ul+h5,
+p+h6, ul+h6 {
+    margin-top: 1.8rem;
+}
+
+/* Text elrements */
+p {
+    font-size: 1rem;
+    margin-bottom: $spacing__base;
+    font-weight: 300;
+}
+ul, ol {
+    font-size: 1rem;
+    margin: 0 0 $spacing__base $spacing__base*0.8;
+}
+ul {
+    list-style: disc;
+}
+ol {
+    list-style: decimal;
+}
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: $spacing__base;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn, cite, rem {
+    font-family: georgia, times, serif;
+    font-style: italic;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: .95rem;
+    line-height: 1.6;
+    margin-bottom: $spacing__base;
+    padding: $spacing__base;
+    overflow: auto;
+    max-width: 100%;
+}
+code, kbd, tt, var {
+    font: .95rem Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    height: auto; /* Make sure images are scaled correctly. */
+    max-width: 100%; /* Adhere to container width. */
+}
+
+label {
+    display: block;
+    font-family: $fontBody;
+    font-size: .75rem;
+}
+
+input[type="text"],
+textarea {
+    font-size: .85rem;
+    font-family: $fontBody;
+    padding: .375rem;
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    border-radius: 3px;
+    min-width: 275px;
+    margin-bottom: 1.2rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+
+/* Links */
+a {
+    color: $link;
+    text-decoration: none;
+    touch-action: manipulation; // remove 300ms delay for ie
+    transition: all .2s;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $link_hover;
+    }
+
+    > * {
+        transition: all .2s;
+    }
+}
+
+.hint {
+    font-size: .9rem;
+    color: lighten($font, 15%);
+}
+
+.dropcap {
+    float: left;
+    font-size: 6rem;
+    line-height: .79;
+    margin-top: -1.7rem;
+    padding: 0 .25rem 0 0;
+}
+
+article h3 {
+    margin-bottom: .2rem;
+}
+
+.btn {
+    color: #fff;
+    background: $font;
+    border: none;
+    font-size: .85rem;
+    font-family: $fontBody;
+    cursor: pointer;
+    padding: .75rem $spacing__base;
+    transition: all .2s;
+}
+
+.btn:hover,
+.btn:focus {
+    border: none;
+    color: #fff;
+    background: darken($font, 10);
+}
+
+.btn:active {
+    color: #fff;
+    background: lighten($font, 10);
+}

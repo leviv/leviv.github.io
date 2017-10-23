@@ -1,0 +1,37 @@
+@include accordion('footnote');
+
+.footnote__button {
+    position: relative;
+    top: -0.4rem;
+    margin-left: -0.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    text-align: center;
+    transition: all .15s;
+    // don't worry, I'm adding it back in!
+    outline: none;
+
+    &:focus {
+        box-shadow: 0 0 5px #007ab8;
+    }
+
+    &.accordion--open {
+        background: rgba(0,0,0,.05);
+        transform: translateY(0.25rem);
+        z-index: 999;
+    }
+
+    &.accordion--closed {
+        background: rgba(0,0,0,.07);
+
+        &:hover {
+            background: rgba(0,0,0,.1);
+        }
+    }
+
+    .icon--close {
+        left: -0.1rem;
+    }
+
+}

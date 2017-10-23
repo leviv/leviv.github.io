@@ -1,0 +1,18 @@
+### Article Experiment
+This is a base template for displaying single news articles for use in various ENP research experiments. You can see an example of the page at http://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/
+
+This particular experiment is analyzing trust indicators in digital journalism.
+
+### Structure
+The templating structure is manual, but simple. To create a new article, copy and paste one of the existing articles in the <code>/articles/</code> directory then rename it to the name of your article, such as <code>/my-new-article/</code>.
+
+Then, replace the content in <code>/articles/my-new-article/data.php</code>. The variables set in data.php will get passed to the template files. <code>data.php</code> basically serves as a way to avoid setting up an actual database for each new experiment since the project is small. If you were to use this system to build an actual CMS, you'd want to use a database.
+
+### Commenting
+Comments just log to a file via Javascript, not a database. They're only submitted via AJAX through <code>/assets/js/post-with-comments.js</code>.
+
+### Tracking
+All clicks on buttons or links are tracked via Google Analytics and pass the button or link identifier, as well as which article the click came from.
+
+### Local Set-up
+We're using Gulp to compile. Run <code>npm install</code> from your project directory to install the node modules from <code>package.json</code>. Run <code>gulp</code> on the command line to serve the project up via localhost with BrowserSync.

@@ -1,0 +1,17 @@
+.icon {
+    height: 1.15em;
+    width: 1.15em;
+    position: relative;
+    top: 0.15em;
+    fill: $primary;
+}
+
+a {
+    .icon,
+    &:visited .icon  {
+        fill: $link;
+    }
+    &:hover {
+        fill: $link_hover;
+    }
+}

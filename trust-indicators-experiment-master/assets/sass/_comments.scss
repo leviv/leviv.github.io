@@ -1,0 +1,76 @@
+.show-comments-wrap {
+    margin: $spacing__base 0 $spacing__base;
+    padding: $spacing__base*2 0 $spacing__base;
+    text-align: center;
+    border-top: 1px solid $font;
+    font-size: .9rem;
+}
+
+.comments-section {
+    margin-top: 5rem;
+    margin-bottom: $spacing__base;
+
+    .comments {
+        list-style: none;
+        margin: 0;
+    }
+
+    .comment-section-title {
+        font-size: 1rem;
+        border-bottom: 2px solid $font;
+    }
+
+    .comment {
+        border-top: 1px solid lighten($font, 40);
+        padding-top: $spacing__base;
+        padding-bottom: $spacing__base;
+
+        @include media($tablet) {
+            padding-left: 0.6rem;
+            padding-right: 0.6rem;
+        }
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    .comment-info {
+        font-family: $fontBody;
+        font-size: .8rem;
+        margin-bottom: 0;
+    }
+
+    .comment-name {
+        font-weight: bold;
+        margin-right: .375rem;
+    }
+
+    .comment-time {
+        font-size: .8rem;
+        color: lighten($font, 40);
+    }
+
+}
+
+
+.new-comment {
+    margin-top: 1rem;
+
+    .add-comment-title {
+        font-size: 1rem;
+        border-bottom: 2px solid $font;
+    }
+
+    .add-comment {
+        padding: 1rem 0;
+        @include media($tablet) {
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+}
+
+#feedback {
+    margin-bottom: $spacing__base;
+}

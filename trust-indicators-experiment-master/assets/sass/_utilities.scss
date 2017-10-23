@@ -1,0 +1,125 @@
+
+
+.center {
+    text-align: center;
+}
+
+.well {
+    padding: 1rem;
+    background: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+
+    *:last-child {
+        margin-bottom: 0.2rem;
+    }
+}
+
+.alert {
+    padding: 1rem;
+    font-size: .8rem;
+    font-family: $sansSerif;
+    background: #ddd;
+}
+
+.alert-success {
+    background: #D5EBCE;
+}
+
+.alert-error {
+    background: #FCDCDC;
+}
+
+@mixin no-button {
+    color: $link;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: $fontBody;
+
+    &:hover {
+        color: $link_hover;
+        background: none;
+        border: none;
+    }
+}
+
+@mixin accordion($root) {
+
+    .#{$root}__button {
+        @include no-button;
+        font-size: 0.85rem;
+    }
+
+    .#{$root}__content {
+        display: block;
+        color: lighten($font, 8);
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: $spacing__base*0.5 0;
+        margin: 5px 0 10px;
+        font-size: 0.85rem;
+        animation: slideInTop .25s ease-out forwards;
+    }
+
+}
+
+.accordion--closed {
+    & + .accordion__content {
+        display: none;
+    }
+}
+
+.accordion--open {
+
+    & + .accordion__content {
+        animation: slideInTop .45s ease-out forwards;
+    }
+
+    .icon--close {
+        fill: red;
+    }
+}
+
+.long-page-nav {
+    font-size: 0.9rem;
+    margin-top: -$spacing__base * 0.5;
+    margin-bottom: $spacing__base * 1.5;
+}
+
+.accordion__second-close {
+    @include no-button;
+
+    .icon--close {
+        fill: red;
+        top: .25em;
+    }
+}
+
+.checklist {
+    list-style: none;
+    margin-left: 0;
+
+    .icon--check {
+        position: absolute;
+        left: 3px;
+        top: 1px;
+        margin-right: $spacing__base * 0.1;
+    }
+
+    li {
+        position: relative;
+        padding-left: $spacing__base;
+    }
+
+    li:before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 3px;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border: 1px solid #ddd;
+    }
+}
