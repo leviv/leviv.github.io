@@ -6576,6 +6576,41 @@ h1 {
     right: 0px; } }
 
 /* ===============================
+    Home-slideshow
+    @mixin ============================== */
+.slideshow-image {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  margin: 0; }
+  .slideshow-image img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10%;
+    margin: auto; }
+
+.slideshow-text {
+  position: absolute;
+  width: 60%;
+  top: 25%;
+  right: 0px; }
+  .slideshow-text h1 {
+    color: #333;
+    font-size: 130px;
+    text-shadow: -2px 0 #fff, 0px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    font-style: italic; }
+  .slideshow-text .yeet-idk {
+    width: 600px;
+    position: relative;
+    line-height: 3em;
+    left: 20%; }
+
+/* ===============================
     Home-categories
     @mixin ============================== */
 .categories-right {
