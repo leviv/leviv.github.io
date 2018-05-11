@@ -1,393 +1,336 @@
 /* ===============================
     Home Page
     =============================== */
+figure
+	height: 100vh
+
+html
+	padding: 0px !important
+	margin: 0px !important
 
 /* ===============================
     Hero
     =============================== */
 
 #home-front
-    .scroll-down
-        bottom: 0%
-        span
-            background: $secondary-color
-            &::before, &::after
-                background: $secondary-color
+	padding-top: 5vh
+	.scroll-down
+		bottom: 0%
+		font-size: 5px
+		span
+			width: 100px
+			background: $secondary-color
+			&::before, &::after
+				background: $secondary-color
 
 .home-left
-    background: $secondary-color
-    cursor: pointer
-    +transition(all, .5s)
-    &:hover
-        background-color: $primary-color !important
-    h1
-        background: $primary-color
-        color: $secondary-color
-        padding: 10px
-        text-transform: uppercase
-        font-size: 21px
-        width: 35px
-        word-wrap: break-word
-        text-align: center
-        position: relative
-        top: 50%
-        transform: translateY(-50%)
-    
-.home-right
-    img.hero-image
-        width: calc(100% - 15px)
-        position: relative
-        top: 50%
-        transform: translateY(-50%)
-        right: 15px
-    h1
-        background: $secondary-color
-        color: $primary-color
-        font-size: 30px
-        letter-spacing: .2em
-        text-transform: uppercase
-        font-style: italic
-        z-index: 99
-        padding: 5px 10px
-        margin: 15px 15px 15px 0
-        
-.home-text
-    position: absolute
-    bottom: 2%
-    
-.home-headshot
-    position: absolute
-    top: calc(50% - 40px)
-    .one
-        position: relative
-        right: 65px
-    img
-        border-radius: 50%
-        -webkit-border-radius: 50%
-        border: 5px solid $primary-color;
+	h1
+		color: $secondary-color
+		font-size: 24px
+		font-style: italic
+		text-align: left
+		position: relative
+		letter-spacing: .2em
+		top: 55%
+		left: 79%
+		margin: 25px 0
+		z-index: 2
+		width: 0px
+		overflow: hidden
+		span
+			background: $primary-color
+			padding: 3px 8px
 
-.head-image
-    position: absolute
-    top: 0
-    right: 0
-    left: 0
-    margin: auto
-    display: block
-    height: 100px
-    width: 100px
-    
-.circle
-    z-index: 2
-    
+.home-right
+	img.hero-image
+		width: 100%
+		position: relative
+		top: 50%
+		transform: translateY(-50%)
+		right: 15px
+		z-index: 1
+
+.home-text
+	margin-top: 30px
+	font-size: 13px
+	p 
+		letter-spacing: .15em
+		line-height: 2em
+
 .front
-    z-index: 1
+	z-index: 1
 
 @media (max-width: 768px)
-    .image-holder
-        display: none
-        
+	.image-holder
+		display: none
+
 @media (max-width: 575px)
-    .home-left
-        h1
-            width: 100%
-            text-align: center
-            position: relative
-            top: 50%
-            margin: 0
-        .col-sm-2
-            margin: none
-    #home-front
-        .scroll-down
-            display: none
-    .home-right
-        img.hero-image
-            width: 100% !important
-            margin: 0 auto
-            position: relative
-            top: 10%
-            transform: translateY(0%)
-            right: 0px
+	.home-left
+		h1
+			width: 100%
+			text-align: center
+			position: relative
+			top: 50%
+			margin: 0
+		.col-sm-2
+			margin: none
+	#home-front
+		.scroll-down
+			display: none
+	.home-right
+		img.hero-image
+			width: 100% !important
+			margin: 0 auto
+			position: relative
+			top: 10%
+			transform: translateY(0%)
+			right: 0px
+
+/* ===============================
+	Projects
+	=============================== */
+
+.big-project-title
+	text-shadow: -3px 3px $primary-color
+	text-align: center
+	position: relative
+	top: 30px
+	font-style: italic
+	font-size: 60px
+	z-index: 9
+
+.project-preview
+	height: 100%
+	width: 100%
+	position: relative
+	margin: 0 0 100px 0
+
+.project-color2
+	padding: 50px 0
+	position: relative
+	right: 20%
+	transform: translateY(30%)
+	z-index: 2
+
+.project-preview-left .project-color2
+	right: 20%
+
+.project-preview-right .project-color2
+	left: 20%
+	text-align: right
+
+.project-preview p span 
+	color: $secondary-color
+	line-height: 1.9em
+	background: -webkit-linear-gradient(bottom, $primary-color 100%, transparent 90%, transparent)
+	background: linear-gradient(to top, $primary-color 100%, transparent 100%, transparent)
+
+.project-preview, .row, .col-sm-6 
+	height: 100%
+
+.project-color2 p
+	line-height: 3em
+
+.project-img2 
+	background-size: cover
+	background-repeat: no-repeat
+	height: 600px
+	z-index: 1
+
+.project-preview-left .project-img2 
+	border-left: 65px solid #fff
+
+.project-preview-right .project-img2 
+	border-right: 65px solid #fff
+
+.project-preview h1 
+	color: $secondary-color
+	font-style: italic
+	text-shadow: -1px 1px $primary-color
+
 
 /* ===============================
     Home-slideshow
-    =============================== */ 
+    =============================== */
 
-.slideshow-image 
-    position: relative
-    height: 100%
-    width: 50%
-    margin: 0
-    img
-        max-height: 100%
-        max-width: 100%
-        width: auto
-        height: 80%
-        position: absolute
-        top: 0
-        bottom: 0  
-        left: 10%
-        margin: auto
+.slideshow-image
+	position: relative
+	height: 100%
+	width: 50%
+	margin: 0
+	img
+		max-height: 100%
+		max-width: 100%
+		width: auto
+		height: 80%
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 10%
+		margin: auto
 
 .slideshow-text
-    position: absolute
-    width: 60%;
-    top: 25%;
-    right: 0px;
-    h1
-        color: $secondary-color
-        font-size: 130px
-        +outlined-text(1px, $third-color)
-        font-style: italic
-    .yeet-idk
-        width: 600px
-        position: relative
-        line-height: 3em
-        left: 20%
-        
-    
-/* ===============================
-    Home-categories
-    =============================== */        
+	position: relative
+	width: 60%
+	top: 25%
+	right: 0px
+	h1
+		color: $secondary-color
+		font-size: 130px
+		+outlined-text(1px, $third-color)
+		font-style: italic
+	.yeet-idk
+		width: 600px
+		position: relative
+		line-height: 3em
+		left: 20%
 
-.categories-right
-    background: $secondary-color
-    overflow: scroll
-    
-.triangle
-    position: absolute
-    top: 50%
-    z-index: 99999
-    right: 0
-    width: 0
-    height: 0
-    border-style: solid
-    border-width: 50px 60px 50px 0
-    border-color: transparent $secondary-color transparent transparent
-    +transition(all, .5s)
-        
-h1.section-lead
-    font-size: 70px
-    letter-spacing: .2em
-    text-transform: uppercase
-    font-style: italic
-    z-index: 99
-    padding: 5px 10px
-    color: $primary-color
-    margin-top: 10px
-    
-h1.section-lead-left
-    text-align: right
-    color: $secondary-color
-    
-.mobile-hide
-    display: none
-    
-h1.category
-    margin: 25px
-    padding-bottom: 5px
-    position: absolute
-    padding-right: 4px
-    font-size: 30px
-    &:hover
-        cursor: pointer
-        +outlined-text(1px, $secondary-color)
-    
-h1.design
-    top: 20%
-    
-h1.engineering
-    top: 40%
-    
-h1.academic
-    top: 60%
-    
-h1.other
-    top: 80%
-    
-h1.vertical-text
-    writing-mode: tb-rl
-    +rotate(0deg)
-    white-space: nowrap
-    display: block
-    position: absolute
-    right: 0
-    font-size: 90px
-    max-width: 100%
-    color: shade($secondary-color, 20%)
-    font-style: italic
-    font-size: 56px
-    font-size: 15vh
-    
-    
-.category-preview
-    height: 300px
-    background: $third-color
-    margin: 2vw 12vw 0 2vw
-    cursor: pointer
-    .col-sm-4
-        margin: 0
-        padding: 0
-    &:hover
-        .category-overlay
-            background: rgba(255, 255, 255, 0)
-        .category-picture
-            background-size: 115%
-    
-.category-display
-    display: none
-    
-.default-category
-    display: block
-
-.category-picture
-    height: 100%
-    width: 100%
-    background-size: cover
-    background-position: center
-    background-size: 100%
-    +transition(all, .5s)
-    h2
-        color: $primary-color
-        font-style: italic
-        line-height: 300px
-        text-align: center !important
-        text-shadow: -3px 3px $secondary-color
-        
-.category-description
-    padding: 30px
-    
-.category-overlay
-    position: absolute
-    right: 1px
-    width: 100%
-    height: 100%
-    padding: 0 !important
-    margin: 0 !important
-    background: rgba(51, 51, 51, 0.46)
-    +transition(all, .5s)
-        
-.dropdown
-    display: none
-    position: relative
-    button
-        +border-radius(0%)
-        width: 100%
-    h2
-        cursor: pointer
-        font-size: 15px
-        margin-left: 18px
-        padding: 10px 0
-        
-.dropdown-menu
-    width: 100%
-        
-@media (max-width: 575px)
-    h1.vertical-text, .triangle, .categories-right h1
-        display: none
-    .mobile-hide
-        display: inline
-    .category-preview
-        height: 200px
-        margin: 2vw 2vw 0 2vw
-    .category-picture h2
-        font-size: 20px
-        line-height: 200px
-    h1
-        &.section-lead
-            font-size: 40px
-            letter-spacing: .2em
-            text-transform: uppercase
-            font-style: italic
-            z-index: 99
-            padding: 50px 10px 25px 10px
-        &.section-lead-left
-            text-align: center
-            color: $primary-color
-            +outlined-text(0px, $secondary-color)
-        &.category
-            display: none
-    .dropdown
-        display: block
-        
 /* ===============================
     Awards
     =============================== */
 
 #awards
-    +transition(all, .5s)
-    padding: 0
-    .col-sm-4
-        height: 100% !important
-        display: table
-    h1
-            display: table-cell
-            vertical-align: middle
-            text-align: center
-            font-style: italic
-            text-shadow: -3px 3px $primary-color
-    .col-sm-8
-        ul
-            height: 100% !important
-            display: flex
-            flex-flow: column
-            justify-content: space-between
-            padding: 10% 0 10% 20%
-        h2
-            font-size: 24px
-            display: table-cell
-            padding-bottom: 4px
-            background: rgb(255, 255, 255)
-            padding: 5px
-            &:hover
-                +outlined-text(.5px, $secondary-color)
-            cursor: pointer
-            
-.award-click 
-    +outlined-text(.5px, $secondary-color)
-    color: $primary-color
-    background-position: 0% -195%
-    text-decoration: none
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $primary-color 50%)
+	+transition(all, .5s)
+	padding: 0
+	.col-sm-4
+		height: 100% !important
+		display: table
+	h1
+			display: table-cell
+			vertical-align: middle
+			text-align: center
+			font-style: italic
+			text-shadow: -3px 3px $primary-color
+	.col-sm-8
+		ul
+			height: 100% !important
+			display: flex
+			flex-flow: column
+			justify-content: space-between
+			padding: 10% 0 10% 20%
+		h2
+			font-size: 24px
+			display: table-cell
+			padding-bottom: 4px
+			background: rgb(255, 255, 255)
+			padding: 5px
+			&:hover
+				+outlined-text(.5px, $secondary-color)
+			cursor: pointer
 
+.award-click
+	+outlined-text(.5px, $secondary-color)
+	color: $primary-color
+	background-position: 0% -195%
+	text-decoration: none
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $primary-color 50%)
 
 .award-background
-    position: absolute
-    height: 100%
-    width: 100%
-    display: block
-    opacity: 0
-    background-size: cover
-    background-position: center
-    background-size: 100%
-    border: 0px solid $third-color
-    +transition(all, .5s)
-        
+	position: absolute
+	height: 100%
+	width: 100%
+	display: block
+	opacity: 0
+	background-size: cover
+	background-position: center
+	background-size: 100%
+	border: 0px solid $third-color
+	+transition(all, .5s)
+
 .award-active
-    opacity: 1 !important
-    
+	opacity: 1 !important
+
 .award-section
-    background: rgba(255, 255, 255, 0.3)
-        
+	background: rgba(255, 255, 255, 0.3)
+
 .award
-    position: relative
-    overflow: hidden
-    +transition(all, .5s)
+	position: relative
+	overflow: hidden
+	+transition(all, .5s)
 
 .collapse
-    display: none
+	display: none
 
 p.award-description
-    display: none
-    padding: 20px 50px 0 0 
-    line-height: 6vh
-    font-size: 1.1em
-    
+	display: none
+	padding: 20px 50px 0 0
+	line-height: 6vh
+	font-size: 1.1em
+
 p.award-description span
-    color: #333
-    line-height: 1.9em
-    background: -webkit-linear-gradient(bottom, $third-color 100%, transparent 90%, transparent)
-    background: linear-gradient(to top, $third-color 100%, transparent 100%, transparent)
-    
-    
-    
-    
+	color: $secondary-color
+	line-height: 1.9em
+	background: -webkit-linear-gradient(bottom, $third-color 100%, transparent 90%, transparent)
+	background: linear-gradient(to top, $third-color 100%, transparent 100%, transparent)
+
+/* ===============================
+	Project Page
+	=============================== */
+
+.project-hero, .container-fluid 
+	height: 100%
+
+.project-img 
+	height: 100%
+	background-size: cover
+
+.project-color 
+	background: $primary-color
+	position: relative
+	top: 50%
+	height: 50%
+	width: 100%
+	padding: 0 !important
+
+.project-color .scroll-section 
+	width: 100%
+	height: 100%
+	color: $secondary-color
+	cursor: pointer
+	+transition(all, .5s)
+
+.project-color .scroll-section:hover 
+	background: $secondary-color
+	color: $primary-color
+
+.project-color p
+	font-size: 2em
+	text-align: center
+	font-weight: 900
+	position: relative
+	top: calc(40% - 1em)
+
+.project-color img 
+	height: 50%
+	padding-top: 20%
+	position: absolute
+	top: -50%
+	left: 0
+	right: 0
+	margin: 0 auto
+
+h1.project-title 
+	text-transform: uppercase
+	font-style: italic
+	text-shadow: -3px 3px $primary-color
+	position: absolute
+	z-index: 99
+	width: 500px
+	left: 35%
+	top: calc(50% - 1em)
+	color: $secondary-color
+	+transition(all, .5s)
+	&:hover 
+		+outlined-text(1px, $secondary-color)
+		+transition(all, .5s)
+		color: $primary-color
+
+.project-color .scroll-section:hover .scroll-down span,
+	.project-color .scroll-section:hover .scroll-down span::before,
+	.project-color .scroll-section:hover .scroll-down span::after
+	background: $primary-color
+	background-color: $primary-color
+	+transition(all, .5s)
+	
+.footer
+	width: 100%
