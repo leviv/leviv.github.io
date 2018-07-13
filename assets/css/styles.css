@@ -413,7 +413,8 @@ html {
   height: 100%; }
 
 .project-color2 p {
-  line-height: 3em; }
+  line-height: 3em;
+  font-size: 15px !important; }
 
 .project-img2 {
   background-size: cover;
@@ -429,8 +430,10 @@ html {
 
 .project-preview h1 {
   color: #333;
-  font-style: italic;
-  text-shadow: -1px 1px #fef200; }
+  font-style: italic; }
+  .project-preview h1 span {
+    background: #fef200;
+    padding: 5px 10px; }
 
 /* ===============================
  * Home-slideshow
@@ -477,6 +480,8 @@ html {
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   padding: 0; }
+  #awards .row {
+    margin: 0 !important; }
   #awards .col-sm-4 {
     height: 100% !important;
     display: table; }

@@ -8,7 +8,7 @@ $( window ).resize(function() {
             $(window).scroll(function() {
 
                 // Scroll the background at var speed
-                // the yPos is a negative value because we're scrolling it UP!                              
+                // the yPos is a negative value because we're scrolling it UP!
                 var yPos = -( ($window.scrollTop() - $bgobj.offset().top) / $bgobj.data('speed'));
 
                 // Put together our final background position
@@ -19,11 +19,30 @@ $( window ).resize(function() {
 
             }); // window scroll Ends
 
-        });    
+        });
     }
 });
 
-
+$(".nav-item").click(function () {
+    $(".c-hamburger").removeClass("is-active");
+    $('#dim-screen').fadeTo(500, 0, function (){
+			$(this).hide();
+		});
+        $("#nav-expand").animate({
+            width: "0%"
+        }, {
+            duration: 1500,
+            easing: 'easeInOutQuint'
+        });
+        $(".nav-list").animate({
+            left: "-100%"
+        }, {
+            duration: 400,
+            easing: 'easeInOutQuint'
+        });
+        $(".c-hamburger").css({'transform' : 'rotate(0deg)'});
+        $("body").css("overflow", "auto");
+});
 
 $(document).ready(function(){
     $window = $(window);
@@ -36,7 +55,7 @@ $(document).ready(function(){
             $(window).scroll(function() {
 
                 // Scroll the background at var speed
-                // the yPos is a negative value because we're scrolling it UP!                              
+                // the yPos is a negative value because we're scrolling it UP!
                 var yPos = -( ($window.scrollTop() - $bgobj.offset().top) / $bgobj.data('speed'));
 
                 // Put together our final background position
@@ -47,7 +66,7 @@ $(document).ready(function(){
 
             }); // window scroll Ends
 
-        });    
+        });
     }
 });
 
@@ -55,7 +74,7 @@ $(document).ready(function(){
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 40) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");       
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
         $(".nav-brand").addClass("logo-shrink");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
