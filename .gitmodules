@@ -1,3 +1,3 @@
 [submodule "botw-loader"]
 	path = botw-loader
-	url = git://github.com/leviv/botw-loader.git
+	url = https://github.com/leviv/botw-loader
