@@ -1,0 +1,51 @@
+/* ===============================
+		Custom Sass
+		By: Levi Villarreal
+		For: two-square-cipher
+		Completed: IN PROGRESS
+		=============================== */
+
+/* ===============================
+		General
+		=============================== */
+
+body
+	-webkit-font-smoothing: antialiased
+	text-rendering: optimizelegibility
+	font-family: 'Dosis', sans-serif
+
+body, html, .row
+	height: 100%
+
+a:hover
+	text-decoration: none
+
+ul
+	list-style: none
+
+hr
+	border-width : 2px
+	border-color: $secondary-color
+
+/* ===============================
+		Typography
+		=============================== */
+
+h1, h1 span
+	font-family: 'Yeseva One', cursive
+	text-align: center
+
+.hover
+	background-size: 100% 200%
+	background-position: 0% 0%
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $secondary-color 50%)
+	+transition(all, .5s)
+	text-decoration: none
+	overflow: hidden
+	color: $secondary-color
+
+	&:hover
+		color: $primary-color
+		background-position: 0% -195%
+		text-decoration: none
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $primary-color 50%)
