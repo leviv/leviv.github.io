@@ -61,14 +61,6 @@ h1, h1 span {
 /* ===============================
  * Home Page
  * =============================== */
-body, html {
-  overflow-x: hidden;
-}
-
-body {
-  margin: 35px 0;
-}
-
 .row {
   margin: auto;
 }
