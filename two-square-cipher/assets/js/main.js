@@ -61,8 +61,6 @@ function encryptPrep(){
   var key2 = parse($("input#encrypt-keyword2").val());
   var text = parse($("input#encrypt-text").val());
 
-  console.log(text);
-
   // If the text entered is an odd number
   if (text.length % 2 == 1){
     text += 'z';

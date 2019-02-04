@@ -8,24 +8,29 @@
   <meta name="description" content="Two Square Cipher Example">
   <meta name="author" content="Levi Villarreal">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>Two Square Cipher Example</title>
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="icons/site.webmanifest">
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-config" content="icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <title>Two Square Cipher</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Jquery -->
+  <script src="assets/js/jquery-3.1.1.slim.min.js"></script>
 
   <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 
   <!-- External Code -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Yeseva+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
@@ -42,242 +47,239 @@
 
 <body>
 
-  <section id="codebreaker">
-    <div class="row">
-      <div class="container">
-        <h1>Two Square Cipher Solver</h1>
-        <div class="row" id="solver-container">
-          <div class="col-sm-6" id="decrypt-container">
-            <h2>Decrypt</h2>
+  <div class="row">
+    <div class="container">
+      <h1>Two Square Cipher Solver</h1>
+      <div class="row" id="solver-container">
+        <div class="col-sm-6" id="decrypt-container">
+          <h2>Decrypt</h2>
 
-            <div class="decrypt-form" id="form">
-              <div class="form-group">
-                <label for="decrypt-text">Text to decrypt</label>
-                <input type="text" class="form-control" id="decrypt-text" placeholder="Enter Encrypted Text">
-              </div><!-- form-group -->
-              <div class="form-group">
-                <label for="decrypt-keyword1">Keyword 1</label>
-                <input type="text" class="form-control" id="decrypt-keyword1" placeholder="Enter Keyword 1">
-              </div><!-- form-group -->
-              <div class="form-group">
-                <label for="decrypt-keyword2">Keyword 2</label>
-                <input type="text" class="form-control" id="decrypt-keyword2" placeholder="Enter Keyword 2">
-              </div><!-- form-group -->
+          <div class="decrypt-form" id="form">
+            <div class="form-group">
+              <label for="decrypt-text">Text to decrypt</label>
+              <input type="text" class="form-control" id="decrypt-text" placeholder="Enter Encrypted Text">
+            </div><!-- form-group -->
+            <div class="form-group">
+              <label for="decrypt-keyword1">Keyword 1</label>
+              <input type="text" class="form-control" id="decrypt-keyword1" placeholder="Enter Keyword 1">
+            </div><!-- form-group -->
+            <div class="form-group">
+              <label for="decrypt-keyword2">Keyword 2</label>
+              <input type="text" class="form-control" id="decrypt-keyword2" placeholder="Enter Keyword 2">
+            </div><!-- form-group -->
 
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div><!-- form -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div><!-- form -->
 
-            <p class="square-label">Keyword 1</p>
-            <div class="grid top-grid">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-            </div><!-- grid -->
+          <br><br>
 
-            <br><br>
-            <p class="square-label">Keyword 2</p>
-            <div class="grid bottom-grid">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-            </div><!-- grid -->
+          <p class="square-label">Keyword 1</p>
+          <div class="grid top-grid">
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+          </div><!-- grid -->
 
-            <br><br>
-            <h2 id="decrypt-result">Result: <span></span></h2>
+          <p class="square-label">Keyword 2</p>
+          <div class="grid bottom-grid">
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+          </div><!-- grid -->
 
-          </div><!-- col -->
+          <h2 id="decrypt-result">Result: <span></span></h2>
 
-          <div class="col-sm-6" id="encrypt-container">
-            <h2>Encrypt</h2>
+        </div><!-- col -->
 
-            <div class="encrypt-form" id="form">
-              <div class="form-group">
-                <label for="encrypt-text">Text to encrypt</label>
-                <input type="text" class="form-control" id="encrypt-text" placeholder="Enter Plain Text">
-              </div><!-- form-group -->
-              <div class="form-group">
-                <label for="encrypt-keyword1">Keyword 1</label>
-                <input type="text" class="form-control" id="encrypt-keyword1" placeholder="Enter Keyword 1">
-              </div><!-- form-group -->
-              <div class="form-group">
-                <label for="encrypt-keyword2">Keyword 2</label>
-                <input type="text" class="form-control" id="encrypt-keyword2" placeholder="Enter Keyword 2">
-              </div><!-- form-group -->
+        <div class="col-sm-6" id="encrypt-container">
+          <h2>Encrypt</h2>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div><!-- form -->
+          <div class="encrypt-form" id="form">
+            <div class="form-group">
+              <label for="encrypt-text">Text to encrypt</label>
+              <input type="text" class="form-control" id="encrypt-text" placeholder="Enter Plain Text">
+            </div><!-- form-group -->
+            <div class="form-group">
+              <label for="encrypt-keyword1">Keyword 1</label>
+              <input type="text" class="form-control" id="encrypt-keyword1" placeholder="Enter Keyword 1">
+            </div><!-- form-group -->
+            <div class="form-group">
+              <label for="encrypt-keyword2">Keyword 2</label>
+              <input type="text" class="form-control" id="encrypt-keyword2" placeholder="Enter Keyword 2">
+            </div><!-- form-group -->
 
-            <p class="square-label">Keyword 1</p>
-            <div class="grid top-grid">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-            </div><!-- grid -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div><!-- form -->
 
-            <br><br>
-            <p class="square-label">Keyword 2</p>
-            <div class="grid bottom-grid">
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-                <div class="col-sm-2 letter">.</div>
-              </div>
-            </div><!-- grid -->
-            <br><br>
-            <h2 id="encrypt-result">Result: <span></span></h2>
-          </div>
+          <br><br>
+
+          <p class="square-label">Keyword 1</p>
+          <div class="grid top-grid">
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+          </div><!-- grid -->
+
+          <p class="square-label">Keyword 2</p>
+          <div class="grid bottom-grid">
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+              <div class="col-xs-2 letter">.</div>
+            </div>
+          </div><!-- grid -->
+          <h2 id="encrypt-result">Result: <span></span></h2>
         </div>
-      </div><!-- container -->
-    </div><!-- row -->
-  </section>
+      </div>
+    </div><!-- container -->
+  </div><!-- row -->
 
-  <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

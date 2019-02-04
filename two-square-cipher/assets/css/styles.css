@@ -61,13 +61,16 @@ h1, h1 span {
 /* ===============================
  * Home Page
  * =============================== */
-figure {
-  height: 100vh;
+body, html {
+  overflow-x: hidden;
 }
 
-html {
-  padding: 0px !important;
-  margin: 0px !important;
+body {
+  margin: 35px 0;
+}
+
+.row {
+  margin: auto;
 }
 
 h1, h2 {
@@ -79,11 +82,16 @@ p.square-label {
   text-align: center;
 }
 
+#decrypt-container, #encrypt-container {
+  padding: 0 25px;
+}
+
 h2#encrypt-result, h2#decrypt-result {
   text-decoration: none;
 }
 h2#encrypt-result span, h2#decrypt-result span {
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 #solver-container {
@@ -93,11 +101,22 @@ h2#encrypt-result span, h2#decrypt-result span {
 button {
   width: 100%;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
-.grid .col-sm-2 {
-  border: 1px solid #999;
+.grid {
+  padding: 0 0px;
+  margin-bottom: 20px;
+  text-align: center !important;
+}
+.grid .row {
+  text-align: center;
+}
+.grid .col-xs-2 {
+  border: 1px solid #999 !important;
+}
+.grid .col-xs-2, .grid .col-xs-1 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

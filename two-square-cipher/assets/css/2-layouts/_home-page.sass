@@ -1,12 +1,12 @@
 /* ===============================
 		Home Page
 		=============================== */
-figure
-	height: 100vh
 
-html
-	padding: 0px !important
-	margin: 0px !important
+body, html
+	overflow-x: hidden
+
+.row
+	margin: auto
 
 h1, h2
 	text-align: center
@@ -15,10 +15,14 @@ h1, h2
 p.square-label
 	text-align: center
 
+#decrypt-container, #encrypt-container
+	padding: 0 25px
+
 h2#encrypt-result, h2#decrypt-result
 	text-decoration: none
 	span
 		font-weight: bold
+		overflow-wrap: break-word
 
 #solver-container
 	margin-top: 50px
@@ -26,8 +30,15 @@ h2#encrypt-result, h2#decrypt-result
 button
 	width: 100%
 	text-align: center
-	margin-bottom: 15px
+	margin-bottom: 35px
 
 .grid
-	.col-sm-2
-		border: 1px solid #999
+	padding: 0 0px
+	margin-bottom: 20px
+	text-align: center !important
+	.row
+		text-align: center
+	.col-xs-2
+		border: 1px solid #999 !important
+	.col-xs-2, .col-xs-1
+		text-align: center
