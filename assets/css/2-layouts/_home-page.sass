@@ -2,341 +2,202 @@
     Home Page
     =============================== */
 figure
-	height: 100vh
+  height: 100vh
 
 html
-	padding: 0px !important
-	margin: 0px !important
+  padding: 0px !important
+  margin: 0px !important
 
 /* ===============================
     Hero
     =============================== */
 
 #home-front
-	padding-top: 5vh
-	.scroll-down
-		bottom: 0%
-		font-size: 5px
-		span
-			width: 100px
-			background: $secondary-color
-			&::before, &::after
-				background: $secondary-color
+  padding-top: 5vh
+  .scroll-down
+    bottom: 0%
+    font-size: 5px
+    span
+      width: 100px
+      background: $secondary-color
+      &::before, &::after
+        background: $secondary-color
 
 .home-left
-	h1
-		color: $secondary-color
-		font-size: 24px
-		font-style: italic
-		text-align: left
-		position: relative
-		letter-spacing: .2em
-		top: 55%
-		left: 79%
-		margin: 25px 0
-		z-index: 2
-		width: 0px
-		overflow: hidden
-		span
-			background: $primary-color
-			padding: 3px 8px
+  h1
+    color: $secondary-color
+    font-size: 24px
+    font-style: italic
+    text-align: left
+    position: relative
+    letter-spacing: .2em
+    top: 55%
+    left: 79%
+    margin: 25px 0
+    z-index: 2
+    width: 0px
+    overflow: hidden
+    span
+      background: $primary-color
+      padding: 3px 8px
 
 .home-right
-	img.hero-image
-		width: 100%
-		position: relative
-		top: 50%
-		transform: translateY(-50%)
-		right: 15px
-		z-index: 1
+  img.hero-image
+    width: 100%
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    right: 15px
+    z-index: 1
 
 .home-text
-	margin-top: 30px
-	font-size: 13px
-	p
-		letter-spacing: .15em
-		line-height: 2em
+  margin-top: 30px
+  font-size: 13px
+  p
+    letter-spacing: .15em
+    line-height: 2em
 
 .front
-	z-index: 1
+  z-index: 1
 
 @media (max-width: 768px)
-	.image-holder
-		display: none
+  .image-holder
+    display: none
 
 @media (max-width: 575px)
-	.home-left
-		h1
-			width: 100%
-			text-align: center
-			position: relative
-			top: 50%
-			margin: 0
-		.col-sm-2
-			margin: none
-	#home-front
-		.scroll-down
-			display: none
-	.home-right
-		img.hero-image
-			width: 100% !important
-			margin: 0 auto
-			position: relative
-			top: 10%
-			transform: translateY(0%)
-			right: 0px
+  .home-left
+    h1
+      width: 100%
+      text-align: center
+      position: relative
+      top: 50%
+      margin: 0
+    .col-sm-2
+      margin: none
+  #home-front
+    .scroll-down
+      display: none
+  .home-right
+    img.hero-image
+      width: 100% !important
+      margin: 0 auto
+      position: relative
+      top: 10%
+      transform: translateY(0%)
+      right: 0px
 
 /* ===============================
-	Projects
-	=============================== */
+  Projects
+  =============================== */
 
 .big-project-title
-	text-shadow: -3px 3px $primary-color
-	text-align: center
-	position: relative
-	top: 30px
-	font-style: italic
-	font-size: 60px
-	z-index: 9
+  text-shadow: -3px 3px $primary-color
+  text-align: center
+  position: relative
+  top: 30px
+  font-style: italic
+  font-size: 60px
+  z-index: 9
 
 .project-preview
-	height: 100%
-	width: 100%
-	position: relative
-	margin: 0 0 100px 0
+  height: 100%
+  width: 100%
+  position: relative
+  margin: 0 0 100px 0
 
-.project-color2
-	padding: 50px 0
-	position: relative
-	right: 20%
-	transform: translateY(30%)
-	z-index: 2
+.project-description
+  padding: 0px 20px
+  transform: translateY(30%)
+  z-index: 2
 
-.project-preview-left .project-color2
-	right: 20%
-
-.project-preview-right .project-color2
-	left: 20%
-	text-align: right
-
-.project-preview p span
-	color: $secondary-color
-	line-height: 1.9em
-	background: -webkit-linear-gradient(bottom, $primary-color 100%, transparent 90%, transparent)
-	background: linear-gradient(to top, $primary-color 100%, transparent 100%, transparent)
+.project-preview-right .project-description
+  text-align: right
 
 .project-preview, .row, .col-sm-6
-	height: 100%
+  height: 100%
 
-.project-color2 p
-	line-height: 3em
-	font-size: 15px !important
+.project-description p
+  line-height: 2em
+  font-size: 18px
 
-
-.project-img2
-	background-size: cover
-	background-repeat: no-repeat
-	height: 600px
-	z-index: 1
-
-.project-preview-left .project-img2
-	border-left: 65px solid #fff
-
-.project-preview-right .project-img2
-	border-right: 65px solid #fff
+.project-image
+  background-size: cover
+  background-repeat: no-repeat
+  height: 500px
+  z-index: 1
+  border-left: 65px solid #fff
 
 .project-preview h1
-	color: $secondary-color
-	font-style: italic
-	span
-		background: $primary-color
-		padding: 5px 10px
-
-
-/* ===============================
-    Home-slideshow
-    =============================== */
-
-.slideshow-image
-	position: relative
-	height: 100%
-	width: 50%
-	margin: 0
-	img
-		max-height: 100%
-		max-width: 100%
-		width: auto
-		height: 80%
-		position: absolute
-		top: 0
-		bottom: 0
-		left: 10%
-		margin: auto
-
-.slideshow-text
-	position: relative
-	width: 60%
-	top: 25%
-	right: 0px
-	h1
-		color: $secondary-color
-		font-size: 130px
-		+outlined-text(1px, $third-color)
-		font-style: italic
-	.yeet-idk
-		width: 600px
-		position: relative
-		line-height: 3em
-		left: 20%
+  color: $secondary-color
+  font-style: italic
+  span
+    background: $primary-color
+    padding: 5px 10px
 
 /* ===============================
-    Awards
-    =============================== */
-
-#awards
-	+transition(all, .5s)
-	.row
-			margin: 0 !important
-	padding: 0
-	.col-sm-4
-		height: 100% !important
-		display: table
-	h1
-			display: table-cell
-			vertical-align: middle
-			text-align: center
-			font-style: italic
-			text-shadow: -3px 3px $primary-color
-	.col-sm-8
-		ul
-			height: 100% !important
-			display: flex
-			flex-flow: column
-			justify-content: space-between
-			padding: 10% 0 10% 20%
-		h2
-			font-size: 24px
-			display: table-cell
-			padding-bottom: 4px
-			background: rgb(255, 255, 255)
-			padding: 5px
-			&:hover
-				+outlined-text(.5px, $secondary-color)
-			cursor: pointer
-
-.award-click
-	+outlined-text(.5px, $secondary-color)
-	color: $primary-color
-	background-position: 0% -195%
-	text-decoration: none
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $primary-color 50%)
-
-.award-background
-	position: absolute
-	height: 100%
-	width: 100%
-	display: block
-	opacity: 0
-	background-size: cover
-	background-position: center
-	background-size: 100%
-	border: 0px solid $third-color
-	+transition(all, .5s)
-
-.award-active
-	opacity: 1 !important
-
-.award-section
-	background: rgba(255, 255, 255, 0.3)
-
-.award
-	position: relative
-	overflow: hidden
-	+transition(all, .5s)
-
-.collapse
-	display: none
-
-p.award-description
-	display: none
-	padding: 20px 50px 0 0
-	line-height: 6vh
-	font-size: 1.1em
-
-p.award-description span
-	color: $secondary-color
-	line-height: 1.9em
-	background: -webkit-linear-gradient(bottom, $third-color 100%, transparent 90%, transparent)
-	background: linear-gradient(to top, $third-color 100%, transparent 100%, transparent)
-
-/* ===============================
-	Project Page
-	=============================== */
+  Project Section
+  =============================== */
 
 .project-hero, .container-fluid
-	height: 100%
-
-.project-img
-	height: 100%
-	background-size: cover
+  height: 100%
 
 .project-color
-	background: $primary-color
-	position: relative
-	top: 50%
-	height: 50%
-	width: 100%
-	padding: 0 !important
+  background: $primary-color
+  position: relative
+  top: 50%
+  height: 50%
+  width: 100%
+  padding: 0 !important
 
 .project-color .scroll-section
-	width: 100%
-	height: 100%
-	color: $secondary-color
-	cursor: pointer
-	+transition(all, .5s)
+  width: 100%
+  height: 100%
+  color: $secondary-color
+  cursor: pointer
+  +transition(all, .5s)
 
 .project-color .scroll-section:hover
-	background: $secondary-color
-	color: $primary-color
+  background: $secondary-color
+  color: $primary-color
 
 .project-color p
-	font-size: 2em
-	text-align: center
-	font-weight: 900
-	position: relative
-	top: calc(40% - 1em)
+  font-size: 2em
+  text-align: center
+  font-weight: 900
+  position: relative
+  top: calc(40% - 1em)
 
 .project-color img
-	height: 50%
-	padding-top: 20%
-	position: absolute
-	top: -50%
-	left: 0
-	right: 0
-	margin: 0 auto
+  height: 50%
+  padding-top: 20%
+  position: absolute
+  top: -50%
+  left: 0
+  right: 0
+  margin: 0 auto
 
 h1.project-title
-	text-transform: uppercase
-	font-style: italic
-	text-shadow: -3px 3px $primary-color
-	position: absolute
-	z-index: 99
-	width: 500px
-	left: 35%
-	top: calc(50% - 1em)
-	color: $secondary-color
-	+transition(all, .5s)
-	&:hover
-		+outlined-text(1px, $secondary-color)
-		+transition(all, .5s)
-		color: $primary-color
+  text-transform: uppercase
+  font-style: italic
+  text-shadow: -3px 3px $primary-color
+  position: absolute
+  z-index: 99
+  width: 500px
+  left: 35%
+  top: calc(50% - 1em)
+  color: $secondary-color
+  +transition(all, .5s)
+  &:hover
+    +outlined-text(1px, $secondary-color)
+    +transition(all, .5s)
+    color: $primary-color
 
 .project-color .scroll-section:hover .scroll-down span,
-	.project-color .scroll-section:hover .scroll-down span::before,
-	.project-color .scroll-section:hover .scroll-down span::after
-	background: $primary-color
-	background-color: $primary-color
-	+transition(all, .5s)
+  .project-color .scroll-section:hover .scroll-down span::before,
+  .project-color .scroll-section:hover .scroll-down span::after
+  background: $primary-color
+  background-color: $primary-color
+  +transition(all, .5s)
 
 .footer
-	width: 100%
+  width: 100%

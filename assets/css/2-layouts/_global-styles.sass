@@ -10,228 +10,223 @@
     =============================== */
 
 body
-	-webkit-font-smoothing: antialiased
-	text-rendering: optimizelegibility
-	font-family: 'Dosis', sans-serif
-    
-body, html, .row 
-	height: 100%
-    
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizelegibility
+  font-family: 'Dosis', sans-serif
+
+body, html, .row
+  height: 100%
+
 a:hover
-	text-decoration: none
+  text-decoration: none
 
 ul
-	list-style: none
+  list-style: none
 
 hr
-	border-width : 2px
-	border-color: $secondary-color
-    
+  border-width : 2px
+  border-color: $secondary-color
+
 /* ===============================
     Typography
     =============================== */
 
 h1, h1 span
-	font-family: 'Yeseva One', cursive
+  font-family: 'Yeseva One', cursive
 
 .hover
-	background-size: 100% 200%
-	background-position: 0% 0%
-	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $secondary-color 50%)
-	+transition(all, .5s)
-	text-decoration: none
-	overflow: hidden
-	color: $secondary-color
+  background-size: 100% 200%
+  background-position: 0% 0%
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $secondary-color 50%)
+  +transition(all, .5s)
+  text-decoration: none
+  overflow: hidden
+  color: $secondary-color
 
-	&:hover
-		color: $primary-color
-		background-position: 0% -195%
-		text-decoration: none
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $primary-color 50%)
+  &:hover
+    color: $primary-color
+    background-position: 0% -195%
+    text-decoration: none
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $primary-color 50%)
 
 /* ===============================
-	Sidebar
-	=============================== */
+  Sidebar
+  =============================== */
 
 #social-sidebar
-	position: absolute
-	left: 0
-	text-align: center
-	top: 50%
-	transform: translate(-50%, -50%)
-	z-index: 9
-	padding-left: 54px
-	li
-		display: block
-		font-size: 24px
-		a
-			color: $secondary-color
-			+transition(all, .5s)
-			&:hover
-				color: $primary-color
-				+transition(all, .5s)
+  position: absolute
+  left: 0
+  text-align: center
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 9
+  padding-left: 54px
+  li
+    display: block
+    font-size: 24px
+    a
+      color: $secondary-color
+      +transition(all, .5s)
+      &:hover
+        color: $primary-color
+        +transition(all, .5s)
 
 /* ===============================
     Navbar
     =============================== */
 
 #dim-screen
-	background: rgba(0, 0, 0, 0.5)
-	display: none
-	height: 100%
-	left: 0
-	position: fixed
-	top: 0
-	width: 100%
-	z-index: 5
+  background: rgba(0, 0, 0, 0.5)
+  display: none
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 5
 
 @media (max-width: 768px)
-	.nav-item p
-		display: none
-	.nav-list
-		top: 30% !important
-		left: -100%
-		h2
-			font-size: 0.5em
+  .nav-item p
+    display: none
+  .nav-list
+    top: 30% !important
+    left: -100%
+    h2
+      font-size: 0.5em
 
 .nav-list
-	text-align: left
-	position: fixed
-	display: block
-	top: 50%
-	left: -100%
-	transform: translateY(-50%)
-	-webkit-transform: translateY(-50%)
-	-moz-transform: translateY(-50%)
-	-o-transform: translateY(-50%)
-	padding: 0 0 0 4%
-	+transition(all, 1.2s)
-	h2
-		text-align: left !important
-        
+  text-align: left
+  position: fixed
+  display: block
+  top: 50%
+  left: -100%
+  transform: translateY(-50%)
+  -webkit-transform: translateY(-50%)
+  -moz-transform: translateY(-50%)
+  -o-transform: translateY(-50%)
+  padding: 0 0 0 4%
+  +transition(all, 1.2s)
+  h2
+    text-align: left !important
+
 .nav-item
-	font-size: 50px
-	line-height: 70px
-	font-weight: 800
-	text-transform: uppercase
-	letter-spacing: 1px
-	margin-top: 20px
-	a
-		color: $secondary-color
-	p
-		font-size: 25px
-		margin-bottom: 20px
-		text-transform: none
-		border-bottom: 2px solid $primary-color
-		span
-			font-weight: 100
-			color: $primary-color
-			font-size: 45px
-	h2
-		color: $third-color
-		span
-			font-weight: 100
-			margin-right: 20px
-			color: $primary-color
-			border-bottom: 2px solid $primary-color
-        
+  font-size: 50px
+  line-height: 70px
+  font-weight: 800
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin-top: 20px
+  a
+    color: $secondary-color
+  p
+    font-size: 25px
+    margin-bottom: 20px
+    text-transform: none
+    border-bottom: 2px solid $primary-color
+    span
+      font-weight: 100
+      color: $primary-color
+      font-size: 45px
+  h2
+    color: $third-color
+    span
+      font-weight: 100
+      margin-right: 20px
+      color: $primary-color
+      border-bottom: 2px solid $primary-color
+
 #nav-expand
-	background: shade($secondary-color, 20%)
-	position: fixed
-	background-image: url(../img/nav.JPG)
-	background-attachment: fixed
-	background-size: cover
-	height: 100%
-	color: $third-color
-	display: inherit
-	z-index: 99999999
-	+transition(background, .5s)
-        
+  background: shade($secondary-color, 20%)
+  position: fixed
+  background-image: url(../img/nav.JPG)
+  background-attachment: fixed
+  background-size: cover
+  height: 100%
+  color: $third-color
+  display: inherit
+  z-index: 99999999
+  +transition(background, .5s)
+
 .c-hamburger
-	display: block
-	z-index: 9999999999
-	position: fixed
-	width: 48px
-	height: 48px
-	text-indent: -999999px
-	border: none
-	cursor: pointer
-	top: 20px
-	right: calc(100% - 68px)
-	+transform(0deg)
-	+transition(background, .3s)
-	+transition(all, 1.2s)
-	+border-radius(50%)
-	&:focus
-		outline: none
-	span
-		display: block
-		position: absolute
-		top: 22px
-		left: 9px
-		right: 9px
-		height: 3px
-		background: $primary-color
-		&::before, &::after
-			content: ""
-			position: absolute
-			display: block
-			left: 0
-			width: 100%
-			height: 3px
-			background-color: $primary-color
-		&::before
-			top: -10px
-		&::after
-			bottom: -10px
-        
-.c-hamburger--htx 
-	background-color: $secondary-color
-	span
-		+transition(background, .3s)
-		&::before
-			transition-property: top, transform 
-		&::after
-			transition-property: bottom, transform
-	&:hover
-		background-color: shade($secondary-color, 60%) 
-		span
-			background: $primary-color
-	&.is-active
-		span
-			background: none
-			transition-delay: 0s, .3s
-			&::before, &::after
-				transition-delay: 0s, .3s
-			&::before
-				top: 0
-				+rotate(45deg)
-			&::after
-				bottom: 0
-				+rotate(-45deg) 
+  display: block
+  z-index: 9999999999
+  position: fixed
+  width: 48px
+  height: 48px
+  text-indent: -999999px
+  border: none
+  cursor: pointer
+  top: 20px
+  right: calc(100% - 68px)
+  +transform(0deg)
+  +transition(background, .3s)
+  +transition(all, 1.2s)
+  +border-radius(50%)
+  &:focus
+    outline: none
+  span
+    display: block
+    position: absolute
+    top: 22px
+    left: 9px
+    right: 9px
+    height: 3px
+    background: $primary-color
+    &::before, &::after
+      content: ""
+      position: absolute
+      display: block
+      left: 0
+      width: 100%
+      height: 3px
+      background-color: $primary-color
+    &::before
+      top: -10px
+    &::after
+      bottom: -10px
+
+.c-hamburger--htx
+  background-color: $secondary-color
+  span
+    +transition(background, .3s)
+    &::before
+      transition-property: top, transform
+    &::after
+      transition-property: bottom, transform
+  &:hover
+    background-color: shade($secondary-color, 60%)
+    span
+      background: $primary-color
+  &.is-active
+    span
+      background: none
+      transition-delay: 0s, .3s
+      &::before, &::after
+        transition-delay: 0s, .3s
+      &::before
+        top: 0
+        +rotate(45deg)
+      &::after
+        bottom: 0
+        +rotate(-45deg)
 
 .c-hamburger--htra
-	span
-		+transition(all, .2s)
-		+rotate(180deg)
-		&::before, &::after
-			+transition(all, .2s)
-	&:hover
-		span
-			background: $primary-color
-			&::before
-				transform-origin: top left !important
-				top: 0 !important
-				transform: translateX(-3px) translateY(1.5px) rotate(-45deg) !important
-			&::after
-				transform-origin: bottom left !important
-				bottom: 0 !important
-				transform: translateX(-3px) translateY(-1.5px) rotate(45deg) !important
-			&::before, &::after
-				width: 50%
-				+transition(all, .3s)
-
-
-
-
-
+  span
+    +transition(all, .2s)
+    +rotate(180deg)
+    &::before, &::after
+      +transition(all, .2s)
+  &:hover
+    span
+      background: $primary-color
+      &::before
+        transform-origin: top left !important
+        top: 0 !important
+        transform: translateX(-3px) translateY(1.5px) rotate(-45deg) !important
+      &::after
+        transform-origin: bottom left !important
+        bottom: 0 !important
+        transform: translateX(-3px) translateY(-1.5px) rotate(45deg) !important
+      &::before, &::after
+        width: 50%
+        +transition(all, .3s)
