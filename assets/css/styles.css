@@ -13,10 +13,6 @@ body {
   font-family: "Dosis", sans-serif;
 }
 
-body, html, .row {
-  height: 100%;
-}
-
 a:hover {
   text-decoration: none;
 }
@@ -41,11 +37,11 @@ h1, h1 span {
   background-size: 100% 200%;
   background-position: 0% 0%;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #333 50%);
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
   text-decoration: none;
   overflow: hidden;
   color: #333;
@@ -75,263 +71,52 @@ h1, h1 span {
 }
 #social-sidebar li a {
   color: #333;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
 }
 #social-sidebar li a:hover {
   color: #fef200;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
 }
 
 /* ===============================
- *  Navbar
- *  =============================== */
-#dim-screen {
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
+ * Buttons
+ * =============================== */
+button {
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
+  margin: 5px 2px;
+  border: 3px solid #333;
+  padding: 7px 15px;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
 }
-
-@media (max-width: 768px) {
-  .nav-item p {
-    display: none;
-  }
-
-  .nav-list {
-    top: 30% !important;
-    left: -100%;
-  }
-  .nav-list h2 {
-    font-size: 0.5em;
-  }
-}
-.nav-list {
-  text-align: left;
-  position: fixed;
-  display: block;
-  top: 50%;
-  left: -100%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  padding: 0 0 0 4%;
-  transition: all 1.2s;
-  -webkit-transition: all 1.2s;
-  -ms-transition: all 1.2s;
-  -moz-transition: all 1.2s;
-  -o-transition: all 1.2s;
-}
-.nav-list h2 {
-  text-align: left !important;
-}
-
-.nav-item {
-  font-size: 50px;
-  line-height: 70px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 20px;
-}
-.nav-item a {
+button:visited {
   color: #333;
 }
-.nav-item p {
-  font-size: 25px;
-  margin-bottom: 20px;
-  text-transform: none;
-  border-bottom: 2px solid #fef200;
+button i {
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
+  overflow: hidden;
+  font-size: 1em;
+  opacity: 0;
+  padding-right: 5px;
 }
-.nav-item p span {
-  font-weight: 100;
-  color: #fef200;
-  font-size: 45px;
-}
-.nav-item h2 {
-  color: #fff;
-}
-.nav-item h2 span {
-  font-weight: 100;
-  margin-right: 20px;
-  color: #fef200;
-  border-bottom: 2px solid #fef200;
-}
-
-#nav-expand {
-  background: #292929;
-  position: fixed;
-  background-image: url(../img/nav.JPG);
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-  color: #fff;
-  display: inherit;
-  z-index: 99999999;
-  transition: background 0.5s;
-  -webkit-transition: background 0.5s;
-  -ms-transition: background 0.5s;
-  -moz-transition: background 0.5s;
-  -o-transition: background 0.5s;
-}
-
-.c-hamburger {
-  display: block;
-  z-index: 9999999999;
-  position: fixed;
-  width: 48px;
-  height: 48px;
-  text-indent: -999999px;
-  border: none;
-  cursor: pointer;
-  top: 20px;
-  right: calc(100% - 68px);
-  -webkit-transform: 0deg;
-  -moz-transform: 0deg;
-  -ms-transform: 0deg;
-  -o-transform: 0deg;
-  transform: 0deg;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
-  -ms-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  -o-transition: background 0.3s;
-  transition: all 1.2s;
-  -webkit-transition: all 1.2s;
-  -ms-transition: all 1.2s;
-  -moz-transition: all 1.2s;
-  -o-transition: all 1.2s;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.c-hamburger:focus {
-  outline: none;
-}
-.c-hamburger span {
-  display: block;
-  position: absolute;
-  top: 22px;
-  left: 9px;
-  right: 9px;
-  height: 3px;
-  background: #fef200;
-}
-.c-hamburger span::before, .c-hamburger span::after {
-  content: "";
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #fef200;
-}
-.c-hamburger span::before {
-  top: -10px;
-}
-.c-hamburger span::after {
-  bottom: -10px;
-}
-
-.c-hamburger--htx {
+button:hover {
   background-color: #333;
+  color: #fef200;
 }
-.c-hamburger--htx span {
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
-  -ms-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  -o-transition: background 0.3s;
-}
-.c-hamburger--htx span::before {
-  transition-property: top, transform;
-}
-.c-hamburger--htx span::after {
-  transition-property: bottom, transform;
-}
-.c-hamburger--htx:hover {
-  background-color: #141414;
-}
-.c-hamburger--htx:hover span {
-  background: #fef200;
-}
-.c-hamburger--htx.is-active span {
-  background: none;
-  transition-delay: 0s, 0.3s;
-}
-.c-hamburger--htx.is-active span::before, .c-hamburger--htx.is-active span::after {
-  transition-delay: 0s, 0.3s;
-}
-.c-hamburger--htx.is-active span::before {
-  top: 0;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.c-hamburger--htx.is-active span::after {
-  bottom: 0;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.c-hamburger--htra span {
-  transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-.c-hamburger--htra span::before, .c-hamburger--htra span::after {
-  transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-}
-.c-hamburger--htra:hover span {
-  background: #fef200;
-}
-.c-hamburger--htra:hover span::before {
-  transform-origin: top left !important;
-  top: 0 !important;
-  transform: translateX(-3px) translateY(1.5px) rotate(-45deg) !important;
-}
-.c-hamburger--htra:hover span::after {
-  transform-origin: bottom left !important;
-  bottom: 0 !important;
-  transform: translateX(-3px) translateY(-1.5px) rotate(45deg) !important;
-}
-.c-hamburger--htra:hover span::before, .c-hamburger--htra:hover span::after {
-  width: 50%;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
+button:hover i {
+  opacity: 1;
 }
 
 /* ===============================
@@ -454,34 +239,31 @@ html {
   position: relative;
   margin: 0 0 100px 0;
 }
-
-.project-description {
+.project-preview .project-description {
   padding: 0px 20px;
   transform: translateY(30%);
   z-index: 2;
 }
-
-.project-preview-right .project-description {
-  text-align: right;
-}
-
-.project-preview, .row, .col-sm-6 {
-  height: 100%;
-}
-
-.project-description p {
+.project-preview .project-description p {
   line-height: 2em;
   font-size: 18px;
 }
-
-.project-image {
+.project-preview .project-description button {
+  display: inline-block;
+  text-align: left;
+}
+.project-preview:nth-child(even) .project-description {
+  text-align: right;
+}
+.project-preview:nth-child(odd) .project-image {
+  border-left: 65px solid #fff;
+}
+.project-preview .project-image {
   background-size: cover;
   background-repeat: no-repeat;
   height: 500px;
   z-index: 1;
-  border-left: 65px solid #fff;
 }
-
 .project-preview h1 {
   color: #333;
   font-style: italic;
@@ -512,11 +294,11 @@ html {
   height: 100%;
   color: #333;
   cursor: pointer;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
 }
 
 .project-color .scroll-section:hover {
@@ -552,19 +334,19 @@ h1.project-title {
   left: 35%;
   top: calc(50% - 1em);
   color: #333;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
 }
 h1.project-title:hover {
   text-shadow: -2px 0 #333, 0px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
   color: #fef200;
 }
 
@@ -573,11 +355,11 @@ h1.project-title:hover {
 .project-color .scroll-section:hover .scroll-down span::after {
   background: #fef200;
   background-color: #fef200;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
 }
 
 .footer {

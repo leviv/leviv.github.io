@@ -28,9 +28,8 @@
   <link href="https://fonts.googleapis.com/css?family=Yeseva+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
-
   <!-- Font Awesome Icons -->
-  <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a890946c74.js"></script>
 
   <!-- Custom CSS -->
   <link href="assets/css/styles.css" rel="stylesheet">
@@ -50,11 +49,11 @@
 
   <div id="social-sidebar">
     <ul>
-      <li><a href="https://twitter.com/villarreallevi" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-      <li><a href="https:/instagram.com/levivillarreal" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.facebook.com/levi.villarreal.9" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.linkedin.com/in/villarreallevi/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-      <li><a href="https://github.com/leviv" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://twitter.com/villarreallevi" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+      <li><a href="https:/instagram.com/levivillarreal" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.facebook.com/levi.villarreal.9" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/villarreallevi/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/leviv" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li>
     </ul>
   </div>
 
@@ -91,24 +90,40 @@
 
     <div id="projects-section">
 
-      <section class="container-fluid project-preview project-preview-left">
+      <section class="container-fluid project-preview">
         <div class="row">
           <div class="col-sm-7 project-image" style="background-image:url('assets/img/belo.jpeg');">
           </div><!-- col -->
 
           <div class="col-sm-5 project-description">
             <h1><span>MoodyHacks</span></h1>
-            <p>This website was built for the first ever Moody College of Communication hackathon at the University of Texas at Austin <br>visit it <a href="http://moodyhacks.org/" target="_blank">here</a> / View the code <a href="https://github.com/leviv/MoodyHacks" target="_blank">here</a></p>
+            <p>This website was built for the first ever Moody College of Communication hackathon at the University of Texas at Austin</p>
+
+            <button type="button" onclick="window.open('http://moodyhacks.org/','_blank');">
+              <i class="fas fa-globe-americas"></i> Visit the project
+            </button>
+            <button type="button" onclick="window.open('https://github.com/leviv/MoodyHacks','_blank');">
+              <i class="fas fa-code"></i> View the Code
+            </button>
           </div><!-- col -->
         </div><!-- row -->
       </section><!-- container -->
 
-      <section class="container-fluid project-preview project-preview-right">
+      <section class="container-fluid project-preview">
         <div class="row">
-
           <div class="col-sm-5 project-description">
             <h1><span>MikesGotStyle</span></h1>
-            <p>Created a chrome extension to greatly enhance UTCS' web pages<br>visit it <a href="https://chrome.google.com/webstore/detail/mikes-got-style/bpfphblljclepkkgcemfhckcebchiled?utm_source=chrome-ntp-icon" target="_blank">here</a> / View the code <a href="https://github.com/leviv/Mikes-Got-Style" target="_blank">here</a> / Read about it <a href="https://medium.com/@villarreallevi/mikesgotstyle-bringing-cs-department-websites-into-the-21st-century-512992c0831d" target="_blank">here</a></p>
+            <p>Created a chrome extension to greatly enhance UTCS' web pages </p>
+
+            <button type="button" onclick="window.open('https://chrome.google.com/webstore/detail/mikes-got-style/bpfphblljclepkkgcemfhckcebchiled?utm_source=chrome-ntp-icon','_blank');">
+              <i class="fas fa-globe-americas"></i> Visit the project
+            </button>
+            <button type="button" onclick="window.open('https://github.com/leviv/Mikes-Got-Style','_blank');">
+              <i class="fas fa-code"></i> View the Code
+            </button>
+            <button type="button" onclick="window.open('https://medium.com/@villarreallevi/mikesgotstyle-bringing-cs-department-websites-into-the-21st-century-512992c0831d','_blank');">
+              <i class="fas fa-book-open"></i> Read about it
+            </button>
           </div><!-- col -->
 
           <div class="col-sm-7 project-image" style="background-image:url('https://cdn-images-1.medium.com/max/800/1*js0Mnn9PkzkLifh2SnmKGA.png');">
@@ -116,14 +131,24 @@
         </div><!-- row -->
       </section><!-- container -->
 
-      <section class="container-fluid project-preview project-preview-left">
+      <section class="container-fluid project-preview">
         <div class="row">
           <div class="col-sm-7 project-image" style="background-image:url('https://cdn-images-1.medium.com/max/1000/1*mAiEeAzktbrdvauDZO4L0g.jpeg');">
           </div><!-- col -->
 
           <div class="col-sm-5 project-description">
             <h1><span>MyPage</span></h1>
-            <p>Created a chrome extenstion to improve reading comprehension for users with dyslexia<br>visit it <a href="https://chrome.google.com/webstore/detail/mypage-webpage-modifier/icdohcdnjlalcknkpljhknheaigcjggl?utm_source=chrome-ntp-icon" target="_blank">here</a> / View the code <a href="https://github.com/leviv/HackSmackers2017" target="_blank">here</a> / Read about it <a href="https://medium.com/@villarreallevi/mypage-a-chrome-extension-for-dyslexia-2e48035b913" target="_blank">here</a></p>
+            <p>Created a chrome extenstion to improve reading comprehension for users with dyslexia</p>
+
+            <button type="button" onclick="window.open('https://chrome.google.com/webstore/detail/mypage-webpage-modifier/icdohcdnjlalcknkpljhknheaigcjggl?utm_source=chrome-ntp-icon','_blank');">
+              <i class="fas fa-globe-americas"></i> Visit the project
+            </button>
+            <button type="button" onclick="window.open('https://github.com/leviv/HackSmackers2017','_blank');">
+              <i class="fas fa-code"></i> View the Code
+            </button>
+            <button type="button" onclick="window.open('https://medium.com/@villarreallevi/mypage-a-chrome-extension-for-dyslexia-2e48035b913','_blank');">
+              <i class="fas fa-book-open"></i> Read about it
+            </button>
           </div><!-- col -->
         </div><!-- row -->
       </section><!-- container -->

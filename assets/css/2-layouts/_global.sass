@@ -6,22 +6,22 @@ $third-color: #fff
 
 
 =transition($transition-property, $transition-timing)
-    transition: $transition-property $transition-timing
-    -webkit-transition: $transition-property $transition-timing
-    -ms-transition: $transition-property $transition-timing
-    -moz-transition: $transition-property $transition-timing
-    -o-transition: $transition-property $transition-timing
-    
+    transition: $transition-property $transition-timing !important
+    -webkit-transition: $transition-property $transition-timing !important
+    -ms-transition: $transition-property $transition-timing !important
+    -moz-transition: $transition-property $transition-timing !important
+    -o-transition: $transition-property $transition-timing !important 
+
 =border-radius($radius)
     border-radius: $radius
     -webkit-border-radius: $radius
     -ms-border-radius: $radius
     -moz-border-radius: $radius
     -o-border-radius: $radius
-    
+
 =outlined-text($outline-thickness, $outline-color)
     text-shadow: -$outline-thickness -$outline-thickness 0 $outline-color, $outline-thickness -$outline-thickness 0 $outline-color, -$outline-thickness $outline-thickness 0 $outline-color, $outline-thickness $outline-thickness 0 $outline-color
-    
+
 =rotate($rotate-degree)
     -webkit-transform: rotate($rotate-degree)
     -moz-transform: rotate($rotate-degree)

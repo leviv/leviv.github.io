@@ -104,35 +104,35 @@ html
   width: 100%
   position: relative
   margin: 0 0 100px 0
-
-.project-description
-  padding: 0px 20px
-  transform: translateY(30%)
-  z-index: 2
-
-.project-preview-right .project-description
-  text-align: right
-
-.project-preview, .row, .col-sm-6
-  height: 100%
-
-.project-description p
-  line-height: 2em
-  font-size: 18px
-
-.project-image
-  background-size: cover
-  background-repeat: no-repeat
-  height: 500px
-  z-index: 1
-  border-left: 65px solid #fff
-
-.project-preview h1
-  color: $secondary-color
-  font-style: italic
-  span
-    background: $primary-color
-    padding: 5px 10px
+  .project-description
+    padding: 0px 20px
+    transform: translateY(30%)
+    z-index: 2
+    p
+      line-height: 2em
+      font-size: 18px
+    button
+      display: inline-block
+      text-align: left
+  &:nth-child(even)
+    .project-description
+      text-align: right
+    .project-image
+      //border-right: 30px solid #fff
+  &:nth-child(odd)
+    .project-image
+      border-left: 65px solid #fff
+  .project-image
+    background-size: cover
+    background-repeat: no-repeat
+    height: 500px
+    z-index: 1
+  h1
+    color: $secondary-color
+    font-style: italic
+    span
+      background: $primary-color
+      padding: 5px 10px
 
 /* ===============================
   Project Section
