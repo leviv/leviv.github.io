@@ -96,6 +96,7 @@ button {
   font-size: 1em;
   color: #333;
   cursor: pointer;
+  background-color: #fff;
 }
 button:visited {
   color: #333;
@@ -254,6 +255,9 @@ html {
 }
 .project-preview:nth-child(even) .project-description {
   text-align: right;
+}
+.project-preview:nth-child(even) .project-image {
+  border-right: 30px solid #fff;
 }
 .project-preview:nth-child(odd) .project-image {
   border-left: 65px solid #fff;
