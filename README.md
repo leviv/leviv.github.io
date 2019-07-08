@@ -1,7 +1,5 @@
 # leviv.github.io
-Personal website
 
-## Description
 A repository to hold all of my current projects. Currently all of the content on the site is static, although I plan to change that soon so that content can be updated more easily.
 
 ## Prerequisites
