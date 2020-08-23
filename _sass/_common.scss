@@ -1,0 +1,68 @@
+$primaryColor: #c7b9ff;
+$primaryDarker: #a259ff;
+
+html,
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Oxygen", sans-serif;
+}
+
+a {
+  color: $primaryColor;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $primaryDarker;
+  }
+}
+
+a.hover {
+  color: black;
+  text-decoration: none;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 50%;
+    background: $primaryDarker;
+  }
+
+  &:after {
+    right: 0px;
+    transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  &:hover:before {
+    background: $primaryDarker;
+    width: 100%;
+    transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  &:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 960px;
+}

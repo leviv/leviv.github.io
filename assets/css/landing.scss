@@ -1,0 +1,80 @@
+---
+---
+
+@import "common";
+
+canvas {
+  display: block;
+}
+
+section#home-content {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  bottom: 5%;
+
+  #about-info {
+    display: none;
+    margin: 0 0 0 auto;
+    opacity: 0;
+    padding-bottom: 10vh;
+    position: relative;
+    width: 50%;
+
+    span {
+      color: $primaryColor;
+      cursor: pointer;
+      font-style: italic;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $primaryDarker;
+      }
+    }
+
+    p em {
+      font-size: 1.3em;
+      color: $primaryDarker;
+    }
+  }
+
+  .bottom {
+    h1 {
+      font-size: 3em;
+    }
+
+    h1,
+    h2,
+    ul {
+      margin: 5px 0;
+    }
+
+    h2 {
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $primaryDarker;
+      }
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline;
+        font-size: 2em;
+
+        a {
+          color: $primaryColor;
+          padding: 0 4px;
+          transition: all 0.2s;
+
+          &:hover {
+            color: $primaryDarker;
+          }
+        }
+      }
+    }
+  }
+}
