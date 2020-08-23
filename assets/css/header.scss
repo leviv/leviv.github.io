@@ -6,6 +6,7 @@
 nav {
   background-color: #fff;
   border-bottom: 2px solid $primaryDarker;
+  font-size: 19px;
   position: absolute;
   width: 100%;
 
@@ -18,6 +19,9 @@ nav {
     li {
       display: inline;
       padding: 0 25px;
+      a {
+        padding: 15px 0;
+      }
     }
   }
 }

@@ -20,11 +20,11 @@ h3 {
 }
 
 a {
-  color: $primaryColor;
+  color: $primaryColor !important;
   transition: all 0.2s;
 
   &:hover {
-    color: $primaryDarker;
+    color: $primaryDarker !important;
   }
 }
 
