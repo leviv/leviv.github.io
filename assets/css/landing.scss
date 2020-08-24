@@ -21,7 +21,10 @@ section#home-content {
     position: relative;
     width: 50%;
 
-    span {
+    button {
+      background: none;
+      border: 3px solid $primaryColor;
+      border-radius: 4px;
       color: $primaryColor;
       cursor: pointer;
       font-style: italic;
@@ -29,12 +32,12 @@ section#home-content {
 
       &:hover {
         color: $primaryDarker;
+        border-color: $primaryDarker;
       }
-    }
 
-    p em {
-      font-size: 1.3em;
-      color: $primaryDarker;
+      p {
+        margin: 7px 0;
+      }
     }
   }
 
@@ -49,12 +52,16 @@ section#home-content {
       margin: 5px 0;
     }
 
-    h2 {
+    button {
+      background: none;
+      border: 3px solid #000;
+      border-radius: 4px;
       cursor: pointer;
       transition: all 0.2s;
 
       &:hover {
         color: $primaryDarker;
+        border-color: $primaryDarker;
       }
     }
 
