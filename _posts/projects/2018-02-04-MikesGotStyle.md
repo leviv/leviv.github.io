@@ -23,7 +23,7 @@ Thus, I hatched a plan to bring this inside joke full circle and solved the desi
 
 ## The Fix
 
-Having just made [my first chrome extension at my first hackathon](https://medium.com/@villarreallevi/mypage-a-chrome-extension-for-dyslexia-2e48035b913), I came up with the idea to create a chrome extension to make the CS312 website ten times better. Working with my classmate Chris Nunez, we started developing a chrome extension that, when installed, would override the styles that were on the current website.
+Having just made [my first chrome extension at my first hackathon](https://medium.com/@villarreallevi/mypage-a-chrome-extension-for-dyslexia-2e48035b913), I came up with the idea to create a chrome extension to make the CS312 website ten times better. Working with my classmate Chris Nunes, we started developing a chrome extension that, when installed, would override the styles that were on the current website.
 
 However, as we dived into the code for the site, we realized that there was only one line of CSS, and it was to set the background to that awful green texture. All of the other styles and structure was done in the HTML, mainly with tables. This made the problem harder, as we wanted to avoid directly editing the HTML, and tables are notoriously hard to style well. However, we were able to work these problems and launch the site right before finals week.
 
