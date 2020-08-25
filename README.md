@@ -1,6 +1,8 @@
 # leviv.github.io
 
-A repository to hold all of my past and current projects and blog posts. View the site here: http://leviv.me/
+A repository to hold all of my past and current projects and blog posts.
+
+View the site here: http://leviv.me/.
 
 ## Prerequisites
 
