@@ -18,7 +18,7 @@ sleep(2)
 # Get all followers
 account = instagram.get_account(insta_username)
 sleep(1)
-following = instagram.get_following(account.identifier, 150, 100, delayed=True)
+following = instagram.get_following(account.identifier, 900, 100, delayed=True)
 
 users = {}
 
@@ -32,18 +32,22 @@ for user in users:
     account = users[user]
     username = account.username
     full_name = account.full_name
-    num_followers = account.follows_count
 
-    writeString = username + "," + full_name + "," + str(num_followers) + "\n"
+    writeString = username + "," + full_name + "\n"
     file.write(writeString)
     print(writeString)
 
-    following = instagram.get_following(account.identifier, 150, 100, delayed=True)
+    try:
+        following = instagram.get_following(account.identifier, 1000, 100, delayed=True)
 
-    # Loop through following that exist in users
-    for following_user in following['accounts']:
-        if following_user.username in users:
-            print('\t' + following_user.username)
-            file.write(following_user.username + "\n")
+        # Loop through following that exist in users
+        for following_user in following['accounts']:
+            if following_user.username in users:
+                print('\t' + following_user.username)
+                file.write(following_user.username + "\n")
+
+    # Catch errors from the finnicky api
+    except:
+        print('failed getting followers for user ' + user)
 
 file.close()

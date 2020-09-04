@@ -2,6 +2,7 @@ console.log("\n\n\n Enjoy your stay ^.^ \n\n\n");
 
 const shapeColor = 0xc7b9ff;
 const edgeColor = 0xc7b9ff;
+const bgColor = 0xffffff;
 const singleGeometry = new THREE.Geometry();
 
 // Construct three.js objects
@@ -29,7 +30,7 @@ light.position.set(10, 0, 25);
 scene.add(light);
 
 // Set renderer properties
-renderer.setClearColor("#fff");
+renderer.setClearColor(bgColor);
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
