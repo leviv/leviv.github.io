@@ -2,7 +2,7 @@ console.log("\n\n\n Enjoy your stay ^.^ \n\n\n");
 
 const shapeColor = 0xc7b9ff;
 const edgeColor = 0xc7b9ff;
-const bgColor = 0x2d3c5c;
+const bgColor = 0xffffff;
 const singleGeometry = new THREE.Geometry();
 
 // Construct three.js objects
@@ -16,7 +16,7 @@ const camera = new THREE.PerspectiveCamera(
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 const material = new THREE.MeshLambertMaterial({
   color: shapeColor,
-  opacity: 0.25,
+  opacity: 0.05,
   transparent: true,
 });
 

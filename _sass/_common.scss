@@ -1,12 +1,11 @@
-$primaryColor: #fff;
-$primaryDarker: #d8b1b7;
-$secondaryColor: #2d3c5c;
-$bgColor: #2d3c5c;
+$primaryColor: #a259ff;
+$primaryDarker: #2d3c5c;
+$secondaryColor: #fff;
+$bgColor: #fff;
 
 html,
 body {
   background: $secondaryColor;
-  color: $primaryColor;
   font-family: "Source Sans Pro", sans-serif;
   height: 100%;
   margin: 0;
