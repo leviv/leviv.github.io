@@ -6,7 +6,7 @@ tag: project
 
 ---
 
-This was a final project for the DH2670 course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad. 
+This was a final project for the DH2670 3D Haptics course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad. 
 
 **Authors**:
 
