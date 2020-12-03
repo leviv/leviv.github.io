@@ -4,6 +4,17 @@
 // Overide theme styles
 @import "minima";
 
+p > img {
+  display: block;
+  margin: 0 auto;
+  max-height: 800px;
+  max-width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
 .wrapper {
   max-width: -webkit-calc(1000px - (30px * 2));
   max-width: calc(1000px - (30px * 2));

@@ -56,6 +56,9 @@ In order to consider the feasibility of using a chat app such as Touchy Feely on
 
 ![The view of a single chat](/assets/img/2020-05-29-Touchy-Feely/chat.PNG)
 
+The view of a single chat
+{: .caption}
+
 To facilitate real-time updates of chats, as well as allow for any number of users to store and retrieve messages, we used Google Firestore [2]. This service allowed for a simple implementation of a real-time database that could handle many users sending and fetching messages simultaneously, without any serious lag. This also facilitated the ability for chats to automatically update with each new text, without the need to refresh or restart the application.
 
 ### Haptic Representation of Emotions
@@ -66,6 +69,9 @@ This research led us to use three main components in our haptic feedback: intens
 
 ![Graph of haptic feedback for Surprise](/assets/img/2020-05-29-Touchy-Feely/Haptics - Surprise.png)
 
+Graph of haptic feedback for Surprise
+{: .caption}
+
 The graph shows the intensity of our haptic feedback over time. The y-axis works on a scale of intensity from 1 to 0, where 0 represents no vibration at all, and 1 is the maximum vibration setting on the phone. The x-axis represents the time that each haptic emotion took to play, with a maximum length of 1 second.
 
 The emotion represented in The above graph is that of surprise. This emotion was not one of Ekman’s five original universal emotions, but we felt like this sentiment was used commonly enough in digital communication to warrant inclusion in the first iteration of this project.
@@ -74,17 +80,26 @@ Much like the pattern for happiness, we use bursts of vibration to convey excite
 
 ![Graph of haptic feedback for Sadness](/assets/img/2020-05-29-Touchy-Feely/Haptics - Sadness.png)
 
+Graph of haptic feedback for Sadness
+{: .caption}
+
 This emotion is sadness. This pattern is the opposite of Figure 6, which was disgust. That is because the two emotions are very similar in both intensity and sharpness. The only real means to differentiate between the two was by modifying the pattern.
 
 The rationale for designing this pattern was that, unlike disgust, which starts slow and eventually grows, sadness is initially more intense and fades over time. The sadness pattern uses the same intensity as the disgust pattern but is slightly less sharp. This, in combination with the reversed pattern, makes it possible to differentiate between the emotions.
 
 ![Graph of haptic feedback for Anger](/assets/img/2020-05-29-Touchy-Feely/Haptics - Anger.png)
 
+Graph of haptic feedback for Anger
+{: .caption}
+
 The haptic pattern in Figure 4 corresponds to the emotion of anger. Anger is conveyed through high intensity and high sharpness to appear more aggressive than other feedback. The pattern for anger is also designed to convey aggression. The intensity and sharpness combine to create force that is much stronger than that of other emotions, and the sustained vibration is sharper than any other emotion.
 
 Anger has the highest intensity of any haptic feedback that we programmed and is one of the sharpest. This was done deliberately in an attempt to simulate a large range of haptic feedback. In order to have a diverse set of feedback, there needs to be an emotion with very low intensity and an emotion with very high intensity.
 
 ![Graph of haptic feedback for Fear](/assets/img/2020-05-29-Touchy-Feely/Haptics - Fear.png)
+
+Graph of haptic feedback for Fear
+{: .caption}
 
 This emotion is fear. Fear is often described as the most basic emotion because it is simple, instinctive, and primal. For this reason, we designed it to have a simple, heartbeat-like pattern.
 
@@ -94,11 +109,17 @@ In the end, fear was represented as an emotion with more intensity than low-inte
 
 ![Graph of haptic feedback for Disgust](/assets/img/2020-05-29-Touchy-Feely/Haptics - Disgust.png)
 
+Graph of haptic feedback for Disgust
+{: .caption}
+
 This emotion is disgust. Though disgust and anger are closely related in real life, there is a clear difference between the haptic feedback for each emotion. The haptic pattern for disgust starts out at a low intensity and sharpness, then uses an elliptical curve pattern to grow into a stronger ending.
 
 The feedback for disgust was intended to be similar to the pattern of anger, but less intense and less sharp. To do this, we included a final vibration strength similar to the one used in the anger feedback, but instead of a sustained vibration, we use an elliptic curve to slowly grow into the stronger feeling.
 
 ![Graph of haptic feedback for Happiness](/assets/img/2020-05-29-Touchy-Feely/Haptics - Happiness.png)
+
+Graph of haptic feedback for Happiness
+{: .caption}
 
 The sixth and final emotion, is happiness, or enjoyment. This haptic pattern is different from the most other patterns, as it consists of four distinct and discrete bursts of vibration with very short pauses between them.
 
@@ -109,6 +130,9 @@ Throughout the process of designing these haptic patterns, we changed and refine
 One piece of feedback received many times throughout the development of these emotional patterns was that implementing six different emotions made it more difficult for each pattern to be memorable and distinct from one another. Because of this, we changed the number of ’Haptic Emojis’ from six to four, as research has been conducted that considers only four basic human emotions [9]. To do this, we removed surprise and disgust, as it has been suggested that these two emotions are simply types of fear and anger, respectively. Thus, we were left with 4 Haptic Emojis which were implemented in Touchy Feely, anger, fear, sadness, and happiness.
 
 ![The menu to send one of four ’Haptic Emojis’](/assets/img/2020-05-29-Touchy-Feely/emotion.PNG)
+
+The menu to send one of four ’Haptic Emojis’
+{: .caption}
 
 Within the Touchy Feely app, the user was able to send a text message with a Haptic Emoji by long pressing on the send icon and selecting one of the emojis from the submenu. Messages could be sent with either one or zero Haptic Emojis, and the Haptic Emoji specified would be played on the user’s phone when they opened and viewed the message.
 
@@ -131,6 +155,9 @@ Two distinct and interesting results emerged from this study. First was the inte
 In the first part of the experiment, users were usually only able to identify one or two out of the four haptic emojis correctly. The happiness Emoji was most commonly mistaken for fear. Multiple users noted that the emoji reminded them of a heartbeat, due to the pattern of two beats spaced closely together. One users stated that the heartbeat reminded them of the increased heartbeat that occurs when you are in a fight or flight situation. The sadness Emoji was identified correctly nearly every time, with participants using words such as ”mellow”, ”subdued”, and ”sigh” to describe the haptic pattern. Fear was often mistaken for anger or happiness. One user stated that it reminded them of ”fists pounding on a door” while another said the pattern was reminiscent of clapping. Anger was mistaken once for happiness, but most users noted that the pattern felt like a low growl.
 
 ![The home screen of Touchy Feely](/assets/img/2020-05-29-Touchy-Feely/home.PNG)
+
+The home screen of Touchy Feely
+{: .caption}
 
 Overall, these observations showed us that the haptic patterns could be interpreted in a variety of ways. Most of the interpretations came from references to real-life vibrations, such as heartbeats, laughter, or growling, rather than more abstract concepts behind emotions. However, all of the participants agreed that the four patterns were distinct, although they other disagreed on both the emotion represented by the haptic pattern, as well as the reasoning why. Because of this, it is clear that haptics that clearly represent common real-life sounds and other physical vibrations work best to allow participants to make a connection between the haptic patterns and the emotions that they represent.
 
@@ -175,6 +202,9 @@ Below are the four different Haptic Emojis and the descriptions that participant
 All of the users involved in the study agreed that the Haptic Emojis helped them better understand the intention behind the text messages. Participants stated that the Emojis served to re-emphasize the sentiment in the text and that while the tone was somewhat clear in from the text of the message, the emoji helped to confirm tone. Users also noted that the user interface was easy to use and understand and that the haptic patterns were enjoyable to use and interact with. This is important because if the Haptic Emojis are a feature that is appealing to users, it will be one that they are more likely to use when messaging with the app.
 
 ![Number of Correct Responses](/assets/img/2020-05-29-Touchy-Feely/percentage_correct.png)
+
+Number of Correct Responses
+{: .caption}
 
 ## Discussion
 
