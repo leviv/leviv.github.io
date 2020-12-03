@@ -6,8 +6,9 @@
   flex-wrap: wrap;
 
   li {
-    flex: calc(50% - 14px);
-    padding: 0 7px;
+    flex: calc(50% - 20px);
+    padding: 0 10px;
+    margin: 20px 0;
 
     @media (max-width: 768px) {
       flex: 100%;

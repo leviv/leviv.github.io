@@ -4,17 +4,15 @@ title: Github Method Search
 image: /assets/img/2020-05-15-Github-Method-Search/searchinterface.png
 category: projects
 tag: project
-
-
 ---
 
-This was a final project for the DD2476 Search Engines and Info Retrieval course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad. 
+This was a final project for the DD2476 Search Engines and Info Retrieval course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad.
 
-[Gihub Link](https://github.com/BadrOuannas/DD2476-Project)
+[GitHub Link](https://github.com/BadrOuannas/DD2476-Project)
 
 **Authors**:
 
-Levi Villarreal - villarreallevi@utexas.edu 
+Levi Villarreal - villarreallevi@utexas.edu
 
 Veronika Cucorova
 
@@ -28,7 +26,10 @@ While general search has become part of many people’s day to day life over the
 
 <iframe width="100%" height="360" src="https://www.youtube.com/embed/-T0MdBh0-PY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Introduction 
+Video demo of the project in action
+{: .caption}
+
+## Introduction
 
 With a large amount of code being saved on code-hosting websites every day, and the explosion of much open-source software and public code repositories, the need for a flexi- ble, fast, and user-friendly code search engine has risen exponentially. With such a search engine a user can navigate a large amount of data and quickly filter out results that do not match their needs. Early successful search engines such as Google were notable because they were able to return meaningful results to the user quickly and consistently. While still popular today, those kinds of search engines are not quite as well suited for a user looking to navigate data sets of code. A programmer or an engineer would benefit from a search engine that takes into account code structure and can return a relevant method or class with the desired properties. Today, advanced search engine techniques are not just limited to large corporations such as Google, open search solutions allow for more niche, but still effective search engines to be created without much knowledge of information retrieval.
 
@@ -57,7 +58,7 @@ The methodology of the project consists of two main parts: information retrieval
 For this project it was necessary to gather source code data from GitHub. Naturally, the aforementioned GitHub search API became the backbone of the solution. While it was not our goal to access and download all of the public repositories available, we aim to access as many as possible providing users of our tool with the widest possible selection of potentially relevant methods. While directly accessing the API was a possibility that was considered, eventually, it was decided to use an ”intermediary” library PyGithub, which made downloading the contents more convenient, although the functionality is not much different from that provided by GitHub’s API.
 
 The pipeline consisted of primarily two types of queries: searching for repositories(getting a list of the public ones) and requesting their content(navigating and downloading those that were written in Java).
- There were several constraints imposed by the design of the API. While the limits for a non-authenticated user are much lower, one can easily generate a token or use the com- bination of username and a password to access the API with much friendlier limitations, which we will describe further. There are three types of limits that constrain the API access:
+There were several constraints imposed by the design of the API. While the limits for a non-authenticated user are much lower, one can easily generate a token or use the com- bination of username and a password to access the API with much friendlier limitations, which we will describe further. There are three types of limits that constrain the API access:
 
 - Search rate limit: Maximum of 30 search-repositories requests per hour per user.
 - Core rate limit: Maximum of 5000 non-search related requests per hour per user.
@@ -85,11 +86,13 @@ Using React[12] and Elasticsearch’s Search UI[13] allowed for quick integratio
 
 ![landing](/assets/img/2020-05-15-Github-Method-Search/landing.png)
 
-<center>The landing page of the search engine</center>
+The landing page of the search engine
+{: .caption}
 
 ![searchinterface](/assets/img/2020-05-15-Github-Method-Search/searchinterface.png)
 
-<center>The search interface</center>
+The search interface
+{: .caption}
 
 ## Evaluation and Results
 
@@ -99,11 +102,11 @@ In the following section we evaluated our search engine on two kinds of queries.
 
 We evaluated the search engine on the returned results for three standard queries that search for implementations of a well-known standard algorithm or function. We evaluate each of these queries on precision, recall, and normalized cumulative gain at the 10th result. Two human judges were used to evaluate the relevance of given results using the following scale:
 
- - 3 : if the result implements the requested algorithm
- - 2 : if the result implements a similar algorithm
- - 1: if the result calls the requested algorithm from somewhere else in the project or from an imported library
+- 3 : if the result implements the requested algorithm
+- 2 : if the result implements a similar algorithm
+- 1: if the result calls the requested algorithm from somewhere else in the project or from an imported library
 
- While evaluating the relevance of the results, the judges did not check the correctness of the method returned, simply inspected the implementation visually. The minimum of two judges’ independent evaluation was used as the relevance scoring for each result.
+While evaluating the relevance of the results, the judges did not check the correctness of the method returned, simply inspected the implementation visually. The minimum of two judges’ independent evaluation was used as the relevance scoring for each result.
 
 The tables show the result of our evaluation for three different queries. Normalized Discounted Cumulative Gain which we refer to as NDCG is one way to evaluate a search engine for a certain query, especially when evaluating a search engine based on how well it ranks relevant results. Precision was calculated using any result relevance score above zero as relevant. As stated before, although the evaluation only used two judges, we can still make some conclusions about the search engine and its limitations. At first glance, we can see that the query euclidean distance did not give very good results in comparison to the other two queries. We assume that contrary to the other queries the code for this query is not uncommon and simple, which means it can be written in a single line of code without mentioning the name of the function making it less searchable. Another reason is that the query is very specific, a search engine replying to a query about euclidean distance would likely give many results about distance rather than the specific query, since it is a common word in methods. Precision for quicksort and hash was reasonably high when evaluated at 10. For both, the results contained methods with implementation from scratch and methods that called the algorithm from somewhere else. For hash functions, it is more common to not design a custom implementation and therefore even the usage of libraries in the solution was evaluated by the judges with the full relevance score.
 
@@ -126,8 +129,6 @@ Results for the query: ”Quicksort”:
 | 0             | 11     | 3\.31132 | 0         | 11      | 3\.31132 | 1        | 0\.88888      |
 | 0             | 11     | 3\.17971 | 0         | 11      | 3\.17971 | 1        | 0\.8          |
 
-
-
 Results for the query: ”Euclidean distance”:
 
 | **Relevance** | **CG** | **DCG**  | **Ideal** | **ICG** | **IDCG** | **NDCG** | **Precision** |
@@ -142,8 +143,6 @@ Results for the query: ”Euclidean distance”:
 | 0             | 2      | 0\.63092 | 0         | 2       | 0\.63092 | 1        | 0\.125        |
 | 0             | 2      | 0\.60205 | 0         | 2       | 0\.60205 | 1        | 0\.11111      |
 | 0             | 2      | 0\.57812 | 0         | 2       | 0\.57812 | 1        | 0\.1          |
-
-
 
 Results for the query: ”Hash”:
 
@@ -160,8 +159,6 @@ Results for the query: ”Hash”:
 | 3             | 20     | 6\.02059 | 0         | 20      | 6\.02059 | 1        | 0\.77777      |
 | 0             | 20     | 5\.78129 | 0         | 20      | 5\.78129 | 1        | 0\.7          |
 
-
-
 1. How do I generate random integers within a specific range in Java?
 
    **URL**: https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
@@ -177,13 +174,13 @@ Results for the query: ”Hash”:
     int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
    ```
 
-   Precision at 1: 1 
+   Precision at 1: 1
 
-   Precision at 5: 0.4 
+   Precision at 5: 0.4
 
    Precision at 10: 0.4
 
-2. How to split a string in Java 
+2. How to split a string in Java
 
    **URL**: https://stackoverflow.com/questions/3481828/how-to-split-a-string-in-java
 
@@ -192,7 +189,7 @@ Results for the query: ”Hash”:
    **Expected results** (the approved and most voted answer for this question):
 
    ```java
-   String string = "004-034556"; 
+   String string = "004-034556";
    String[] parts = string.split("-");
    ```
 
@@ -202,9 +199,9 @@ Results for the query: ”Hash”:
    String[] parts = string.split(Pattern.quote("."));
    ```
 
-   Precision at 1: 0 
+   Precision at 1: 0
 
-   Precision at 5: 0.2 
+   Precision at 5: 0.2
 
    Precision at 10: 0.5
 
