@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "MikesGotStyle — Bringing CS Department Websites into the 21st century"
+title: "MikesGotStyle - Bringing CS Department Websites into the 21st century"
+image: /assets/img/2018-02-04-MikesGotStyle/old.png
 category: projects
 tag: project
 ---

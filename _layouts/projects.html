@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- Custom Styles -->
+<link rel="stylesheet" href="/assets/css/posts.css" />
+
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
@@ -18,7 +21,14 @@ layout: default
           {{ post.title | escape }}
         </a>
       </h3>
-      {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+      {%- if post.image -%}
+      <div class="post-image">
+        <img
+          src="{{ post.image | relative_url }}"
+          alt="{{ post.title | escape }} feature image"
+        />
+      </div>
+      {% endif %} {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
     </li>
     {% endif %} {%- endfor -%}
   </ul>

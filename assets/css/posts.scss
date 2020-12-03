@@ -1,0 +1,17 @@
+---
+---
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    flex: calc(50% - 14px);
+    padding: 0 7px;
+
+    @media (max-width: 768px) {
+      flex: 100%;
+      padding: 0 0;
+    }
+  }
+}

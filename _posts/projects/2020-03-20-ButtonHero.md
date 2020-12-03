@@ -1,20 +1,20 @@
 ---
 layout: post
 title: ButtonHero - A Collaborative Instrument
+image: /assets/img/2020-03-20-ButtonHero/physical.jpg
 category: projects
 tag: project
-
 ---
 
-This was a final project for the DM2623 IT Design for Disabilities course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad. 
+This was a final project for the DM2623 IT Design for Disabilities course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad.
 
 [Gihub Link](https://github.com/leviv/buttonhero)
 
 **Authors**:
 
-Levi Villarreal - villarreallevi@utexas.edu 
+Levi Villarreal - villarreallevi@utexas.edu
 
-Gracia Yuwono Kwantalalu - graciayk@kth.se 
+Gracia Yuwono Kwantalalu - graciayk@kth.se
 
 Josephine Lantz
 
@@ -40,7 +40,7 @@ However, our group feels that a musical instrument focused on simplicity and fun
 
 ### Ethical Considerations
 
-Due to the length of this project, we were unable to receive user feedback on our finished project. However, if this were to be tested, some ethical considerations to consider include ensuring that our target users, who are the children with profound disabilities in Rullen, are treated with respect and dignity. We would also need to ensure that they are subjected to harm or discomfort in any way. We would do this by seeking approval from the school authority, as well as the course coordinator, before letting the children try the product.
+Due to the length of this project, we were unable to receive user feedback on our finished project. However, if this were to be tested, some ethical considerations to consider include ensuring that our target users, who are the children with profound disabilities in Rullen, are treated with respect and dignity. We would also need to ensure that they are not subjected to harm or discomfort in any way. We would do this by seeking approval from the school authority, as well as the course coordinator, before letting the children try the product.
 
 ## Method
 
@@ -66,15 +66,11 @@ The light to indicate which button to press adds an element of fun as children r
 
 <center>Button Hero (Physical Form)</center>
 
-
-
 For the digital form, each child will be given a device that is able to open our instruments [website](https://instrument-71113.firebaseapp.com/). Similar to the physical form, the children will have to collaborate by tapping their screens when they turn green in order to play the whole song. The digital “Button Hero” is more scalable than the physical one as it is able to accommodate as many devices as desired.
 
 ![digital instrument](/assets/img/2020-03-20-ButtonHero/digital.png)
 
 <center>Button Hero (Digital Form)</center>
-
-
 
 With our focus on fun and interaction, we hope that the children at Rullen show enthusiasm towards this musical instrument. We can foresee that not all of the children would be able to grasp the concept of music, which was why we included the element of light. We hope that this visual cue would help them to still be able to participate and enjoy the game so that even though the children are not communicating verbally with each other, they will still be able to collaborate in a meaningful way. Furthermore, using songs rather than abstract notes, will make it easier for the children to recognize and appreciate the song.
 
@@ -90,8 +86,6 @@ In regards to our original goals of simplicity and encouraging collaboration, th
 
 <center>Buttons during play</center>
 
-
-
 The collaborative aspect of the physical instrument worked as intended, although, with only three buttons, it was not possible with the first iteration of our design to achieve the level of collaboration that we had originally planned to. However, this prototype showed us that the concept of many people playing with independent button(s) would be something that could work well. In addition, the code and hardware were explicitly designed so that if new buttons were created, they could be added easily to the preexisting system.
 
 The digital version of the instrument was a bit more complicated than the physical one when getting started. Since it required users to enter in a username, and gave the option to clear and start a new game, there were many more buttons that the user could be confused by, or hit accidentally. However, after being given directions by the person leading the session, there was not much confusion among the participants, as they only had to focus on hitting a single button..
@@ -101,8 +95,6 @@ The collaborative aspect of the digital version was much better than the current
 ![class](/assets/img/2020-03-20-ButtonHero/class.png)
 
 <center>8 participants using Button Hero simultaneously</center>
-
-
 
 One of the design decisions that brought up much discussion among those who used our instrument was that of the speaker’s location. When planning the project, it was decided that each button (or digital device), would have its own speaker, rather than have one speaker for the entire system. This was done so that each participant could explicitly see the effect that the press of the button was having. However, several participants pointed out that it would be difficult to hear the entire song if the buttons/devices were spread out across a room. This would be an aspect that we would place under further consideration if we were to refine the instrument's design.
 
