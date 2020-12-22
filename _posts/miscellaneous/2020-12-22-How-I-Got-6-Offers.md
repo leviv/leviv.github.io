@@ -62,7 +62,7 @@ Some of the highlights from my onsite interviews included:
 Picture from my interview in San Francisco
 {: .caption}
 
-Although these things experiences were great, I also remember many of the missed classes, late-night flights, and hotel room homework I had to complete to attend these interviews. I was never in a city for more than 48 hours (and often less than 24), so this short-term travel eventually lost it's appeal to me. Lucky for me, Covid-19 made sure that I have not had any short-term or long-term trips recently.
+Although these things experiences were great, I also remember many of the missed classes, late-night flights, and hotel room homework I had to complete to attend these interviews. I was never in a city for more than 48 hours (and often less than 24), so this short-term travel eventually lost its appeal to me. Lucky for me, Covid-19 made sure that I have not had any short-term or long-term trips recently.
 
 ## Results
 
