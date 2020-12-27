@@ -1,12 +1,14 @@
 ---
 ---
 
+$small: 768px;
+
 @import "common";
 
 nav {
   background-color: $secondaryColor;
   border-bottom: 1px solid $primaryDarker;
-  font-size: 19px !important;
+  font-size: 19px;
   position: absolute;
   width: 100%;
 
@@ -21,7 +23,23 @@ nav {
       padding: 0 20px;
       a {
         padding: 15px 0;
+
+        @media screen and (max-width: $small) {
+          padding: 10px 0;
+        }
+      }
+
+      @media screen and (max-width: $small) {
+        padding: 0 10px;
       }
     }
+
+    @media screen and (max-width: $small) {
+      margin: 12px 0;
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    font-size: 16px;
   }
 }
