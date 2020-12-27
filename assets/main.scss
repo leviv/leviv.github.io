@@ -32,6 +32,10 @@ p.caption {
 }
 
 table {
+  border-width: 0px;
   display: block;
-  overflow: auto;
+  margin: 0 auto 30px auto;
+  overflow-x: auto;
+  width: fit-content;
+  white-space: nowrap;
 }
