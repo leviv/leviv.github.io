@@ -16,7 +16,7 @@ section#home-content {
   bottom: 8%;
 
   @media screen and (max-width: $small) {
-    bottom: 2%;
+    bottom: 75px;
   }
 
   #about-info {
