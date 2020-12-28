@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-  <head>
-    <meta charset="utf-8" />
-    <title>Levi Villarreal</title>
+  
+  {%- include head.html -%}
 
-    <!-- Favicon -->
-      <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-
+  <body>
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/landing.css" />
-    <link rel="stylesheet" href="/assets/main.css"> 
-
-    <!-- Google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/a890946c74.js"></script>
-  </head>
-  <body>
+
     {%- include header.html -%}
 
     <section id="home-content">
