@@ -41,15 +41,18 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
 });
 
-const cylinderOuterRadius = 2;
-const cylinderInnerRadius = cylinderOuterRadius * 0.82;
-const numCurves = 16;
 const block = 0.1;
+const circumference = 96;
+const pillarDim = 4;
+const pillarHeight = 17;
+const baseHeight = 4;
+const cylinderInnerRadius = (circumference * block) / 2 / Math.PI;
+const cylinderOuterRadius = cylinderInnerRadius + pillarDim * block;
+const numCurves = 16;
 
 // Base
 const extrudeSettings = {
-  depth: block * 4,
-  steps: 1,
+  depth: block * baseHeight,
   bevelEnabled: false,
   curveSegments: numCurves,
 };
@@ -65,13 +68,9 @@ const cylinder = new THREE.ExtrudeGeometry(circle, extrudeSettings);
 const base = new THREE.Mesh(cylinder, material);
 singleGeometry.merge(base.geometry, base.matrix);
 
-// Create object group
-const sculpture = new THREE.Group();
-
 // Pillar
 const pillarExtrudeSettings = {
-  depth: block * 17,
-  steps: 1,
+  depth: block * pillarHeight,
   bevelEnabled: false,
   curveSegments: numCurves,
 };
@@ -122,7 +121,7 @@ for (let i = 0; i < numPillars; i++) {
     pillarExtrudeSettings
   );
   const pillar = new THREE.Mesh(pillarGeo, material);
-  pillar.translateZ(block * 4);
+  pillar.translateZ(block * baseHeight);
 
   // Add to the sculpture group
   pillar.updateMatrix();
@@ -136,6 +135,9 @@ const singleBufGeometry = new THREE.BufferGeometry().fromGeometry(
   singleGeometry
 );
 const mergedMesh = new THREE.Mesh(singleBufGeometry, material);
+
+// Create object group
+const sculpture = new THREE.Group();
 sculpture.add(mergedMesh);
 const edges = new THREE.EdgesGeometry(singleBufGeometry);
 const lines = new THREE.LineSegments(
@@ -143,14 +145,14 @@ const lines = new THREE.LineSegments(
   new THREE.LineBasicMaterial({ color: edgeColor })
 );
 sculpture.add(lines);
-sculpture.rotation.x = -0.9;
+sculpture.rotation.x = -0.9; // Tilt the sculpture forward
 scene.add(sculpture);
 
 // Render the scene
 const render = () => {
   requestAnimationFrame(render);
   controls.update();
-  sculpture.rotation.z += 0.003;
+  sculpture.rotation.z += 0.003; // Slowly tilt the structure on each frame
   renderer.render(scene, camera);
 };
 
