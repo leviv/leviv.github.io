@@ -6,7 +6,7 @@ category: technical
 tag: technical, web
 ---
 
-I wanted to throw together a post on how I made the 3D spinning animation seen on my current home page (2020) because it ended up significantly more challenging than I expected. This was my first time using three.js, or dealing with any kind of 3D objects in the browser, and I learned a lot!
+I wanted to throw together a post on how I made the 3D spinning animation seen on my current (2020) home page because it ended up significantly more challenging than I expected. This was my first time using three.js, or dealing with 3D objects in the browser, and I learned a lot!
 
 ![gif of the spinning 3d animation](/assets/img/2020-12-29-How-I-Created-My-Home-Page/gdc.gif)
 
@@ -17,9 +17,9 @@ View an editable version of the project [here](https://codepen.io/leviv/pen/NWNq
 
 ## Background
 
-The motivation to redesign my website's landing page originally came from [Jonathan Zong's](https://jonathanzong.com/) portfolio, which features an interesting infinite animation (you can also see the color inspirations that I took from his site). I found myself spending many minutes on the home page, just watching the interesting patterns that were drawn on the screen. I had always been a sucker for small, interesting animations like these, and wanted to create one of my own.
+The motivation to redesign my website's landing page originally came from [Jonathan Zong's](https://jonathanzong.com/) portfolio, which features an interesting infinite animation (you can also see the color inspirations that I took from his site). I found myself spending many minutes on the home page, just watching the interesting patterns that were drawn on the screen. I had always been a sucker for small, interesting landing pages like these, and wanted to create one of my own.
 
-As I searched for inspirations of what kind of landing page I wanted on my site, I found myself spending lots of time on [Dwitter](https://www.dwitter.net/) (JavaScript visualizations written in 140 characters or left) and [Awwwards](https://www.awwwards.com/) (web design awards). Specifically, on Awwwards, there are many crazy interesting websites that use [three.js](https://threejs.org/), a 3d JavaScript library, to create visuals I could not believe I was viewing inside of a browser. Since high school, I had been in awe at websites such as this, and I decided that I would use this small project as a way to learn the basics of three.js.
+As I searched for inspirations of what kind of landing page I wanted, I paid many visits to [Dwitter](https://www.dwitter.net/) (JavaScript visualizations written in 140 characters or left) and [Awwwards](https://www.awwwards.com/) (web design awards). Specifically, on Awwwards, there are many crazy interesting websites that use [three.js](https://threejs.org/), a 3d JavaScript library, to create visuals I could not believe were possible inside of a browser. Since high school, I had been in awe of websites such as this, and I decided that I would use this small project as a way to learn the basics of three.js.
 
 I wanted to model something that wasn't too hard for my first attempt, but ideally more complex than a simple cube. I settled on the [Circle with Towers](https://landmarks.utexas.edu/artwork/circle-towers) Sculpture by Sol LeWitt, which sits outside of the computer science building at the University of Texas. Before the pandemic, I saw that sculpture nearly every day and often felt like I spent more time inside of that building than my own apartment. More importantly, however, it had a seemingly simple geometry that I felt would be a good starting point to learn three.js.
 
@@ -45,7 +45,7 @@ const bgColor = 0xffffff;
 const singleGeometry = new THREE.Geometry();
 ```
 
-Here I define the colors (hex values) that I will be using throghout the project, as well as a single three.js **geometry**, because I am only going to be displying one object in the scene.
+Here I define the colors (hex values) that I will be using throughout the project, as well as a single three.js **geometry**, because I am only going to be displying one object in the scene.
 
 #### Scene, camera, renderer, and material
 
@@ -76,9 +76,9 @@ I define a **renderer** that will actually display the scene. Anti-aliasing redu
 
 Finally, I set up the material, which is transparent purple that allows for the see-through effect.
 
-#### Lights, camera, no action
+#### Lights, camera, some action
 
-```Javascript
+```javascript
 // Set camera
 camera.position.z = 5;
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -95,7 +95,7 @@ Here I also add a white light with full intensity and a distance of 500.
 
 #### Browser resizing
 
-```Javascript
+```javascript
 // Handle browser resize
 window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -108,7 +108,7 @@ This code is a handler for when the browser size is changed by the user. Without
 
 ### Model Geometry
 
-Because of the pandemic, I was not in Austin at the time I created this webpage and sought to model the sculpture without any actual measurements. However, the artist LeWitt used blocks throughout this entire sculpture (as was his style), which made it possible for me to count the blocks and get semi-accurate ratios for the model.
+Because of the pandemic, I was not in Austin at the time I created this webpage and sought to model the sculpture without any actual measurements. However, the original sculpture artist used blocks throughout this entire sculpture, which made it possible for me to count the blocks and get semi-accurate ratios for the model.
 
 ![The same picture of the sculpture, but with labeled dimensions listed below](/assets/img/2020-12-29-How-I-Created-My-Home-Page/labeled-blocks.jpg)
 
@@ -121,7 +121,7 @@ Note: I will refer to the bottom ring of the sculpture as the **base**, and the 
 
 After some experimentation, I found 0.1 was an appropriate size to represent 1 block, and based all other calculations off of that.
 
-```Javascript
+```javascript
 const block = 0.1;
 const circumference = 96; // in block units
 const pillarDim = 4; // in block units
@@ -161,7 +161,7 @@ const base = new THREE.Mesh(cylinder, material);
 singleGeometry.merge(base.geometry, base.matrix);
 ```
 
-Here I define a cylinder by creating a circle with `cylinderOuterRadius`. I then create a hole with `cylinderInnerRadius` and add it to the three.js shape as a hole. I then can extrude the shape 4 blocks high to create the base. Once the object is created I add it to the geometry I am using to contain all 3d objects.
+Here I define a cylinder by creating a circle with `cylinderOuterRadius` and create a hole with `cylinderInnerRadius`. I then can extrude the shape 4 blocks high to create the base. Once the object is created I add it to the geometry I am using to contain all 3d objects.
 
 Some technical notes here because it will keep coming up in later code snippets:
 
@@ -178,14 +178,14 @@ Some technical notes here because it will keep coming up in later code snippets:
 
 #### Calculating pillar dimensions
 
-At this point, I ran into a problem with computing how far apart the pillars should be. Since the distance between pillars (and the pillar widths themselves) was not clear due to the variation in concrete spacing between blocks, I had to come up with another way to calculate the measurements. Keep in mind here that the width is also not a single measurement, since the whole pillar is a subsection of a cylinder with a hole in it.
+At this point, I ran into a problem computing how far apart the pillars should be. Since the distance between pillars was not clear due to the variation in concrete spacing between blocks, I had to come up with another way to calculate the measurements. Also, remember that the width of the pillar is not a single measurement, since the whole pillar is a subsection of a cylinder with a hole in it.
 
 ![Representation of the top of a single pillar](/assets/img/2020-12-29-How-I-Created-My-Home-Page/face.png)
 
 Representation of the top of a single pillar
 {: .caption}
 
-In order to do this, I used a ratio between the pillars and gaps. I knew there are 8 pillars and 8 gaps between pillars, with each gap being exactly as large as two pillars. Another way to think of this is that there is room on the base for 24 appropriately sized pillars. Using this I divide the geometry into sections of 24 and extrude every third segment. For each pillar, I need to determine the outer arc and inner arc that will make up the face of the pillar, which can then be extruded.
+In order to do this, I used a ratio between the pillars and the gaps between them. I knew there are 8 pillars and 8 gaps between pillars, with each gap being exactly as large as two pillars. Another way to think of this is that there is room on the base for 24 appropriately sized pillars. Using this I divide the geometry into sections of 24 and extrude every third segment. For each pillar, I need to determine the outer arc and inner arc that will make up the face of the pillar, which can then be extruded.
 
 ```javascript
 const numPillars = 8;
@@ -215,7 +215,7 @@ Great! I now have the arcs for the inner and outer curve of all of the pillars, 
 
 ```javascript
 ...
-	// Get the vertices from the two arcs
+// Get the vertices from the two arcs
   const vertices = [];
   const outerVertices = outerPillarShape.extractPoints().shape;
   const innerVertices = innerPillarShape.extractPoints().shape.reverse();
@@ -267,7 +267,7 @@ sculpture.rotation.x = -0.9; // Tilt the sculpture forward
 scene.add(sculpture);
 ```
 
-I create a `bufferGeometry()` representations of the geometry, which is more efficient and causes less GPU strain than traditional three.js geometry. In order to display the line geometry of the object to accomplish the wireframe effect, I extract the edges from the geometry and use `THREE.LineSegments()` to style them. Finally, I put everything into the three.js `scene`.
+I create a `bufferGeometry()` representations of the geometry, which is more efficient and causes less GPU strain than traditional three.js geometry. In order to display the line geometry of the object to accomplish the wireframe effect, I extract the edges from the geometry and use `THREE.LineSegments()` to style them. Finally, I can render the entire scene.
 
 ```javascript
 // Render the scene
@@ -287,7 +287,7 @@ The render loop is called on each frame (60 times per second on most modern disp
 
 After creating the object, I wanted to create some kind of interesting animation to further display and experiment with the cool aspects of 3d rendering in the browser. I used [GreenSock Animation Platform](https://greensock.com/gsap/) or GSAP for an animation whenever a user clicks the 'About' button on the home page.
 
-```Javascript
+```javascript
 controls.reset();
 this.tl = new TimelineMax().eventCallback("onComplete", () => {
   zoomed = true;
@@ -325,13 +325,13 @@ this.tl.to(
 );
 ```
 
-Which basically does the same thing as before, but with the default settings.
+Which basically does the same thing as before, but restores the properties to the original settings.
 
 ## Conclusion
 
 As you can probably tell by the length of this write-up, this three.js experiment took much longer than I was expecting. I spent many hours googling an out-of-the-box solution for how to better create the pillars but ended up having to draw a lot of pictures, count a lot of blocks, and try many different approaches before I found one that was relatively clean and efficient.
 
-Overall I am really happy with how the project turned out. I learned a lot about three.js and have really enjoyed being able to show off my fancy new website to professors and fellow students in college.
+Overall I am really happy with how the project turned out. I learned a lot about three.js and have really enjoyed being able to show off my fancy new website to professors and fellow students in college, who all miss the computer science building to varying degrees.
 
 If you have any questions or suggestions please shoot me a message on any of the contact options linked in the footer of my blog!
 
