@@ -11,8 +11,11 @@ layout: default
 
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+
+    <p>A place to express my thoughts in more than 280 characters. Sometimes technical, sometimes personal, always containing grammatical errors. Feel free to subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>.</p>
+
     <ul class="post-list">
-      {%- for post in site.posts -%}
+      {%- for post in site.posts -%} {% unless post.categories contains 'leetcode' %}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -25,10 +28,29 @@ layout: default
           {{ post.excerpt }}
         {%- endif -%}
       </li>
-      {%- endfor -%}
+      {% endunless %} {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <h2 class="post-list-heading">Archived posts</h2>
+
+    <p>Right now just personal Leetcode solutions that I do not want showing up at the top of my blog. I often get asked, "Levi, why do you post so many Leetcode solutions?" to which I respond ¯\_(ツ)_/¯. I realize there's much better solutions out there for these problems, but these are <i>my</i> solutions, which makes them special to me.</p>
+
+    <ul class="post-list">
+      {%- for post in site.posts -%} {% if post.categories contains 'leetcode' %}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {% endif %} {%- endfor -%}
+    </ul>
   {%- endif -%}
 
 </div>
