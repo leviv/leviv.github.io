@@ -48,9 +48,19 @@ section#home-content {
       font-style: italic;
       transition: all 0.2s;
 
+      @media (prefers-color-scheme: dark) {
+        border-color: $primaryColor--dark;
+        color: $primaryColor--dark;
+      }
+
       &:hover {
         color: $primaryDarker;
         border-color: $primaryDarker;
+
+        @media (prefers-color-scheme: dark) {
+          color: $primaryDarker--dark;
+          border-color: $primaryDarker--dark;
+        }
       }
 
       p {
@@ -82,6 +92,11 @@ section#home-content {
       cursor: pointer;
       transition: all 0.2s;
 
+      @media (prefers-color-scheme: dark) {
+        border-color: $primaryColor--dark;
+        color: $primaryColor--dark;
+      }
+
       @media screen and (max-width: $small) {
         font-size: 14px !important;
       }
@@ -89,6 +104,11 @@ section#home-content {
       &:hover {
         color: $primaryDarker;
         border-color: $primaryDarker;
+
+        @media (prefers-color-scheme: dark) {
+          color: $primaryDarker--dark;
+          border-color: $primaryDarker--dark;
+        }
       }
     }
 
@@ -104,13 +124,7 @@ section#home-content {
         }
 
         a {
-          color: $primaryColor;
           padding: 0 4px;
-          transition: all 0.2s;
-
-          &:hover {
-            color: $primaryDarker;
-          }
         }
       }
     }

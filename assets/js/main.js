@@ -1,8 +1,11 @@
 console.log("\n\n\n Enjoy your stay ^.^ \n\n\n");
 
 const shapeColor = 0xc7b9ff;
+const shapeColorDarker = 0xc89cff;
 const edgeColor = 0xc7b9ff;
+const edgeColorDarker = 0xc89cff;
 const bgColor = 0xffffff;
+const bgColorDarker = 0x2d3c5c;
 const singleGeometry = new THREE.Geometry();
 
 // Construct three.js objects
@@ -15,7 +18,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 const material = new THREE.MeshLambertMaterial({
-  color: shapeColor,
+  color: shapeColorDarker,
   opacity: 0.05,
   transparent: true,
 });
@@ -30,7 +33,7 @@ light.position.set(10, 0, 25);
 scene.add(light);
 
 // Set renderer properties
-renderer.setClearColor(bgColor);
+renderer.setClearColor(bgColorDarker);
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -142,7 +145,7 @@ sculpture.add(mergedMesh);
 const edges = new THREE.EdgesGeometry(singleBufGeometry);
 const lines = new THREE.LineSegments(
   edges,
-  new THREE.LineBasicMaterial({ color: edgeColor })
+  new THREE.LineBasicMaterial({ color: edgeColorDarker })
 );
 sculpture.add(lines);
 sculpture.rotation.x = -0.9; // Tilt the sculpture forward

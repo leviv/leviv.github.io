@@ -14,7 +14,7 @@ nav {
 
   @media (prefers-color-scheme: dark) {
     background-color: $bgColor--dark;
-    border-color: $bgColor;
+    border-color: $primaryDarker--dark;
   }
 
   ul {
