@@ -3,12 +3,21 @@
 
 // Overide theme styles
 @import "minima";
+@import "common";
 
 p > img {
+  background: #ffffff;
   display: block;
   margin: 0 auto;
   max-height: 800px;
   max-width: 100%;
+}
+
+code,
+.highlighter-rouge .highlight {
+  @media (prefers-color-scheme: dark) {
+    background: #444444;
+  }
 }
 
 .center {
@@ -24,11 +33,22 @@ p > img {
   padding-left: 30px;
 }
 
+.footer-col-wrapper,
+.post-meta {
+  @media (prefers-color-scheme: dark) {
+    color: $primaryDarker--dark;
+  }
+}
+
 p.caption {
-  color: #444;
+  color: $primaryDarker;
   font-style: italic;
   margin-bottom: 25px;
   text-align: center;
+
+  @media (prefers-color-scheme: dark) {
+    color: $primaryDarker--dark;
+  }
 }
 
 table {

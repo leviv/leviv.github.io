@@ -1,7 +1,10 @@
 $primaryColor: #a259ff;
+$primaryColor--dark: #c89cff;
 $primaryDarker: #2d3c5c;
+$primaryDarker--dark: #eee;
 $secondaryColor: #fff;
 $bgColor: #fff;
+$bgColor--dark: #2d3c5c;
 
 html,
 body {
@@ -12,6 +15,11 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
+
+  @media (prefers-color-scheme: dark) {
+    background: $bgColor--dark;
+    color: $bgColor;
+  }
 }
 
 body {
@@ -28,8 +36,16 @@ a {
   color: $primaryColor !important;
   transition: all 0.2s;
 
+  @media (prefers-color-scheme: dark) {
+    color: $primaryColor--dark !important;
+  }
+
   &:hover {
     color: $primaryDarker !important;
+
+    @media (prefers-color-scheme: dark) {
+      color: $primaryDarker--dark !important;
+    }
   }
 }
 
@@ -57,6 +73,10 @@ a.hover {
     background: $primaryDarker;
     width: 100%;
     transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    @media (prefers-color-scheme: dark) {
+      background: $primaryDarker--dark;
+    }
   }
 
   &:hover:after {
@@ -74,4 +94,8 @@ a.hover {
 
 .site-footer {
   border-top: 1px solid $primaryDarker;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: $primaryDarker--dark;
+  }
 }

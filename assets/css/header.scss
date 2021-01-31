@@ -6,11 +6,16 @@ $small: 768px;
 @import "common";
 
 nav {
-  background-color: $secondaryColor;
+  background-color: $bgColor--dark;
   border-bottom: 1px solid $primaryDarker;
   font-size: 19px;
   position: absolute;
   width: 100%;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $bgColor--dark;
+    border-color: $bgColor;
+  }
 
   ul {
     list-style: none;
