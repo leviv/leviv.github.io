@@ -1,12 +1,25 @@
 console.log("\n\n\n Enjoy your stay ^.^ \n\n\n");
 
-const shapeColor = 0xc7b9ff;
-const shapeColorDarker = 0xc89cff;
-const edgeColor = 0xc7b9ff;
-const edgeColorDarker = 0xc89cff;
-const bgColor = 0xffffff;
-const bgColorDarker = 0x2d3c5c;
+let shapeColor = 0xc7b9ff;
+const shapeColorDark = 0xc89cff;
+let edgeColor = 0xc7b9ff;
+const edgeColorDark = 0xc89cff;
+let bgColor = 0xffffff;
+const bgColorDark = 0x2d3c5c;
 const singleGeometry = new THREE.Geometry();
+
+const darkMediaOpt = "(prefers-color-scheme: dark)";
+
+// Event listener to look for dark theme change
+window.matchMedia(darkMediaOpt).addEventListener("change", (e) => {
+  if (e.matches) {
+    renderer.setClearColor(bgColorDark);
+    renderer.render(scene, camera);
+  } else {
+    renderer.setClearColor(bgColor);
+    renderer.render(scene, camera);
+  }
+});
 
 // Construct three.js objects
 const scene = new THREE.Scene();
@@ -18,7 +31,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 const material = new THREE.MeshLambertMaterial({
-  color: shapeColorDarker,
+  color: shapeColor,
   opacity: 0.05,
   transparent: true,
 });
@@ -33,7 +46,13 @@ light.position.set(10, 0, 25);
 scene.add(light);
 
 // Set renderer properties
-renderer.setClearColor(bgColorDarker);
+// Check for dark theme
+if (window.matchMedia && window.matchMedia(darkMediaOpt).matches) {
+  renderer.setClearColor(bgColorDark);
+} else {
+  renderer.setClearColor(bgColor);
+}
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -145,7 +164,7 @@ sculpture.add(mergedMesh);
 const edges = new THREE.EdgesGeometry(singleBufGeometry);
 const lines = new THREE.LineSegments(
   edges,
-  new THREE.LineBasicMaterial({ color: edgeColorDarker })
+  new THREE.LineBasicMaterial({ color: edgeColor })
 );
 sculpture.add(lines);
 sculpture.rotation.x = -0.9; // Tilt the sculpture forward
