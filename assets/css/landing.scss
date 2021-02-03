@@ -20,9 +20,9 @@ section#home-content {
   }
 
   #about-info {
-    display: none;
+    display: block;
     margin: 0 0 0 auto;
-    opacity: 0;
+    opacity: 1;
     padding-bottom: 30px;
     position: relative;
     overflow-y: auto;
@@ -37,6 +37,10 @@ section#home-content {
     em {
       color: $primaryDarker;
       font-size: 1.3em;
+
+      @media (prefers-color-scheme: dark) {
+        color: $bgColor;
+      }
     }
 
     button {

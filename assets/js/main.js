@@ -1,11 +1,11 @@
 console.log("\n\n\n Enjoy your stay ^.^ \n\n\n");
 
-let shapeColor = 0xc7b9ff;
+const shapeColor = 0xc7b9ff;
 const shapeColorDark = 0xc89cff;
-let edgeColor = 0xc7b9ff;
+const edgeColor = 0xc7b9ff;
 const edgeColorDark = 0xc89cff;
-let bgColor = 0xffffff;
-const bgColorDark = 0x2d3c5c;
+const bgColor = 0xffffff;
+const bgColorDark = 0x2c303a;
 const singleGeometry = new THREE.Geometry();
 
 const darkMediaOpt = "(prefers-color-scheme: dark)";
@@ -167,7 +167,10 @@ const lines = new THREE.LineSegments(
   new THREE.LineBasicMaterial({ color: edgeColor })
 );
 sculpture.add(lines);
-sculpture.rotation.x = -0.9; // Tilt the sculpture forward
+sculpture.rotation.x = 0;
+sculpture.position.x = -2.5;
+camera.position.z = 3;
+
 scene.add(sculpture);
 
 // Render the scene
