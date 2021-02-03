@@ -183,7 +183,7 @@ const render = () => {
 
 render();
 
-let zoomed = false;
+let zoomed = true;
 let inProgress = false;
 
 function aboutAnimation() {
