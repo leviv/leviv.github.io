@@ -51,15 +51,24 @@ p.caption {
   }
 }
 
-table {
-  border-width: 0px;
-  display: block;
-  margin: 0 auto 30px auto;
-  overflow-x: auto;
-  width: fit-content;
-  white-space: nowrap;
+table tr:nth-child(even) {
+  @media (prefers-color-scheme: dark) {
+    background-color: darken($bgColor--dark, 6) !important;
+    color: $bgColor;
+  }
+}
+
+th {
+  @media (prefers-color-scheme: dark) {
+    background-color: darken($bgColor--dark, 10) !important;
+  }
 }
 
 table tr:nth-child(odd) {
   background-color: $bgColor;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $bgColor--dark;
+    color: $bgColor;
+  }
 }

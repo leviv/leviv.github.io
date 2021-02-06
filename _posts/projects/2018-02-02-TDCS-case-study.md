@@ -11,7 +11,7 @@ tag: project
 The TDCS device — fully assembled
 {: .caption}
 
-In my [previous article]({% post_url 2018-02-01-how-I-made-TDCS %}) I explained exactly how I created my own Transcranial Direct Current Stimulation Device from scratch. However, I didn’t just want to make my own device to see if it worked on my, I wanted to see if it made any difference in general. Thus, I created a study to study the effectiveness of my TDCS device.
+In my [previous article]({% post_url projects/2018-02-01-how-I-made-TDCS %}) I explained exactly how I created my own Transcranial Direct Current Stimulation Device from scratch. However, I didn’t just want to make my own device to see if it worked on my, I wanted to see if it made any difference in general. Thus, I created a study to study the effectiveness of my TDCS device.
 
 _NOTE: this study was done with permission from all participants and should not be replicated without proper approval and medical supervision_
 
