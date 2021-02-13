@@ -72,3 +72,24 @@ table tr:nth-child(odd) {
     color: $bgColor;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .highlight .nn {
+    color: #ccc;
+  }
+
+  .highlight .nf,
+  .highlight .s,
+  .highlight .s2,
+  .highlight .sc {
+    color: #ff6161;
+  }
+
+  .highlight .na {
+    color: #06b9b9;
+  }
+
+  .highlight .nc,
+  .highlight .kt {
+    color: #7c9dff;
+  }
+}

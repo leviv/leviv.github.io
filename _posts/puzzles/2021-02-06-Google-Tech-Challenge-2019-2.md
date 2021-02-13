@@ -218,7 +218,7 @@ PASSIONRESILIENCEINTELLIGENCELUCK
 
 You, an adventurer, have an unfortunate penchant for getting locked in dungeons. The good news is that your captors like to leave the keys to the doors just lying around.
 
-Each dungeon is represented as a sequence of keys & and locked doors |. You encounter these from left to right, and you can only open a door if you have a key remaining to open it. For example, you can escape the dungeon `&&|&|` because you have enough keys, but `&|&|&&|&|||` is inescapable because you can’t open the last door.
+Each dungeon is represented as a sequence of keys `&` and locked doors `|`. You encounter these from left to right, and you can only open a door if you have a key remaining to open it. For example, you can escape the dungeon `&&|&|` because you have enough keys, but `&|&|&&|&|||` is inescapable because you can’t open the last door.
 
 For each dungeon, determine whether you can escape or not, then take the 10 bits this results in (escape = 1, no escape = 0) with the most significant bit first and submit the number represented by this binary string.
 

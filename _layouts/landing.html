@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   
-  {%- include head.html -%}
+  <head>
+    {%- include head.html -%}
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
+    <script defer src="assets/js/OrbitControls.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
 
   <body>
     <!-- Custom Styles -->
@@ -28,6 +35,7 @@
             <a
               href="https://landmarks.utexas.edu/artwork/circle-towers"
               target="_blank"
+              rel="noreferrer"
               >Circle with Towers</a
             >
             sculpture outside of the UT Austin computer science building.
@@ -42,12 +50,20 @@
           <h1>Levi Villarreal</h1>
           <ul>
             <li>
-              <a href="https://twitter.com/villarreallevi" target="_blank"
+              <a 
+                href="https://twitter.com/villarreallevi"
+                target="_blank"
+                aria-label="twitter icon"
+                rel="noreferrer"
                 ><i class="fab fa-twitter" aria-hidden="true"></i
               ></a>
             </li>
             <li>
-              <a href="https://instagram.com/levivillarreal" target="_blank"
+              <a 
+                href="https://instagram.com/levivillarreal" 
+                target="_blank"
+                aria-label="instagram icon"
+                rel="noreferrer"
                 ><i class="fab fa-instagram" aria-hidden="true"></i
               ></a>
             </li>
@@ -55,6 +71,8 @@
               <a
                 href="https://www.facebook.com/levi.villarreal.9"
                 target="_blank"
+                aria-label="facebook icon"
+                rel="noreferrer"
                 ><i class="fab fa-facebook" aria-hidden="true"></i
               ></a>
             </li>
@@ -62,11 +80,17 @@
               <a
                 href="https://www.linkedin.com/in/villarreallevi/"
                 target="_blank"
+                aria-label="linkedin icon"
+                rel="noreferrer"
                 ><i class="fab fa-linkedin" aria-hidden="true"></i
               ></a>
             </li>
             <li>
-              <a href="https://github.com/leviv" target="_blank"
+              <a 
+                href="https://github.com/leviv" 
+                target="_blank" 
+                aria-label="Github icon"
+                rel="noreferrer"
                 ><i class="fab fa-github" aria-hidden="true"></i
               ></a>
             </li>
@@ -75,10 +99,5 @@
         </div>
       </div>
     </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
-    <script src="assets/js/OrbitControls.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="assets/js/main.js"></script>
   </body>
 </html>

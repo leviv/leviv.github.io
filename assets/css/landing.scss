@@ -16,7 +16,7 @@ section#home-content {
   bottom: 8%;
 
   @media screen and (max-width: $small) {
-    bottom: 75px;
+    bottom: 25px;
   }
 
   #about-info {
@@ -129,6 +129,9 @@ section#home-content {
 
         a {
           padding: 0 4px;
+          span {
+            text-indent: 90000px;
+          }
         }
       }
     }
