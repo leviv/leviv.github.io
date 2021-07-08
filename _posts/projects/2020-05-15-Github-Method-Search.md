@@ -20,8 +20,6 @@ Badr Ouannas
 
 ## Abstract
 
-Abstract
-
 While general search has become part of many people’s day to day life over the past few years due to its usefulness and versatility, there still does not exist a satisfactory solution for many programmers. Programmers often write pieces of code that could be easily re-purposed from existing projects, if they can find it. This project makes the use of GitHub’s API to index more than 72,000 methods using Elastic Search to build a code search engine. Compared to the GitHub code search tool, it allows for more restrictive filtering of the results and to search directly for method or class names. Ourvaluation shows that it can return relevant results for methods with well-known standardized names as well as queries aimed at finding out how to achieve the desired result with code.
 
 <iframe width="100%" height="360" src="https://www.youtube.com/embed/-T0MdBh0-PY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
