@@ -11,7 +11,7 @@ This was the final project for my grad-level course CS 395T - Topics in Natural 
 
 View our [live demo](https://twitterstyletransfer.herokuapp.com/) to check out the project yourself!
 
-**Authos**:
+**Authors**:
 
 Levi Villarreal
 
