@@ -39,6 +39,7 @@ const material = new THREE.MeshLambertMaterial({
 // Set camera
 camera.position.z = 5;
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
 
 // Add a light
 const light = new THREE.PointLight(0xffffff, 1, 500);
@@ -173,11 +174,14 @@ camera.position.z = 3;
 
 scene.add(sculpture);
 
+const clock = new THREE.Clock();
+
 // Render the scene
 const render = () => {
+  const elapsedTime = clock.getElapsedTime();
   requestAnimationFrame(render);
   controls.update();
-  sculpture.rotation.z += 0.003; // Slowly tilt the structure on each frame
+  sculpture.rotation.z = elapsedTime / 10; // Slowly tilt the structure on each frame
   renderer.render(scene, camera);
 };
 

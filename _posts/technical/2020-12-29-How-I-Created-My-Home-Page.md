@@ -82,6 +82,7 @@ Finally, I set up the material, which is transparent purple that allows for the 
 // Set camera
 camera.position.z = 5;
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; // Make panning smoother
 
 // Add a light
 const light = new THREE.PointLight(0xffffff, 1, 500);
@@ -270,18 +271,21 @@ scene.add(sculpture);
 I create a `bufferGeometry()` representations of the geometry, which is more efficient and causes less GPU strain than traditional three.js geometry. In order to display the line geometry of the object to accomplish the wireframe effect, I extract the edges from the geometry and use `THREE.LineSegments()` to style them. Finally, I can render the entire scene.
 
 ```javascript
+const clock = new THREE.Clock();
+
 // Render the scene
 const render = () => {
+  const elapsedTime = clock.getElapsedTime();
   requestAnimationFrame(render);
   controls.update();
-  sculpture.rotation.z += 0.003; // Slowly tilt the structure on each frame
+  sculpture.rotation.z = elapsedTime / 10; // Slowly tilt the structure on each frame
   renderer.render(scene, camera);
 };
 
 render();
 ```
 
-The render loop is called on each frame (60 times per second on most modern displays). It displays the scene to the browser, updating based on user control input, and the rotation speed of 0.003.
+Using `THREE.Clock`, we can ensure that the rotation of our object is the same speed regardless of the FPS of the monitor our website is displayed on.
 
 ### Animations
 
