@@ -7,7 +7,7 @@ from datetime import date
 
 # Print a help message if user types no arguments or -h/--help
 if len(sys.argv) == 1 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
-  print("Usage: python convert.py path/to/md/file.md post_category")
+  print("Usage: python convert-md.py path/to/md/file.md post_category")
   sys.exit()
 
 # Check we have both arguments
@@ -87,7 +87,7 @@ with open(path_to_file) as post_file:
       # Write the new image code
       f.write("![" + alt_tag + "](" + new_img_path + ")\n")
       # I use a custom class (.caption) to style the text under images
-      f.write("\nCAPTION GOES HERE\n")
+      f.write("\nCAPTION_GOES_HERE\n")
       f.write("{{: .caption}}") # Escape { and }
     else:
       f.write(line)
