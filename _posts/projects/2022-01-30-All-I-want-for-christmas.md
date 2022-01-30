@@ -9,7 +9,7 @@ miscellaneous: projects
 ![Final website screenshot](/assets/img/2022-01-30-All-I-want-for-christmas/final.png)
 
 The final website, although it will look different depending on the time of year you visit it!!
-{{: .caption}}
+{: .caption}
 
 View the code [on GitHub](https://github.com/leviv/christmas) and check out a live demo of the project [here](https://leviv.me/christmas/)!
 
@@ -20,13 +20,13 @@ On a typical day of browsing the internet in early December, I came across a [ho
 ![Me proposing the project to amanda](/assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
 
 Ignore the time that this message is sent
-{{: .caption}}
+{: .caption}
 The original idea came from a meme that seems to get reshared every year, showing the popularity of 'All I want for Christmas is You.' The idea that you can predict the proximity to christmas via a Mariah Carey Song was amusing to me - and plus, I just really liked the song.
 
 ![Meme showing the uptick in Google Trends for the song starting in November](/assets/img/2022-01-30-All-I-want-for-christmas/trends.jpg)
 
 Meme showing the uptick in Google Trends for the song starting in November.
-{{: .caption}}
+{: .caption}
 While I was in college, December brought finals instead of normal holiday activities, and I was often too stressed to properly feel Christmas-y exams were over, usually just a few days before christmas. I wanted to capture the Christmas feeling I had as a kid, where each day seemed to be more festive than the last until it culminated on Christmas morning.
 
 ## The design
@@ -36,7 +36,7 @@ After deciding on the website's theme, Amanda and I got to work designing what t
 ![first draft](/assets/img/2022-01-30-All-I-want-for-christmas/first-draft.png)
 
 Big 'graphic design is my passion' vibes.
-{{: .caption}}
+{: .caption}
 
 The main thing I wanted to convey with the design was the proximity to christmas via the album opacity, volume, and countdown. I also wanted to employ an interactive element for the user to fiddle with while visiting the site - because it's something that I enjoy when visiting websites. As for the design, I thought the idea of doing a very minimal, early 2000s Esque aesthetic could be interesting, hence the colors in the 'Eve' trail.
 
@@ -45,17 +45,17 @@ After walking through my ideas with Amanda, she proposed the idea of making the 
 ![very festive](/assets/img/2022-01-30-All-I-want-for-christmas/close.png)
 
 The website when it's very close to christmas.
-{{: .caption}}
+{: .caption}
 
 ![sad cursor and not much on the screen](/assets/img/2022-01-30-All-I-want-for-christmas/far.png)
 
 The website when it's very far from christmas.
-{{: .caption}}
+{: .caption}
 
 ![Small snowflakes with small album cover](/assets/img/2022-01-30-All-I-want-for-christmas/medium.png)
 
 The website when we're in the middle of the year.
-{{: .caption}}
+{: .caption}
 
 As you can tell, Amanda might be a little bit of a better designer than me.
 
@@ -129,6 +129,6 @@ When I showed the work-in-progress site to friends, family, and coworkers, nearl
 ![Reddit comment](/assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
 
 "I did really enjoy the way you turned my mouse pointer into an elf. Gave me a warm feeling inside."
-{{: .caption}}
+{: .caption}
 
 There were also many great suggestions for other fun minor interactions or easter eggs to add, and I think adding those would be a great idea to revisit next holiday season. That is if I can handle listening to this song hundreds more times as I develop the website.

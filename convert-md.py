@@ -79,16 +79,16 @@ with open(path_to_file) as post_file:
       if not os.path.exists(new_img_path):
         os.makedirs(new_img_path)
 
-      new_img_path = new_img_path + img_name_sanitized
+      new_img_path_full = new_img_path + img_name_sanitized
 
       # Move the image to a new directory
-      shutil.move(img_path, new_img_path)
+      shutil.move(img_path, new_img_path_full)
 
       # Write the new image code
-      f.write("![" + alt_tag + "](" + new_img_path + ")\n")
+      f.write("![" + alt_tag + "](" + new_img_path_full + ")\n")
       # I use a custom class (.caption) to style the text under images
       f.write("\nCAPTION_GOES_HERE\n")
-      f.write("{{: .caption}}") # Escape { and }
+      f.write("{: .caption}")
     else:
       f.write(line)
 
