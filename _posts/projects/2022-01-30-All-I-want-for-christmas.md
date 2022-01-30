@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "All I want for christmas"
-image: ./assets/img/2022-01-30-All-I-want-for-christmas/final.png
+image: /assets/img/2022-01-30-All-I-want-for-christmas/final.png
 category: projects
 miscellaneous: projects
 ---
 
 # All I want for christmas
 
-![Final website screenshot](./assets/img/2022-01-30-All-I-want-for-christmas/final.png)
+![Final website screenshot](/assets/img/2022-01-30-All-I-want-for-christmas/final.png)
 
 The final website, although it will look different depending on the time of year you visit it!!
 {{: .caption}}
@@ -19,13 +19,13 @@ View the code [on GitHub](https://github.com/leviv/christmas) and check out a li
 
 On a typical day of browsing the internet in early December, I came across a [holiday fish website](https://sunday-desert.github.io/holiday-swim/#/), which I couldn't seem to get out of my head. It was a simple, whimsical idea, but it was implemented beautifully. And since christmas was coming up, I was in a festive website-making mood. I sent the website to my friend/coworker [Amanda](https://amandayeh.com/), who appreciates these websites (almost) as much as I do.
 
-![chat](./assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
+![Me proposing the project to amanda](/assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
 
 Ignore the time that this message is sent
 {{: .caption}}
 The original idea came from a meme that seems to get reshared every year, showing the popularity of 'All I want for Christmas is You.' The idea that you can predict the proximity to christmas via a Mariah Carey Song was amusing to me - and plus, I just really liked the song.
 
-![trends](./assets/img/2022-01-30-All-I-want-for-christmas/trends.jpg)
+![Meme showing the uptick in Google Trends for the song starting in November](/assets/img/2022-01-30-All-I-want-for-christmas/trends.jpg)
 
 Meme showing the uptick in Google Trends for the song starting in November.
 {{: .caption}}
@@ -35,7 +35,7 @@ While I was in college, December brought finals instead of normal holiday activi
 
 After deciding on the website's theme, Amanda and I got to work designing what the website would look like. I opened up Figma and had a first go of what I envisioned the website could look like:
 
-![first draft](./assets/img/2022-01-30-All-I-want-for-christmas/first-draft.png)
+![first draft](/assets/img/2022-01-30-All-I-want-for-christmas/first-draft.png)
 
 Big 'graphic design is my passion' vibes.
 {{: .caption}}
@@ -44,17 +44,17 @@ The main thing I wanted to convey with the design was the proximity to christmas
 
 After walking through my ideas with Amanda, she proposed the idea of making the website as festive as possible by adding Christmasy colors, drawings, and fonts. I wasn't immediately on board, but I was hooked once I saw the designs she had in mind.
 
-![close](./assets/img/2022-01-30-All-I-want-for-christmas/close.png)
+![very festive](/assets/img/2022-01-30-All-I-want-for-christmas/close.png)
 
 The website when it's very close to christmas.
 {{: .caption}}
 
-![far](./assets/img/2022-01-30-All-I-want-for-christmas/far.png)
+![sad cursor and not much on the screen](/assets/img/2022-01-30-All-I-want-for-christmas/far.png)
 
 The website when it's very far from christmas.
 {{: .caption}}
 
-![medium](./assets/img/2022-01-30-All-I-want-for-christmas/medium.png)
+![Small snowflakes with small album cover](/assets/img/2022-01-30-All-I-want-for-christmas/medium.png)
 
 The website when we're in the middle of the year.
 {{: .caption}}
@@ -128,7 +128,7 @@ The second major challenge was more of a design problem. After all, the christma
 
 When I showed the work-in-progress site to friends, family, and coworkers, nearly all of them had the exact reaction. "I don't know what this is, but it's pretty funny," which was what we were going for. Once we had fine-tuned most of the interactions and designs, we eventually launched on December 18. And by launched, I mean I posted it on [Reddit](https://www.reddit.com/r/web_design/comments/rj5wgt/i_built_a_website_that_plays_all_i_want_for/) and [Twitter](https://twitter.com/villarreallevi/status/1472171321513676800). The response was better than I had hoped! Many of my friends and complete strangers took time to visit, and my post even hit the top of r/web_design for the day! My favorite comment of the bunch was this one, but there are a lot of gems in the thread.
 
-![Screen Shot 2022 01 30 at 4.45.45 AM](./assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
+![Reddit comment](/assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
 
 "I did really enjoy the way you turned my mouse pointer into an elf. Gave me a warm feeling inside."
 {{: .caption}}
