@@ -126,7 +126,7 @@ The second major challenge was more of a design problem. After all, the christma
 
 When I showed the work-in-progress site to friends, family, and coworkers, nearly all of them had the exact reaction. "I don't know what this is, but it's pretty funny," which was what we were going for. Once we had fine-tuned most of the interactions and designs, we eventually launched on December 18. And by launched, I mean I posted it on [Reddit](https://www.reddit.com/r/web_design/comments/rj5wgt/i_built_a_website_that_plays_all_i_want_for/) and [Twitter](https://twitter.com/villarreallevi/status/1472171321513676800). The response was better than I had hoped! Many of my friends and complete strangers took time to visit, and my post even hit the top of r/web_design for the day! My favorite comment of the bunch was this one, but there are a lot of gems in the thread.
 
-![Reddit comment](/assets/img/2022-01-30-All-I-want-for-christmas/chat.png)
+![Reddit comment](/assets/img/2022-01-30-All-I-want-for-christmas/comment.png)
 
 "I did really enjoy the way you turned my mouse pointer into an elf. Gave me a warm feeling inside."
 {: .caption}
