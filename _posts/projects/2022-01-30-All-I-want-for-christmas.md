@@ -6,8 +6,6 @@ category: projects
 miscellaneous: projects
 ---
 
-# All I want for christmas
-
 ![Final website screenshot](/assets/img/2022-01-30-All-I-want-for-christmas/final.png)
 
 The final website, although it will look different depending on the time of year you visit it!!
