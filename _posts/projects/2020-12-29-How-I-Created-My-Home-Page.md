@@ -2,7 +2,7 @@
 layout: post
 title: "How I made my 3D home page animation"
 image: /assets/img/2020-12-29-How-I-Created-My-Home-Page/gdc.gif
-category: technical
+category: projects
 tag: technical, web
 ---
 

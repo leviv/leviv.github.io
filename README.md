@@ -8,8 +8,20 @@ View the site here: http://leviv.me/.
 
 In order to compile the styles for this project, you need to have [Jekyll](https://jekyllrb.com/) installed.
 
+Install [Homebrew](https://brew.sh/)
+
 ```bash
-gem install bundler jekyll
+bew install ruby
+sudo gem install bundler jekyll
+```
+
+If you have issues, run through [this setup guide](https://jekyllrb.com/docs/installation/macos/) to ensure you have the correct dependencies.
+
+Also running these commmands helped:
+
+```
+bundle update
+bundle install
 ```
 
 ## Getting started
@@ -24,7 +36,7 @@ Then run the app with the following commands
 
 ```bash
 cd leviv.github.io
-jekyll serve
+bundle exec jekyll serve --livereload
 ```
 
 and open http://127.0.0.1:4000/
