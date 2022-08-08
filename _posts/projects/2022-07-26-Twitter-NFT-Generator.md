@@ -97,7 +97,7 @@ I had a completed profile picture generator, but I wanted an interface to match.
 - Heavy use of gradients
 - Transparent overlays
 
-I had been taking Bruno Simons's ThreeJS Journey course and decided to make the whole landing page 3D to practice the things I'd been learning. I also heavily drew upon inspiration from [ilithya's website](ilithya.rocks).
+I had been taking Bruno Simons's ThreeJS Journey course and decided to make the whole landing page 3D to practice the things I'd been learning. I also heavily drew upon inspiration from [ilithya's website](https://ilithya.rocks).
 
 I ended up with a very simple interface that included some 3d text and a giant spinning preview of the hexagon profile photo. The only abnormal part of this 3d scene was the construction of the 3d hexagon from the 2d svg. The relevant code is below (shoutout to [this blog post](https://muffinman.io/blog/three-js-extrude-svg-path/) from Stanko Tadić):
 
