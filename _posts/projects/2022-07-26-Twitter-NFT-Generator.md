@@ -116,11 +116,11 @@ var materials = [
 ];
 
 // Loop through all of the parsed paths
-svgData.paths.forEach((path, _i) => {
+svgData.paths.forEach((path) => {
   const shapes = path.toShapes(true);
 
   // Each path has array of shapes
-  shapes.forEach((shape, j) => {
+  shapes.forEach((shape) => {
     // Finally we can take each shape and extrude it
     const geometry = new THREE.ExtrudeGeometry(shape, {
       depth: 0.1,
