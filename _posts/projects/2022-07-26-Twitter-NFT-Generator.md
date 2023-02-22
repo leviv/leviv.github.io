@@ -6,7 +6,7 @@ category: projects
 tag: projects
 ---
 
-[Check out the live website!](https://leviv.me/nft-pfp/)
+[Check out the live website!](https://leviv.cool/nft-pfp/)
 
 [Check out the video demo!](https://youtu.be/1t37qoKTYhU)
 

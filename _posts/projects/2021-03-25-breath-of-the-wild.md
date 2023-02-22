@@ -13,7 +13,7 @@ A result of too much time on my hands and too many hours into Breath of the Wild
 The final loading animation
 {: .caption}
 
-View the code [on GitHub](https://github.com/leviv/botw-loader) and check out a live demo of the project [here](https://leviv.me/botw-loader)!
+View the code [on GitHub](https://github.com/leviv/botw-loader) and check out a live demo of the project [here](https://leviv.cool/botw-loader)!
 
 ## Background
 

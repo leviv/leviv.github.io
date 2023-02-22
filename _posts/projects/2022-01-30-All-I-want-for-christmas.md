@@ -11,7 +11,7 @@ miscellaneous: projects
 The final website, although it will look different depending on the time of year you visit it!!
 {: .caption}
 
-View the code [on GitHub](https://github.com/leviv/christmas) and check out a live demo of the project [here](https://leviv.me/christmas/)!
+View the code [on GitHub](https://github.com/leviv/christmas) and check out a live demo of the project [here](https://leviv.cool/christmas/)!
 
 ## The Idea
 

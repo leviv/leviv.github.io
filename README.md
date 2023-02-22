@@ -2,7 +2,7 @@
 
 A repository to hold all of my past and current projects and blog posts.
 
-View the site here: http://leviv.me/.
+View the site here: https://leviv.cool/.
 
 ## Prerequisites
 
