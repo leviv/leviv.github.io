@@ -15,7 +15,7 @@ layout: default
     <p>A place to express my thoughts in more than 280 characters. Sometimes technical, sometimes personal, always containing grammatical errors. Feel free to subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>.</p>
 
     <ul class="post-list">
-      {%- for post in site.posts -%} {% unless post.categories contains 'leetcode' %}
+      {%- for post in site.posts -%} {% unless post.categories contains 'leetcode' %} {% unless post.categories contains 'projects' %}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -28,7 +28,7 @@ layout: default
           {{ post.excerpt }}
         {%- endif -%}
       </li>
-      {% endunless %} {%- endfor -%}
+      {% endunless %} {% endunless %} {%- endfor -%}
     </ul>
 
     <h2 class="post-list-heading">Archived posts</h2>

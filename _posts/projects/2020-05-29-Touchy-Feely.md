@@ -6,13 +6,13 @@ category: projects
 tag: project
 ---
 
-This was a final project for the DH2670 3D Haptics course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad.
+The following article is a research paper that I wrote with my friend [Chris Nunes](https://chrisnun.es/). The paper was a final project for the DH2670 3D Haptics course at KTH Royal Institute of Technology while we were studing abroad.
 
 **Authors**:
 
-Chris Nunes - chrisnunes57@gmail.com
+Chris Nunes
 
-Levi Villarreal - villarreallevi@utexas.edu
+Levi Villarreal
 
 ## Abstract
 
