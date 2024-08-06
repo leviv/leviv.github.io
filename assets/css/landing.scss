@@ -12,8 +12,8 @@ canvas {
 section#home-content {
   position: absolute;
   text-align: right;
-  width: 100%;
   bottom: 8%;
+  right: 8%;
 
   @media screen and (max-width: $small) {
     bottom: 25px;
@@ -26,7 +26,7 @@ section#home-content {
     padding-bottom: 30px;
     position: relative;
     overflow-y: auto;
-    width: 50%;
+    width: 500px;
 
     @media screen and (max-width: $small) {
       width: 100%;
