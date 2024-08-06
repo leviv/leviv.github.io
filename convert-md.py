@@ -35,7 +35,7 @@ file_path_prefix = path_to_file[0:len(path_to_file)-len(file_name)-2]
 # Sometimes I add a title in the md file, sometimes I dont
 # If I added a title (h1) to the document, use that for the file name
 with open(path_to_file) as post_file:
-    line = post_file.readline().rstrip()
+    line = post_file.readline().rstrip().replace(' ', '-').lower()
     if line.startswith("#"):
        file_name_sanitized = line[2:len(line)]
 
@@ -46,7 +46,7 @@ month = '{:02d}'.format(todays_date.month)
 year = todays_date.year
 new_file_name = str(year) + "-" + str(month) + "-" + str(day) + "-" + file_name_sanitized
 
-new_img_path = "./assets/img/" + new_file_name + "/"
+new_img_path = "/assets/img/" + new_file_name + "/"
 
 # Open the new file
 new_file_path = "./_posts/" + post_category + "/"
