@@ -46,7 +46,8 @@ month = '{:02d}'.format(todays_date.month)
 year = todays_date.year
 new_file_name = str(year) + "-" + str(month) + "-" + str(day) + "-" + file_name_sanitized
 
-new_img_path = "/assets/img/" + new_file_name + "/"
+img_path = "./assets/img"
+new_img_path = img_path + "/" + new_file_name + "/"
 
 # Open the new file
 new_file_path = "./_posts/" + post_category + "/"
@@ -60,6 +61,7 @@ title = file_name.replace("-", " ").replace("_", " ")
 f.write("---\n")
 f.write("layout: post\n")
 f.write('title: "' + title  + '"\n')
+f.write('image: \n')
 f.write("category: " + post_category + "\n")
 f.write("miscellaneous: " + post_category + "\n")
 f.write("---\n\n")
@@ -77,9 +79,10 @@ with open(path_to_file) as post_file:
 
       # Create image directory if doesn't exist
       if not os.path.exists(new_img_path):
+        print(new_img_path)
         os.makedirs(new_img_path)
 
-      new_img_path_full = new_img_path + img_name_sanitized
+      new_img_path_full = new_img_path[1:] + img_name_sanitized # Remove the starting '.'
 
       # Move the image to a new directory
       shutil.move(img_path, new_img_path_full)

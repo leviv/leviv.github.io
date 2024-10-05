@@ -11,7 +11,7 @@ In order to compile the styles for this project, you need to have [Jekyll](https
 Install [Homebrew](https://brew.sh/)
 
 ```bash
-bew install ruby
+brew install ruby
 sudo gem install bundler jekyll
 ```
 
