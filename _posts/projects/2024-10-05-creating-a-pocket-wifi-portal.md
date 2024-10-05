@@ -6,8 +6,6 @@ category: projects
 miscellaneous: projects
 ---
 
-# Creating a pocket wifi portal
-
 [GitHub Repo](https://github.com/leviv/pocket-wifi)
 
 [Demo Link](https://leviv.cool/pocket-wifi/)
