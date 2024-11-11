@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploy a SveteKit app to GitHub Pagees"
+title: "Deploy a SveteKit app to GitHub Pages"
 image:
 category: miscellaneous
 tag: miscellaneous
