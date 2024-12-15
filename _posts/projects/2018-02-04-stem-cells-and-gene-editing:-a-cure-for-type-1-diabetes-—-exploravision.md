@@ -3,7 +3,7 @@ layout: post
 title: "Stem Cells and Gene Editing A Cure for Type 1 Diabetes — Exploravision"
 image: /assets/img/2018-02-04-stem-cells-and-gene-editing:-a-cure-for-type-1-diabetes-—-exploravision/group-photo.png
 category: projects
-miscellaneous: projects
+tag: high-school
 ---
 
 Type 1 diabetes in an autoimmune disorder that affects as many as three million Americans, and millions more around the world. Once diagnosed, you are sentenced to a lifetime of checking glucose levels and diet monitoring. While many advancements have been made in the past few years when it comes to treating type one diabetes, many of them focus on making it easier to live with it, rather than eliminating it entirely.

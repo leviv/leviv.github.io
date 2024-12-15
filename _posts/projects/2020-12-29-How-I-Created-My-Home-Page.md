@@ -3,7 +3,7 @@ layout: post
 title: "How I made my 3D home page animation"
 image: /assets/img/2020-12-29-How-I-Created-My-Home-Page/gdc.gif
 category: projects
-tag: technical, web
+tag: technical, web, personal
 ---
 
 I wanted to throw together a post on how I made the 3D spinning animation seen on my current (2020) home page because it ended up significantly more challenging than I expected. This was my first time using three.js, or dealing with 3D objects in the browser, and I learned a lot!

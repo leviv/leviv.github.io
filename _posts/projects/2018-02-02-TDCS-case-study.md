@@ -3,7 +3,7 @@ layout: post
 title: "Does TDCS Really Work: A Case Study"
 image: /assets/img/2018-02-02-TDCS-case-study/assembled.jpeg
 category: projects
-tag: project
+tag: high-school
 ---
 
 ![The TDCS device — fully assembled](/assets/img/2018-02-02-TDCS-case-study/assembled.jpeg)

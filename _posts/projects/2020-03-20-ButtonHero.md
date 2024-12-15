@@ -3,7 +3,7 @@ layout: post
 title: ButtonHero - A Collaborative Instrument
 image: /assets/img/2020-03-20-ButtonHero/physical.jpg
 category: projects
-tag: project
+tag: college
 ---
 
 This was a final project for the DM2623 IT Design for Disabilities course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad.

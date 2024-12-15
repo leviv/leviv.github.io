@@ -6,13 +6,19 @@ layout: default
 <link rel="stylesheet" href="/assets/css/posts.css" />
 
 <div class="home">
-  {%- if page.title -%}
+  {% if page.title %}
   <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
+  {% endif %} {{ content }} {% if site.posts.size > 0 %}
   <h2 class="post-list-heading">{{ page.list_title | default: "Projects" }}</h2>
+  <div class="filter-buttons">
+    <button data-filter="all" class="filter-button active">All</button>
+    <button data-filter="personal" class="filter-button">Personal</button>
+    <button data-filter="college" class="filter-button">College</button>
+    <button data-filter="high-school" class="filter-button">High School</button>
+  </div>
   <ul class="post-list">
-    {%- for post in site.posts -%} {% if post.categories contains 'projects' %}
-    <li>
+    {% for post in site.posts %} {% if post.categories contains 'projects' %}
+    <li class="post-item" data-tags="{{ post.tags | join: ' ' }}">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
       -%}
       <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -21,16 +27,45 @@ layout: default
           {{ post.title | escape }}
         </a>
       </h3>
-      {%- if post.image -%}
+      {% if post.image %}
       <div class="post-image">
         <img
           src="{{ post.image | relative_url }}"
           alt="{{ post.title | escape }} feature image"
         />
       </div>
-      {% endif %} {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+      {% endif %} {% if site.show_excerpts %} {{ post.excerpt }} {% endif %}
     </li>
-    {% endif %} {%- endfor -%}
+    {% endif %} {% endfor %}
   </ul>
-  {%- endif -%}
+  {% endif %}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".filter-button");
+    const posts = document.querySelectorAll(".post-item");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove 'active' class from all buttons
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        // Add 'active' class to clicked button
+        button.classList.add("active");
+
+        // Get filter value
+        const filter = button.getAttribute("data-filter");
+
+        // Show/hide posts based on filter
+        posts.forEach((post) => {
+          const tags = post.getAttribute("data-tags").split(" ");
+          if (filter === "all" || tags.includes(filter)) {
+            post.style.display = "";
+          } else {
+            post.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>

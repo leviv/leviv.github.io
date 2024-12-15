@@ -3,7 +3,7 @@ layout: post
 title: "HTML Energy Freewrite NYC 2024"
 image: /assets/img/2024-08-06-HTML-Energy-Freewrite/website.png
 category: projects
-miscellaneous: projects
+tag: personal
 ---
 
 # HTML Energy Freewrite - NYC 2024

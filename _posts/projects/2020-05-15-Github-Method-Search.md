@@ -3,7 +3,7 @@ layout: post
 title: Github Method Search
 image: /assets/img/2020-05-15-Github-Method-Search/searchinterface.png
 category: projects
-tag: project
+tag: college
 ---
 
 This was a final project for the DD2476 Search Engines and Info Retrieval course at KTH Royal Institute of Technology during the spring 2020 semester while I was studying abroad.

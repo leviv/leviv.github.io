@@ -3,7 +3,7 @@ layout: post
 title: "All I want for christmas"
 image: /assets/img/2022-01-30-All-I-want-for-christmas/final.png
 category: projects
-miscellaneous: projects
+tag: personal
 ---
 
 ![Final website screenshot](/assets/img/2022-01-30-All-I-want-for-christmas/final.png)

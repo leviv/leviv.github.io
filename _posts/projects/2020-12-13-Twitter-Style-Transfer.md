@@ -3,7 +3,7 @@ layout: post
 title: Twitter Style Transfer
 image: /assets/img/2020-12-13-Twitter-Style-Transfer/interface.png
 category: projects
-tag: project
+tag: college
 usemathjax: true
 ---
 

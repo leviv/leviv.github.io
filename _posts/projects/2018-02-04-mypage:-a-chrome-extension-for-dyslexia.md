@@ -3,7 +3,7 @@ layout: post
 title: "MyPage: A Chrome Extension for Dyslexia"
 image: /assets/img/2018-02-04-mypage:-a-chrome-extension-for-dyslexia/hack-tx-donut-wall.png
 category: projects
-miscellaneous: projects
+tag: college
 ---
 
 ![hack tx donut wall](/assets/img/2018-02-04-mypage:-a-chrome-extension-for-dyslexia/hack-tx-donut-wall.png)

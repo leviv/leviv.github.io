@@ -3,7 +3,7 @@ layout: post
 title: Breath of the Wild loading screen - but on the web
 image: /assets/img/2021-03-25-breath-of-the-wild/loader.gif
 category: projects
-tag: project
+tag: personal
 ---
 
 A result of too much time on my hands and too many hours into Breath of the Wild.

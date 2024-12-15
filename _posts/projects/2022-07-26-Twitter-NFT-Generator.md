@@ -3,7 +3,7 @@ layout: post
 title: "Twitter NFT Generator???"
 image: /assets/img/2022-07-26-Twitter-NFT-Generator/landing.png
 category: projects
-tag: projects
+tag: personal
 ---
 
 [Check out the live website!](https://leviv.cool/nft-pfp/)

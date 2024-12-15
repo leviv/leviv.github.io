@@ -3,7 +3,7 @@ layout: post
 title: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
 image: /assets/img/2020-05-29-Touchy-Feely/feature.PNG
 category: projects
-tag: project
+tag: college
 ---
 
 The following article is a research paper that I wrote with my friend [Chris Nunes](https://chrisnun.es/). The paper was a final project for the DH2670 3D Haptics course at KTH Royal Institute of Technology while we were studing abroad.

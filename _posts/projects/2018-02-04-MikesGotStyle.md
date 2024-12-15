@@ -3,7 +3,7 @@ layout: post
 title: "MikesGotStyle - Bringing CS Department Websites into the 21st century"
 image: /assets/img/2018-02-04-MikesGotStyle/old.png
 category: projects
-tag: project
+tag: college
 ---
 
 The first day of CS 312: Intro to Programming, everyone was nervous. The room full of ~100 computer science freshman was dead silent as the professor Mike Scott read the syllabus and what was to come in the course, referencing many times to links on his class website. After going through many points on the syllabus, he paused and asked the class, “Is there any questions? Feel free to ask anything at all, don’t be shy.” The room remained quiet until I raised my hand to ask a genuine question that I had about the course.

@@ -3,7 +3,7 @@ layout: post
 title: "When in NYC"
 image: /assets/img/2024-11-11-when-in-nyc/preview.png
 category: projects
-miscellaneous: projects
+tag: personal
 ---
 
 [GitHub Repo](https://github.com/leviv/winyc)

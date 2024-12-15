@@ -3,7 +3,7 @@ layout: post
 title: "The Effect of Space Weather on Cosmic Rays"
 image: /assets/img/2018-02-04-the-effect-of-space-weather-on-cosmic-rays/poster.png
 category: projects
-miscellaneous: projects
+tag: high-school
 ---
 
 ![poster](/assets/img/2018-02-04-the-effect-of-space-weather-on-cosmic-rays/poster.png)

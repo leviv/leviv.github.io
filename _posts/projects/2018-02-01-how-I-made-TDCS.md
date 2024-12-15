@@ -3,7 +3,7 @@ layout: post
 title: "Using a Transcranial Direct Current Stimulation Device to Zap Myself Smarter"
 image: /assets/img/2018-02-04-how-I-made-TDCS/participant.jpeg
 category: projects
-tag: project
+tag: high-school
 ---
 
 My senior year of high school, my sister and I had become somewhat addicted to listening to RadioLab podcasts on the commute to and from school. One day near the beginning of the first semester, I heard [this episode](https://www.wnycstudios.org/podcasts/radiolab/articles/9-volt-nirvana) from RadioLab titled “9-Volt Nirvana” about a form of ‘brain enhancement’ known as Transcranial Direct Current Stimulation. My initial thought after hearing it was “I can do that.” So with no prior knowledge of circuity, soldering, or neural stimulation, I set to find out if TDCS was actually effective.

@@ -3,7 +3,7 @@ layout: post
 title: "Creating a pocket wifi portal"
 image: "./assets/img/2024-10-05-creating-a-pocket-wifi-portal/final-box.png"
 category: projects
-miscellaneous: projects
+tag: personal
 ---
 
 [GitHub Repo](https://github.com/leviv/pocket-wifi)

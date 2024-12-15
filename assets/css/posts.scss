@@ -1,14 +1,17 @@
 ---
 ---
 
+$small: 768px;
+@import "common";
+
 .post-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 
   li {
     flex: calc(50% - 20px);
-    padding: 0 10px;
-    margin: 20px 0;
 
     h3 {
       min-height: 72px;
@@ -31,6 +34,51 @@
     @media (max-width: 768px) {
       flex: 100%;
       padding: 0 0;
+    }
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button {
+  background: none;
+  border: 3px solid $primaryColor;
+  border-radius: 4px;
+  color: $primaryColor;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 18px;
+
+  &.active {
+    color: $primaryDarker;
+    border-color: $primaryDarker;
+
+    @media (prefers-color-scheme: dark) {
+      color: $primaryDarker--dark;
+      border-color: $primaryDarker--dark;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    border-color: $primaryColor--dark;
+    color: $primaryColor--dark;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px !important;
+  }
+
+  &:hover {
+    color: $primaryDarker;
+    border-color: $primaryDarker;
+
+    @media (prefers-color-scheme: dark) {
+      color: $primaryDarker--dark;
+      border-color: $primaryDarker--dark;
     }
   }
 }

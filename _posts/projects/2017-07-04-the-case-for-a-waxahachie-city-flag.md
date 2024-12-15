@@ -3,7 +3,7 @@ layout: post
 title: "The Case For a Waxahachie City Flag"
 image: /assets/img/2017-07-04-the-case-for-a-waxahachie-city-flag/waxahachie-redesign-flag.png
 category: projects
-miscellaneous: projects
+tag: personal
 ---
 
 **Flags**.
