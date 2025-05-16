@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploy a SveteKit app to GitHub Pages"
+title: "Deploy a SvelteKit app to GitHub Pages"
 image:
 category: miscellaneous
 tag: miscellaneous
@@ -119,6 +119,6 @@ Go to the repository page > Settings > Pages. The url should be `https://github.
 
 It should look like this:
 
-![Github Pages deploy page](/assets/img/2024-11-10-deploy-a-svetekit-app-to-github-pages/deploy.png)
+![Github Pages deploy page](/assets/img/2024-11-10-deploy-a-sveltekit-app-to-github-pages/deploy.png)
 
 ## That's it! Simply push to main to deploy the site
