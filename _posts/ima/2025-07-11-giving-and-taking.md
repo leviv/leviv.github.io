@@ -12,7 +12,7 @@ The assignment, like most in the program, was simple but open ended. We were to 
 
 What I got in return was a picture of my classmate Rebekah Zhou's favorite painting, *The Coronation of Napoleon*.
 
-![Napoléon](/assets/img/2025-07-11-giving-and-taking/Napoléon.JPG)
+![Napoleon](/assets/img/2025-07-11-giving-and-taking/napoleon.jpg)
 
 The Coronation of Napoleon by Jacques-Louis David
 {: .caption}
@@ -33,7 +33,7 @@ I immediately went to the idea of a website. I started by just putting the image
 
 I stared at it for a while, thinking about how I could transform the imaae through the medium of the web. I started by just putting emojis in the the hands of Napoloeon because I thought it looked funny. However it wasn't as interactive as I wanted and I thought it could be good to push myself to do something a bit more technical. 
 
-![image 20250710210036592](/assets/img/2025-07-11-giving-and-taking/image-20250710210036592.png)
+![napoleon holding a caterpillar](/assets/img/2025-07-11-giving-and-taking/napoleon_emoji.png)
 
 My first idea, having Napoleon hold different emojis 
 {: .caption}
