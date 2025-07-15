@@ -6,7 +6,7 @@ category: ima
 miscellaneous: ima
 ---
 
-In our first class for Interface Lab - we discussed a fundamental question that speaks to the name of the class.
+In our first class for Interface Lab - we discussed a fundamental question that addresses the name of the class.
 
 > What is an interface?
 
@@ -19,7 +19,7 @@ To further drive home the point, our homework was to take a walk around our neig
 An estimation of the route I took (exact location changed for privacy)
 {: .caption}
 
-Throghout my route I was pleasently surprised that for the most part I interacted with less devices than I expected.
+Throghout my route I was pleasently surprised that I interacted with less devices than I expected.
 
 I put on my noise cancelling headphones to drown out the car noise on the east village streets, using the on device controls to play, skip and change volume.
 
@@ -35,7 +35,7 @@ I turned on my air conditioning through an app on my phone to cool down my apart
 Summer game changer
 {: .caption}
 
-I waited impatiently for the traffic lights and crosswalk signals to show me when I was allowed to cross the street. Because I live in one of the few places in the country that expects pedestrians, I didn't have to press the crosswalk button and instead simply waited my turn. I was also likely sensed by some of the smarter cars, trucks and busses that drove next to me while I crossed the street.
+I waited impatiently for the traffic lights and crosswalk signals to show me when I was allowed to cross the street. Because I live in one of the few places in the country whose design considerations include pedestrians, I didn't have to press the crosswalk button and instead simply waited my turn. I was also likely sensed by some of the smarter cars, trucks and busses that drove next to me while I crossed the street.
 
 ![crosswalk](/assets/img/2025-07-15-sensing-senors/crosswalk.png)
 
@@ -46,7 +46,7 @@ I checked the subway times out of habit even though I wasn't boarding. I had the
 
 ![subway display](/assets/img/2025-07-15-sensing-senors/subway-display.png)
 
-This doesn't even show the other side of the display which was only ads
+This photo doesn't even show the other side of the display which was only ads
 {: .caption}
 
 I scanned my key fob at the apartment entrance and checked the lobby display to see if I had any packages delivered throughout the day (I didn't). And finally I came back to my cooled apartment and flipped on my lights to make some dinner.
