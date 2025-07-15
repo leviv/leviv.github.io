@@ -29,7 +29,7 @@ As of this post, ***ORGAN2/ASLSP*** has been playing in Halberstadt for 23 years
 
 ## One-upping John Cage
 
-If I were recreating this project today, I would of course seek to beat the record of playing ASLSP even slower. To put my own spin on this project, I would make a collaborative instrument that is kept alive by millions of people around the world, rather than just a handful of dedicated music nerds in Germany. I can envision an app or website that plays ASLSP through the speakers of whatever device is connected to it. If there is not a single perosn in the world playing it, the song ends.
+If I were recreating this project today, I would of course seek to beat the record of playing ASLSP even slower. To put my own spin on this project, I would make a collaborative instrument that is kept alive by millions of people around the world, rather than just a handful of dedicated music nerds in Germany. I can envision an app or website that plays ASLSP through the speakers of whatever device is connected to it. If there is not a single person in the world playing it, the song ends.
 
 Of course this would require tremendous technical infrastructure, redundancies, and maintainers to keep the site up and running for over 600 years. Not to mention the dedication and collaboration of millions of strangers to keep the song going. But I truly believe it could be possible, and I can imagine a world where an open source website, and tens of generations of families keep a song going for nearly 1000 years.
 
