@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "John Cage, Macklemore, and the meaning of musice"
+title: "John Cage, Macklemore, and the meaning of music"
 image:
 category: ima
 miscellaneous: ima
