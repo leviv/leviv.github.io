@@ -5,96 +5,103 @@ import sys
 import re
 from datetime import date
 
-# Print a help message if user types no arguments or -h/--help
-if len(sys.argv) == 1 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
-  print("Usage: python convert-md.py path/to/md/file.md post_category")
-  sys.exit()
+# Print help message
+if len(sys.argv) == 1 or sys.argv[1] in ('-h', '--help'):
+    print("Usage: python convert-md.py path/to/md/file.md post_category")
+    sys.exit()
 
-# Check we have both arguments
 if len(sys.argv) < 3:
-  print("Must provide a path to the file and a post category")
-  sys.exit()
+    print("Must provide a path to the file and a post category")
+    sys.exit()
 
 path_to_file = sys.argv[1]
 post_category = sys.argv[2]
 
-# Check if the file exists and is a markdown file
 if not os.path.exists(path_to_file):
-  print("Provided file path does not exist")
-  sys.exit()
+    print("Provided file path does not exist")
+    sys.exit()
 if not path_to_file.endswith(".md"):
-  print("Provided file does not have a .md extension")
-  sys.exit()
+    print("Provided file does not have a .md extension")
+    sys.exit()
 
-# Extract the file name and file path
-match = re.search(".*\/(.*).md", path_to_file)
-file_name = match.group(1)
-file_name_sanitized = file_name.replace(" ", "-").replace("_", "-")
-file_path_prefix = path_to_file[0:len(path_to_file)-len(file_name)-2]
+# Extract raw file name
+match = re.search(r".*/(.*)\.md", path_to_file)
+raw_file_name = match.group(1)
 
-# Sometimes I add a title in the md file, sometimes I dont
-# If I added a title (h1) to the document, use that for the file name
+# Try to extract the first H1 title
+title_from_heading = None
 with open(path_to_file) as post_file:
-    line = post_file.readline().rstrip().replace(' ', '-').lower()
-    if line.startswith("#"):
-       file_name_sanitized = line[2:len(line)]
+    for line in post_file:
+        if line.strip().startswith("# "):
+            title_from_heading = line.strip()[2:].strip()
+            break
 
-# Get todays date correctly formatted
-todays_date = date.today()
-day = '{:02d}'.format(todays_date.day)
-month = '{:02d}'.format(todays_date.month)
-year = todays_date.year
-new_file_name = str(year) + "-" + str(month) + "-" + str(day) + "-" + file_name_sanitized
+# Fallback to file name if no heading
+final_title = title_from_heading if title_from_heading else raw_file_name.replace("-", " ").replace("_", " ")
+file_name_slug = title_from_heading.lower().strip().replace(" ", "-").replace("_", "-") if title_from_heading else raw_file_name.replace(" ", "-").replace("_", "-").replace("'", "").replace('"', "")
 
-img_path = "./assets/img"
-new_img_path = img_path + "/" + new_file_name + "/"
+# Date info
+today = date.today()
+new_file_name = today.strftime("%Y-%m-%d-") + file_name_slug
 
-# Open the new file
-new_file_path = "./_posts/" + post_category + "/"
-# Create post directory if doesn't exist
-if not os.path.exists(new_file_path):
-  os.makedirs(new_file_path)
-f = open(new_file_path + new_file_name + ".md", "w")
+# Paths
+img_path_root = "./assets/img"
+new_img_dir = f"{img_path_root}/{new_file_name}/"
+new_post_dir = f"./_posts/{post_category}/"
+os.makedirs(new_post_dir, exist_ok=True)
 
-# Write the template header
-title = file_name.replace("-", " ").replace("_", " ")
-f.write("---\n")
-f.write("layout: post\n")
-f.write('title: "' + title  + '"\n')
-f.write('image: \n')
-f.write("category: " + post_category + "\n")
-f.write("miscellaneous: " + post_category + "\n")
-f.write("---\n\n")
+# Write header
+output_path = os.path.join(new_post_dir, f"{new_file_name}.md")
+out = open(output_path, "w")
+out.write("---\n")
+out.write("layout: post\n")
+out.write(f'title: "{final_title}"\n')
+out.write("image: \n")
+out.write(f"category: {post_category}\n")
+out.write(f"miscellaneous: {post_category}\n")
+out.write("---\n\n")
 
-# Loop through file to find images
+# Read full post file
 with open(path_to_file) as post_file:
-  for line in post_file:
-    img_match = re.findall("!\[(.*)\]\((.*)\)", line) # Check for pattern ![alt](path)
-    # This line is an image
-    if len(img_match) > 0:
-      alt_tag = img_match[0][0].replace("-", " ").replace("_", " ")
-      img_path = img_match[0][1]
-      img_name = re.findall(".*\/(.*\..*)", img_path)[0] # Get the img name from path/to/file.jpg
-      img_name_sanitized = img_name.replace(" ", "-").replace("_", "-")
+    lines = post_file.readlines()
 
-      # Create image directory if doesn't exist
-      if not os.path.exists(new_img_path):
-        print(new_img_path)
-        os.makedirs(new_img_path)
+# Write body with caption detection
+i = 0
+while i < len(lines):
+    line = lines[i]
+    if line.strip().startswith("# ") and title_from_heading and line.strip()[2:].strip() == title_from_heading:
+        i += 1  # Skip the title line in the body
+        continue
 
-      new_img_path_full = new_img_path + img_name_sanitized 
+    img_match = re.findall(r"!\[(.*?)\]\((.*?)\)", line)
+    if img_match:
+        alt_tag = img_match[0][0].replace("-", " ").replace("_", " ")
+        src_path = img_match[0][1]
+        img_name = os.path.basename(src_path)
+        img_name_sanitized = img_name.replace(" ", "-").replace("_", "-")
 
-      # Move the image to a new directory
-      shutil.move(img_path, new_img_path_full)
+        os.makedirs(new_img_dir, exist_ok=True)
+        target = os.path.join(new_img_dir, img_name_sanitized)
+        shutil.move(src_path, target)
 
-      # Write the new image code
-      f.write("![" + alt_tag + "](" + new_img_path_full[1:] + ")\n") # Remove the starting '.'
-      # I use a custom class (.caption) to style the text under images
-      f.write("\nCAPTION_GOES_HERE\n")
-      f.write("{: .caption}")
+        out.write(f"![{alt_tag}]({target[1:]})\n")
+
+        # Find caption on next non-empty line
+        caption = "CAPTION GOES HERE"
+        j = i + 1
+        while j < len(lines):
+            next_line = lines[j].strip()
+            if next_line:
+                caption = next_line
+                break
+            j += 1
+
+        out.write("\n" + caption + "\n")
+        out.write("{: .caption}\n")
+        i = j  # skip caption line next iteration
     else:
-      f.write(line)
+        out.write(line)
+    i += 1
 
-# Close file stream
-f.close()
-print("Blog post successfully generated! Nice work :)")
+out.close()
+print(f"Blog post '{final_title}' generated successfully!")
