@@ -106,9 +106,11 @@ No. Maybe? Honestly probably not unless you fiddle with the velocity sliders and
 
 ## Reception
 
-I mostly got reception via [my companies](http://figma.com/) Slack channel.
+I mostly got reception via [my company's](http://figma.com/) Slack channel.
 
 ![slack](/assets/img/2025-07-21-3d-dvd-loading-screen/slack.png)
 
-People shared their high score, a number of bugs ([disposing](https://threejs.org/docs/#api/en/materials/Material.dispose) of out of date materials and textures!!), and successfully killing at least a few hours of what could have been productive work. Overall this was a fun little project that was small in scope to begin with, and finished as a respectable bite size website.
+Wow - 21 reacts! Although one of them is mine
 {: .caption}
+
+People shared their high score, a number of bugs ([disposing](https://threejs.org/docs/#api/en/materials/Material.dispose) of out of date materials and textures!!), and successfully killing at least a few hours of what could have been productive work. Overall this was a fun little project that was small in scope to begin with, and finished as a respectable bite size website.
