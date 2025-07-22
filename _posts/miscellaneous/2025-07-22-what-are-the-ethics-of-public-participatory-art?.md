@@ -11,7 +11,7 @@ I recently read the book *Uncanny Valley* by Anna Wiener, which talks about tech
 
 Last week as part of our 'Conversations in New York Class' we had the media artist [Roopa Vasudevan](https://roopavasudevan.com/) come to talk to our cohort about a selection of her works. One of them [#Bellwether](https://www.nyu.edu/about/news-publications/news/2018/march/an-algorithm-for-art.html), compiled Twitter data to conduct sentiment analysis and eventually produce a series of faux campaign posters plastered with social media praise and vitrol. The effect was quite striking to me, to see a room full of campaign buttons, yard signs, and flyers that look legitimate on first glace, but reveal individual sentiments on closer inspection.
 
-![bellwether](/assets/img/2025-07-22-what-are-the-ethics-of-public-participatory-art?/bellwether.jpg)
+![Photo of fake campaign merch from the artists exhibit](/assets/img/2025-07-22-what-are-the-ethics-of-public-participatory-art/bellwether.jpg)
 
 A photo from the exhibit. Sourced from the [artists site](https://roopavasudevan.com/artwork/)
 {: .caption}
