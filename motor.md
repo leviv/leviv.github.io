@@ -1,0 +1,4 @@
+---
+layout: motor
+permalink: /motor/
+---

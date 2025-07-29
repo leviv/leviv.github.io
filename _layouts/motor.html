@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Motor Control</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
+<body>
+  <h1>Motor Control</h1>
+  <button onclick="setMotor(true)">Turn ON</button>
+  <button onclick="setMotor(false)">Turn OFF</button>
+
+  <script>
+    // Firebase config with only databaseURL (no apiKey/auth needed)
+    const firebaseConfig = {
+      databaseURL: "https://motor-88c72-default-rtdb.firebaseio.com"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Write motor state to /motor node
+    function setMotor(state) {
+      database.ref('/motor').set(state)
+        .then(() => {
+          alert(`Motor turned ${state ? "ON" : "OFF"}`);
+        })
+        .catch(error => {
+          console.error("Failed to update motor state:", error);
+          alert("Failed to update motor state.");
+        });
+    }
+  </script>
+</body>
+</html>
