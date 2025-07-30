@@ -15,19 +15,48 @@ This was a semester long project completed for CS373 - Software Engineering with
 
 Below is a long Technical Report that covers everything we needed to document for the final project. But what it doesn't mention is the process that it took to bring PutItInPark back online after nearly 4 years dormant.
 
-Because our database and our backend were hosted on Google Cloud Platform, we were constrained by the meager amount of student Cloud credits we got. And while enough to get us through the school year, after the class had finished and the next year started, my account slowly drained to 0 credits available. 
+Because our database and our backend were hosted on Google Cloud Platform, we were constrained by the meager amount of student Cloud credits we got. And while we had enough to get us through the school year, after the class had finished and the next year started my account slowly drained to 0. 
 
 However, I was extemely proud of this project! I started drafting this write up multiple times during the lockdowns of 2020, but could find no simple way of bringing the site back online without spending a few hundred dollars a year. However, I knew it was possible because the site had nothing dynamic, no user data, and zero updates since the class ended. 
 
 In 2024, I finally got the motivation to attempt the conversion. This included
 
 - Switching from the traditional React Router to a `HashRouter`. You may notice that every url has a `#` (e.g. `PutItInPark/#/states/1`). This pattern allows us to have a single page app that acts like we have a bunch of distinct pages.
-- Created new python scripts to fetch data and store it in javascript objects (`client/src/fake_api/`). These files act as our 'database' which is fine because we only update them manually by rerunning the scripts, and there's nothing sensitive in there.
-- Creating a `fakeFetch` Api method in `client/src/fake_api/fakeApi.js`. Here we accept an 'api string' and parse it the same way our Flask API used to. This includes handling pagination, filtering, sorting, and more! It was an interesting exploration to implement these features manually, as before I just completely relied on Flask to handle all of that.
-- Created a new home page visualization that was more interesting than a stock photo
+- Created new python scripts to fetch data and store it in javascript objects (`client/src/fake_api/`). These files act as our 'database' which is fine because we only update them manually by rerunning the scripts, and there's no user data in there.
+- Creating a `fakeFetch` Api method in `client/src/fake_api/fakeApi.js`. Here we accept an 'api string' and parse it the same way our Flask API used to. This includes handling pagination, filtering, sorting, and more! It was an interesting exploration to implement these features manually, as before I just completely relied on Flask.
+- Created a new home page visualization that was more interesting than a stock photo.
 - A bunch of other small quality of life updates that once I started it was hard to stop! 2019 me really had some bad practices around React components. 
 
 Even with all of this there is likely some lingering bugs! Please feel free to poke around the website and email me any feedback.
+
+## CS373 Reflections
+
+This was one of the most intense computer science electives I took at UT. The semester-long project was just one component in the course. Most of the class time was spent learning basic python and basic SQL, and we were left to figure out the technical side of the project ourselves. We also had to write weekly blog posts dicussing our lives and answering given prompts.
+
+![Rate my professor review](/assets/img/2025-05-16-put-it-in-park/review.png)
+
+My RateMyProfessor Review after the class was finished
+{: .caption}
+
+> My least favorite class I have taken in UTCS department. The class topics seem haphazardly selected, do not relate much to actual software development, and are better covered in other classes. I actually liked the project, but random groups made it so much worse. The class and exam format is not engaging and left me very disappointed overall.
+
+This class had incredible potential, and it was the CS elective I was most excited about UT. The concepts that were explored and the premise of the group project really excited me as a web developer and designer. However, the in person content was essentially Python 101 for the first two months, and then intro to SQL for the rest of the class. The project, on the other hand, involved creating APIs, databases, and a React frontend. These were engaging topics! But none of them were covered in class.
+
+Team member choice was also entirely out of my control. We filled out surveys at the beginning of the semester with our availability, demographics, etc, and were sorted into groups of algorthmically generated compatibility. In my case, I was partnered with 4 teammates. Three of them contributed less than nothing to the final project. For one reason or another (last semester of college with a job already lined up, mental health crisis, other university priorities), these teammates were focused on anything but this class, and would lie about progress until right before the deadline. And the professor, in his infinite wisdom, gave one grade to the whole group with no recourse of changing teams, or negotiating higher grades for more work.
+
+I still vividly remember the day our first project milestone was due. I was in Chicago for 2 days only for an Optiver intervew. I was walking around the city for the first time - I saw The Bean, checked into my hotel (The Athletic), and walked along the lake shore. I had finished my work days earlier, telling my teammates that I would be offline while in the Windy City. While walking around Millenium Park, I sent a message to a member of the team whose work had not yet been added. He was in charge of creating a frontend page for each of our three data models, and had told us days before that he was all but finished. This page did not yet have to be hooked up to real data, just a blank canvas for which to start the frontend. 
+
+I watched my message be ignored for one, two, three hours. I sent a few more follow-ups, each more desperate as the midnight deadline got closer and closer. Eventually, I had no recourse but to send a message I was going back to my hotel and doing it myself, with still nothing but complete radio silence from my teammate. Finishing the hasty web page in a few hours, I committed the code and sent it to the team, leaving to get a slice of deep dish pizza at one of the few places still open that late. Immediately following a half day of silence, my teammate replies that he was offended I had done his work, and that he had just finished the code himself. I hastily apologized, and asked him to commit his code that he had worked the past two weeks on, and we could just discard my attempt. However, he said that oh no! He had actually just deleted it, and we could just use my work for this milestone.
+
+This was unfortunately not a one time occurrance. The project was plagued by broken promises, missed deadlines, and non-functioning code. After this hapened twice, my teammate Ella and I started splitting work meant for 5 among just the 2 of us, assigning our other 3 team member to smaller, inconsequential aspects of the project which they also struggled to finish on time.
+
+This all being said, I became intimitely familiar with this project. I set up the Google Cloud project, I created the entirety of our API, I wrote the entirety of our backend, I designed and developed every single page of the website, and created every data visualtion. And Ella setup the entire database, got API keys for all of our data sources, and created all of the schemas used for the backend. She truly was the one saving grace of this ill-fated team, and I fear I would have gone insane without her.
+
+When it came time for the final presentation, we knew we had hit it out of the park. Our website was the most full-featured and best designed of the class. We had a predictible color palette, slick layouts, and even a responsive mobile site! Just the fact that we bothered to add proper spacing and legible text made us stand out amongst the hoard of functional-but-plain websites. We were added to the shortlist of example websites for future CS373 students to study, and received a hearty round of applause from our classmates.
+
+Did all that make the suffering worth it?
+
+No ? Maybe. But I still like the site :)
 
 
 <hr> 
@@ -420,32 +449,3 @@ The website we were to make for this class was very specific. I searched for age
   - You must create Postman documntation for the API
 - You must have frontend test, backend tests, and end-to-end tests
   - These tests must run as a CI job on commit
-
-## CS373 Reflections
-
-This was one of the most intense computer science electives I took while at UT. The semester-long project was just one component in the course. Most of the class time was actually spent learning basic python and basic SQL, and we were left to figure out the technical side of the project ourselves. We also had to write weekly blog posts dicussing our lives and answering given prompts.
-
-![Rate my professor review](/assets/img/2025-05-16-put-it-in-park/review.png)
-
-My RateMyProfessor Review after the class was finished
-{: .caption}
-
-> My least favorite class I have taken in UTCS department. The class topics seem haphazardly selected, do not relate much to actual software development, and are better covered in other classes. I actually liked the project, but random groups made it so much worse. The class and exam format is not engaging and left me very disappointed overall.
-
-This class had incredible potential, and it was the CS elective I was probably most excited about UT. The concepts that were explored and the premise of the group project really excited me as a web developer. However, the in person content was essentially Python 101 for the first two months, and then intro to SQL for the rest of the class. The project on the other hand, involved creating APIs, databases, and a React frontend. These were engaging topics! But none of them were covered in class.
-
-In addition, group assignments were entirely out of your control. We filled out surveys at the beginning of the semester with our availability, demographics, etc, and were sorted into groups of algorthmically generated compatibility. In my case I was partnered with 4 teammates, three of which contributed less than nothing to the final project. For one reason or another (last semester of college with a job already lined up, mental health crisis, other university priorities), these teammates were focused on anything but this class, and would lie about progress until right before the deadline. And the professor, in his infiinite wisdom, gave one grade to the whole group, with no recourse of changing teams, or negotiating higher grades for more work.
-
-The milestone, I trusted my team members to deliver on the work that we had assigned, and was blindsided when the day of the deadline came to pass, and there was no work done. I still remember the day vividly. I was in Chicago for 2 days only for an Optiver intervew. I was walking around the city for the first time in the limited amount of time that I had.  I finished my work days earlier, telling my teammates that I would be offline while in the Windy City. However, that afternoon, while walking around Millenium Park, I sent a message to a member of the team whose work was essential to this milestone. He was in charge of creating a frontend page for each of our three data models, and had told us all days before that he was all but finished. This page did not yet have to be hooked up to real data, just a blank canvas for which to start the frontend. 
-
-I watched my message be ignored for one, two, three hours. I sent a few more follow-ups, each more desperate as the midnight deadline got closer and closer. Eventually, I had no recourse but to send a message I was going back to my hotel and doing it myself, all the while with complete radio silence from my teammate. Finishing the hasty web page in a few hours, I committed the code and sent it to the team, leaving to get a slice of deep dish pizza and one of the few places still open that late. Immediately, following a half day of silence, my teammate replies that he was offended I had done his work, and that he had just finished the code himself. I hastily told him I apologized, and to commit his code that he had worked the past two weeks on, and we could just discard my attempt. However, he said that oh no! He had actually just deleted the code from his computer, and we could just use mine for this milestone.
-
-This was unfortunately not a one time occurrance. The project was plagued by broken promises, missed deadlines, and non-functioning code. After this hapened twice, my teammate Ella and I started splitting work meant for 5 among just the 2 of us, assigning our other 3 team member to smaller, inconsequential aspects of the project which they also struggled to finish on time.
-
-This all being said, I became intimitely familiar with this project. I set up the Google Cloud project, I created the entirety of our API, I created the entirety of our backend, I designed and developed every single page of the website, and created every data visualtion on the website. And Ella setup the entire database, got API keys for all of our data sources, and created all of the schemas used in the backend. She truly was the one saving grace of this ill-fated team, and I fear I would have gone insane without her.
-
-When it came time for the final presentation, we knew we had hit it out of the park. Our website was the most full-featured and best designed. We had a predictible color palette, slick layouts, and even a responsive mobile site! Just the fact that we bothered to add proper spacing and legible text made us stand out amongst the hoard of functional-but-plain websites. We were added to the shortlist of example websites for future CS373 students to study, and received a hearty round of applause from our classmates.
-
-Did all that make the suffering worth it?
-
-No ? Maybe. But I still like the site :)
