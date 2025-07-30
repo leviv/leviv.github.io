@@ -21,7 +21,7 @@ Do you guys remember the bouncing dvd logo when we used to primarily watch movie
 
 It was a paradigm born of necessity, back when displaying a static image for too long on a CRT (cathode ray tube) monitor could easily cause burn-in.
 
-In CRT monitors, images are displayed by shooting streams of electrons at a phosporous screen, which causes that part of the screen to glow. Bombard the same spot with too many electrons for too long, and you'll see that part of the screen glow even while it's no longer actively been lit up. 
+In CRT monitors, images are displayed by shooting streams of electrons at a phosporous screen, which causes that part of the screen to glow. Bombard the same spot with too many electrons for too long and you'll see that part of the screen glow even while it's no longer actively being lit up. 
 
 So when I saw an instagram reel experiment 2 years ago with a rendered bouncing 3d logo - I knew it was a great project to try out with my newfound [ThreeJS knowledge](https://threejs-journey.com/). I have searched high and low to find the original Instagram video I was inspired by - to no avail! Shoot me an email if you find it!
 
@@ -87,9 +87,9 @@ const tick = () => {
 tick()
 ```
 
-We have two boxes.  We move each axis on the inner boxy by `05` each `tick`. When the inner box crosses the outer boxes bounder, we reverse the velocity for that axis. And for two years that's how the code stayed. Just a box bouncing around - not very exciting!
+Here we create two boxes.  We move each axis on the inner box by `.05` each `tick`. When the inner box crosses the outer boxes bounds, we reverse the velocity for that axis. And for two years that's how the code stayed. Just a box bouncing around - not very exciting!
 
-So I added a bunch of 'juice' to make things more interesting. I added
+So I added a bunch of 'juice' to make things more interesting.
 
 - An intro animation
 - The actual DVD logo as a texture on the inner box
@@ -102,7 +102,7 @@ This really elevated the project from boring to at least mildly interesting!
 
 ## So does this thing ever hit the corner?
 
-No. Maybe? Honestly probably not unless you fiddle with the velocity sliders and get lucky. When fiddling with the initial velocity I was either getting patterns that hit the corners way too often, or patterns that seemingly missed the corners forever. But maybe it's just because I'm not patient enough. I'm not sure the exact math behind getting, say, one corner hit ever 100 bounces, but if I do figure that out, I'll update the code!
+No. Maybe? Honestly probably not unless you fiddle with the velocity sliders and get lucky. When play-testing the initial velocity I was either getting patterns that hit the corners way too often, or patterns that seemingly missed the corners forever. But maybe it's just because I'm not patient enough. I'm not sure the exact math behind getting, say, one corner hit every 100 bounces. But if I do figure that out, I'll update the code!
 
 ## Reception
 
@@ -113,4 +113,4 @@ I mostly got reception via [my company's](http://figma.com/) Slack channel.
 Wow - 21 reacts! Although one of them is mine
 {: .caption}
 
-People shared their high score, a number of bugs ([disposing](https://threejs.org/docs/#api/en/materials/Material.dispose) of out of date materials and textures!!), and successfully killing at least a few hours of what could have been productive work. Overall this was a fun little project that was small in scope to begin with, and finished as a respectable bite size website.
+People shared their high score, a number of bugs (I was not [disposing](https://threejs.org/docs/#api/en/materials/Material.dispose) of out of date materials and textures!!), and successfully killing at least a few hours of what could have been productive work for Figma shareholders. Overall this was a fun little project that was small in scope to begin with, and finished as a respectable bite size website.
