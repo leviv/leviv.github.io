@@ -3,7 +3,7 @@ layout: post
 title: "Spreading ideas - and Wifi signals"
 image: /assets/img/2025-07-21-spreading-ideas---and-wifi-signals/final_posters.png
 category: projects
-tag: personal
+tag: grad-school
 ---
 
 
