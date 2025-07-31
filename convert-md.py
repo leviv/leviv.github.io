@@ -58,7 +58,7 @@ out.write("layout: post\n")
 out.write(f'title: "{final_title}"\n')
 out.write("image: \n")
 out.write(f"category: {post_category}\n")
-out.write(f"miscellaneous: {post_category}\n")
+out.write(f"tag: {post_category}\n")
 out.write("---\n\n")
 
 # Read full post file
