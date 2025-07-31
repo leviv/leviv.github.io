@@ -10,27 +10,28 @@ tag: grad-school
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/Tko8nDTEqjo?si=-stSTr1Js0pkJzWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 *Desk Friend (2025) Levi Villarreal*
+{: .caption}
 
-## On throwing things out into the digital ether
+## Throwing things into the digital ether
 
-To this day, when someone tells me that they read my blog, or saw a project I put online - I am still surprised. Despite the fact that putting things online is sharing your work in the most wide reaching way possible across human history - it feels to me, detached from reality. Like the web is a sphere that sits next to the physical world, only occasionally making contact.
+When someone tells me that they read my blog, or saw a project I put online - I am always shocked. Despite the fact that putting things online is sharing your work in the most wide reaching way possible in human history - it still feels somehow detached from reality. Like the web is a sphere that sits *next* to the physical world, only occasionally making contact.
 
-I think this is why I have always loved digital guest books. Things that allow people to write "I was here". It's like getting to the end of a solo hike to a lonely peak, and seeing a log box that shows you are connected to the travelers that had made the journey before you.
+I think this is why I have always loved digital guest books. Things that allow people to write "I was here". It's like getting to the end of a solo hike to a lonely peak, and seeing a log box that shows you are connected to the travelers that had made the journey before long before you.
 
 ![inspirations](/assets/img/2025-07-30-desk-friend/inspirations.png)
 
-Three of my inspirations for this project. 1) A summit log on the top of a mountain in Mexico, where my friends from New York had written a year earlier. 2) [yourworldoftext](https://www.yourworldoftext.com/~selenechang/) by Selene Chang - a text based log book and collaborative website. 3) [Gleb Sabirzyanov's](https://gleb.sexy) logbook - a long running open access Figma file that allowed any type of contributions before eventually shutting down in 2024.
+Three of my inspirations for this project. <br>1) A summit log on the top of a mountain in Mexico, where my friends from New York had written a year earlier. <br>2) [yourworldoftext](https://www.yourworldoftext.com/~selenechang/) by Selene Chang - a text based log book and collaborative website. <br>3) [Gleb Sabirzyanov's](https://gleb.sexy) logbook - a long running open access Figma file that allowed any type of contributions before eventually shutting down in 2024.
 {: .caption}
 
-I wanted this project to be an extension of this idea, a way for digital travelers who stumbled across my website could make their presence known to me in the phyiscal world. 
+I wanted this project to be an extension of this idea - a way for digital travelers who stumbled across my website to make their presence known to me in the phyiscal world. 
 
 ## Minimum viable product
 
-I became a bit paralyzed when considering a long term installation that could live on my desk - or perhaps a wearable. Thus I decided to focus on a **minimum viable product** or MVP. I wanted to make something movie via an Arduino using a button on my website. Shouldn't be too hard right?
+I became a bit paralyzed when considering a long term installation that could live on my desk (or perhaps a wearable?). Thus I decided to focus on a **minimum viable product** or MVP. I wanted to make something movie via an Arduino using a button on my website. Shouldn't be too hard right?
 
 ### 3D Model
 
-I scanned my real life friend - [Queenie](queeniwu.com), for the physical object that would move. I used a free Polycam account to take a series of 120 pictures on the floor of the NYU ITP lab in Brooklyn. I cropped the scan in the app, and used the free web based 3d editor OnShape to convert the file from `gltf` to `stl` - a format required by the school 3D printers.
+I scanned my real life friend - [Queenie](queeniwu.com), for the physical object that would move. I used a free Polycam account to take a series of 120 pictures on the floor of the NYU ITP lab in Brooklyn. I cropped the scan in the app, and used the free web based 3d editor OnShape to convert the file from `gltf` to `stl` - a format required by the 3D printers in the school.
 
 ![polycam](/assets/img/2025-07-30-desk-friend/polycam.gif)
 
