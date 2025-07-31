@@ -177,12 +177,10 @@ void checkData() {
   </script>
 ```
 
-This code was kind of gross and not something I was too proud of. We have no real error handline, no styling, no async call in the Arduino code. It barely worked for a proof of concept, but would need several refinements before it would be something I would consider closer to being finished.
+This code was kind of gross and not something I was proud of. I have no real error handline, no styling, no async call in the Arduino code. It barely worked for a proof of concept, and would need several refinements before it would be something I would consider passable.
 
 ## Reflection
 
 I was able to give a successful live demo in class! I had classmates turn the device on and off from their own computers, and it was such a relief that everything managed to come together at the last moment.
 
-It's hard to feel I didn't completely miss the mark on this project. So far I have consistently been able to turn out high quality work in this program, and this was definitely not an example of that. My desire to use AI tools almost spelled disaster for this project. However, I am proud of myself for getting something working in spite of everything that went wrong. I'm glad I got to learn how to do a quick 3d scan, and that my project was something that could speak to my peers. 
-
-I have ideas of continuing to explore this theme in the future even if it is not a direct follow-up to this piece. But for now, I'm grateful for all the learnings that this project could teach me.
+Despite that, it's hard to feel I didn't completely miss the mark on this project. So far I have consistently been able to turn out high quality work in this program, and this was definitely not an example of that. My desire to use AI tools almost spelled disaster for this project. However, I am proud of myself for getting something working in spite of everything that went wrong. I'm glad I got to learn how to do a quick 3d scan, and that my project was something that could speak to my peers. 
