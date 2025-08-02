@@ -1,6 +1,0 @@
-[submodule "botw-loader"]
-	path = botw-loader
-	url = https://github.com/leviv/botw-loader
-[submodule "two-square-cipher"]
-	path = two-square-cipher
-	url = https://github.com/leviv/two-square-cipher
