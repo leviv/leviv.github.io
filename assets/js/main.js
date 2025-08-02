@@ -168,9 +168,9 @@ const lines = new THREE.LineSegments(
   new THREE.LineBasicMaterial({ color: edgeColor })
 );
 sculpture.add(lines);
-sculpture.rotation.x = 0;
-sculpture.position.x = -2.5;
-camera.position.z = 3;
+sculpture.rotation.x = -0.9;
+sculpture.position.x = 0;
+camera.position.z = 5;
 
 scene.add(sculpture);
 
@@ -187,7 +187,7 @@ const render = () => {
 
 render();
 
-let zoomed = true;
+let zoomed = false;
 let inProgress = false;
 
 function aboutAnimation() {
