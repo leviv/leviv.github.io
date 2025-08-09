@@ -9,11 +9,19 @@ canvas {
   display: block;
 }
 
+.webring {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  font-size: 14px;
+  display: inline;
+}
+
 section#home-content {
   position: absolute;
   text-align: right;
-  bottom: 8%;
-  right: 8%;
+  bottom: 25px;
+  right: 25px;
 
   @media screen and (max-width: $small) {
     bottom: 25px;
