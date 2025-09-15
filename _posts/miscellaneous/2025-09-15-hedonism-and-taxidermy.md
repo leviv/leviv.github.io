@@ -9,13 +9,15 @@ tag: miscellaneous
 
 This week for my class *Critical Experiences* I was assigned excerpts from the book *Emergent Strategy: Shaping Change, Changing Worlds* by Adrienne Maree Brown. On its face, this book seemed extremely unappealing to me: a nebulous, vaguely-self help style book full of empty platitudes and fetishization of indigenous practices and cultures. Written by an author who by their own admission does not have data to support any of their conclusions. As I read more, I can't say my opinion changed much, but that doesn't mean there was nothing to reflect on or learn from.
 
+## What is our purpose in life?
+
 > A mushroom is a toxin-transformer, a dandelion is a community of healers waiting to spread… What are we as humans, what is our function in the universe?
 >
 > ...
 >
 > I often feel I am trapped inside someone else's imagination, and I must engage my own imagination to break free.
 
-Even before I left the Mormon church, I was grappling with this question. The church approved answer was that we were on this live to prepare to meet God; i.e. do good things and go to church so that we would be let into the highest level of heaven. But... then what? Apparently being in the presence of God was going to be so great that I would feel eternally fulfilled. This answer was barely enough for me as a child, but once I left the church, it opened up a whole new quest for this answer. I had to engage my own imagination and define for myself what I am on this Earth to do.
+Even before I left the Mormon church, I was grappling with this question. The church approved answer was that this life was to prepare to meet God; i.e. we do good things, profess our belief in God, and go to church so that we would be let into the highest level of heaven. But... then what? Apparently, being in the presence of God was going to be so great that we would feel eternally fulfilled in some way that was beyond mortal understanding. This answer was barely enough for me as a child, but once I left the church, it opened up a whole new search for a satisfying answer. I had to engage my own imagination and define for myself what I was on this Earth to do.
 
 Immediately after leaving the church, the easy answer that came to me was that our highest purpose was to materially help others. I spent long nights thinking about how I could benefit the most number of people in the world. Would it be through dedicating my life to non-profit work abroad? Pursuing a medical degree to develop unique skills to alleviate physical suffering? Or maybe seeking out the highest paying job possible and trusting that I could use Effective Altruism to direct large sums of money to the world's woes. But none of these sat well with me either. Everyone's life couldn't be helping others, and one's entire life can't be in service to others in complete replacement of service to self.
 
