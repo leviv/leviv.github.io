@@ -7,7 +7,7 @@ tag: grad-school
 ---
 
 
-[Try out the map](leviv.cool/abortion-desert)
+[Try out the map](https://leviv.cool/abortion-desert)
 
 ![Texas abortion map](/assets/img/2025-09-18-abortion-deserts/texas.png)
 
