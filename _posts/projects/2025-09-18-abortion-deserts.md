@@ -96,7 +96,7 @@ I used `Svelte` as the web framework for this project, and (mentioned earlier) d
 
 The relevant code for plotting the states and counties is as follows
 
-```typescript
+```javascript
 import us from '$lib/us.json';
 import { feature } from 'topojson-client';
 
@@ -133,7 +133,7 @@ countiesGroup
 
 We implemented panning and zooming ourselves, which was way easier than expected.
 
-```typescript
+```javascript
 // Panning and zooming functionality
 const zoom = d3
   .zoom()
@@ -150,30 +150,30 @@ const zoom = d3
 
 When the user clicks on the map, we run a function that loops through all of the clinics and finds the shortest distance. We make a (very naïve assumption) that 1km of distance will equal roughly 1 minute of travel time, and multiply that by 2 to get the round trip time.
 
-```typescript
+```javascript
 function findShortestDistance(
 		clinicPoints: [number, number][],
 		clickedCoordinates: [number, number] | null
 	): { closestClinic: [number, number] | null; minDistance: number } {
-		// for length of array use d3.distance to calculate distance between click and a point. if it's shorter than min, replace value
-		let minDistance = Infinity;
-		let closestClinic: [number, number] | null = null;
+  // for length of array use d3.distance to calculate distance between click and a point. if it's shorter than min, replace value
+  let minDistance = Infinity;
+  let closestClinic: [number, number] | null = null;
 
-		if (!clickedCoordinates) {
-			return { closestClinic: null, minDistance: Infinity };
-		}
+  if (!clickedCoordinates) {
+    return { closestClinic: null, minDistance: Infinity };
+  }
 
-		for (const point of clinicPoints) {
-			const radians = geoDistance(point, clickedCoordinates);
-			const distanceKm = radians * 6371 * 2; // times by earth's radius in km, double for round trip
+  for (const point of clinicPoints) {
+    const radians = geoDistance(point, clickedCoordinates);
+    const distanceKm = radians * 6371 * 2; // times by earth's radius in km, double for round trip
 
-			if (distanceKm < minDistance) {
-				minDistance = Math.floor(distanceKm * 100) / 100;
-				closestClinic = point;
-			}
-		}
-		return { closestClinic, minDistance };
-	}
+    if (distanceKm < minDistance) {
+      minDistance = Math.floor(distanceKm * 100) / 100;
+      closestClinic = point;
+    }
+  }
+  return { closestClinic, minDistance };
+}
 ```
 
 ## Reflection
