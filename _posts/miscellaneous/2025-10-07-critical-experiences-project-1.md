@@ -11,10 +11,12 @@ tag: miscellaneous
 
    My guide is a diorama/showcase to show the longevity of different forms of preservation. I'm going to create different physical representations of a digital Neopet and mount them on a backing that looks like a real taxidermy mount
 
-![Taxidermy mount](/assets/img/2025-10-07-critical-experiences-project-1/mount.jpg)
+   ![Taxidermy mount](/assets/img/2025-10-07-critical-experiences-project-1/mount.jpg)
+   
+   An example of a wooden taxidermy mount
+   {: .caption}
 
 2. What are you titling your guide?
-{: .caption}
 
    "Digital Taxidermy"
 
