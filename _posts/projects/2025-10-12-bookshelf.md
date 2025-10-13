@@ -20,7 +20,7 @@ A close up section of the bookshelf
 
 Early last year I came across this Tweet from Adam Majmudar
 
-  <blockquote class="twitter-tweet"><p lang="en" dir="ltr">spent way too long making my book review page<br><br>ended up building a 3d interactive bookshelf <a href="https://t.co/nwotnY5pJN">pic.twitter.com/nwotnY5pJN</a></p>&mdash; adammaj (@MajmudarAdam) <a href="https://twitter.com/MajmudarAdam/status/1760485637680198099?ref_src=twsrc%5Etfw">February 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">spent way too long making my book review page<br><br>ended up building a 3d interactive bookshelf <a href="https://t.co/nwotnY5pJN">pic.twitter.com/nwotnY5pJN</a></p>&mdash; adammaj (@MajmudarAdam) <a href="https://twitter.com/MajmudarAdam/status/1760485637680198099?ref_src=twsrc%5Etfw">February 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 I had spent way too much time in 2021 exploring and trying to recreate the [Stripe Press](https://press.stripe.com/) website. In my deep dive of Stripes compiled code, I found that each book was a combination of a 3D model, texture and diffusion maps, and overlays. The books were then loaded into the browser with ThreeJS, with shaders using all the resources to create the matte and shimmering effects. This was a bit complicated for me, especially at that time when I had never heard of or created a shader before. 
 
