@@ -22,16 +22,17 @@ Early last year I came across this Tweet from Adam Majmudar
 
   <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">spent way too long making my book review page<br><br>ended up building a 3d interactive bookshelf <a href="https://t.co/nwotnY5pJN">pic.twitter.com/nwotnY5pJN</a></p>&mdash; adammaj (@MajmudarAdam) <a href="https://twitter.com/MajmudarAdam/status/1760485637680198099?ref_src=twsrc%5Etfw">February 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I had spent way too much time in 2021 exploring and trying to recreate the [Stripe Press](https://press.stripe.com/) website. In my deep dive of Stripes compiled code, I found that each book was a combination of a 3D model, texture and diffusion maps, and overlays. The books were then loaded into the browser with ThreeJS, with shaders using all the resources to create the matte and shimmering effects. This was a bit complicated for me, especially at that time when I had never heard of or created a shader before. 
 
-I abandoned the project until seeing Adam's tweet, which reignited my desire to create a personal digital bookshelf. Adam linked his code in the replies, and I used that to get started. It used a much simpler CSS transform and SVG filter to create the 3D effect, which didn't require creating custom texture maps like the Stripe Website. I converted his Next Code to Svelte, and got a rough prototype working that used the same transforms.
+Years earlier in 2021 I spent way too much time exploring and trying to recreate the [Stripe Press](https://press.stripe.com/) website. In my deep dive of Stripes compiled code, I found that each book was a combination of a 3D model, texture and diffusion maps, and png overlays. The books were then loaded into the browser with ThreeJS, with custom shaders using all the aforementioned resources to create the matte and shimmer effects. This was all a bit to complex for what I wanted to achieve, especially because I had never even heard of a shader before. 
+
+I abandoned the project until seeing Adam's tweet, which reignited my desire to create a personal digital bookshelf. Adam linked his code in the replies, and I used that to get started. It used a much simpler CSS transform and SVG filter to create the 3D effect. Although it looked less impressive, it also didn't require creating custom texture maps for each book like Stripe Press. I converted his NextJS Code to Svelte, and got a rough prototype working that used the same CSS transforms.
 
 ![book animation demo](/assets/img/2025-10-12-bookshelf/demo.gif)
 
 A working svelte demo, using the animation from Adams bookshelf
 {: .caption}
 
-After this, I promptly abandoned the project for a year and a half, getting busy with my day job at Figma. I picked it back up again when my first project for Connections Lab in grad school was to make 'something' interactive that used a dataset. I had long had the idea to connect the bookshelf to my Goodreads profile - on which I had been faithfully reviewing books for the past two years.
+After this, I promptly abandoned the project for a year and a half, getting busy with my day job at Figma. I picked it back up again when my first project for Connections Lab was to make an interactive website that used a dataset. I had long had the idea to connect the bookshelf to my Goodreads profile - on which I had been faithfully reviewing books for the past two years.
 
 ## Development
 
@@ -42,7 +43,7 @@ The two technical complexities of this project were:
 
 ### Connecting the bookshelf to Goodreads data
 
-Finding my Goodreads data is easy. There's a [settings page](https://www.goodreads.com/review/import) that makes your data available in `.csv` format at the push of a button. Looking at the downloads you can see a number of interesting fields. Here's some of the relevant ones - there's a sample file on the import/export page to see all.
+Finding my Goodreads data was easy. There's a [settings page](https://www.goodreads.com/review/import) that makes your data available in `.csv` format at the push of a button. Looking at the downloads you can see a number of interesting fields. Here's some of the relevant ones - there's a sample file on the import/export page to see all.
 
 ```txt
 {
@@ -59,7 +60,7 @@ Finding my Goodreads data is easy. There's a [settings page](https://www.goodrea
 }
 ```
 
-I used the number of pages to set the width of the book in the bookshelf which works pretty well for all the books in my 'read' shelf except for The Power Broker (1,246 pages). It was a helpful list of book data with which I could fetch the publication date, average rating, author etc, and personal data to display my review of the book.
+I used the number of pages to set the width of the book in the bookshelf. This works pretty well for all the books in my 'read' shelf except for The Power Broker (1,246 pages). It was a helpful list of book data with which I could fetch the publication date, average rating, author etc, and personal data to display my review of the book.
 
 ![A long virtual bookshelf](/assets/img/2025-10-12-bookshelf/entire-bookshelf.png)
 
