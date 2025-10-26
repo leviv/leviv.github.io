@@ -3,7 +3,7 @@ layout: post
 title: "Digital Taxidermy"
 image: /assets/img/2025-10-26-digital-taxidermy/gallery.png
 category: projects
-tag: projects
+tag: grad-school
 ---
 
 
