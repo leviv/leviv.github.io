@@ -75,7 +75,7 @@ Laser cutter in action making the labels
 
 I created a quick p5 sketch that used a [glitch library](https://ffd8.github.io/p5.glitch//) to make it appear as if the neopet gif was being corrupted. I loaded the sketch on an old Android test device I had from work and mounted it between four nails on the wood.
 
-<iframe src="https://editor.p5js.org/leviv/full/5XgiHUOD6" height="100%" width="600px" ></iframe>
+<iframe src="https://editor.p5js.org/leviv/full/5XgiHUOD6" width="100%" height="650px" ></iframe>
 
 <br>
 
