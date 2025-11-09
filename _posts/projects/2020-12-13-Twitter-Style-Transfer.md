@@ -9,7 +9,7 @@ usemathjax: true
 
 This was the final project for my grad-level course CS 395T - Topics in Natural Language Processing.
 
-View our [live demo](https://twitterstyletransfer.herokuapp.com/) to check out the project yourself!
+View/run the project code at our [GitHub repo](https://github.com/leviv/TwitterStyleTransfer)!
 
 **Authors**:
 
@@ -19,7 +19,7 @@ Isaac Buitrago
 
 ## Abstract
 
-Recent works on style transfer have allowed for the re-creation of everyday images with stylistic features from other works, such as being able to recreate your headshot in the style of a Gauguin painting. However, little research has been done in applying this method to text. In this paper, we investigate existing Recurrent Neural Network-based architectures for performing style transfer on Twitter data. With an ultimate goal of being able to re-create arbitrary input text in the writing style of any desired twitter account (e.g. @garyvee), we also created a user interface to facilitate understanding and experimentation in this domain. Our codebase and model have been [published to Github](https://github.com/leviv/TwitterStyleTransfer) to encourage further work.
+Recent works on style transfer have allowed for the re-creation of everyday images with stylistic features from other works, such as being able to recreate your headshot in the style of a Gauguin painting. However, little research has been done in applying this method to text. In this paper, we investigate existing Recurrent Neural Network-based architectures for performing style transfer on Twitter data. With an ultimate goal of being able to re-create arbitrary input text in the writing style of any desired twitter account (e.g. @garyvee). We also created a user interface to facilitate understanding and experimentation in this domain. Our codebase and model have been [published to Github](https://github.com/leviv/TwitterStyleTransfer) to encourage further work.
 
 ## Introduction
 
