@@ -18,11 +18,11 @@ Screenshot of the game experience
 
 ## Introduction
 
-A few weeks ago my friend [Lucy](https://lyuu.cc/) told me about a Wikipedia Game Jam happening soon in Brooklyn. The tagline was
+A few weeks ago my friend [Lucy](https://lyuu.cc/) told me about a Wikipedia Game Jam happening soon in Brooklyn. The tagline was:
 
 > Join developers, designers, and Wikipedia enthusiasts for a weekend of creative hacking. We're building games and interactive experiences powered by the world's largest encyclopedia.
 
-As someone who loves Wikipedia, game jams, and weird tech events, I knew I had to go. I showed up to the event early, where I was greeted by an amazing spread of food and drinks, and met a mixture of software engineers, game designers, Wikipedia editors and more. The venue it was hosted at, Hex House, a community space and artist workshop in Bushwick. The first night we had a series of great talks about art, code, and Wikipedia, and I left feeling very inspired.
+As someone who loves Wikipedia, game jams, and weird tech events, I knew I had to go. I showed up early to the event where  met a mixture of software engineers, game designers, and Wikipedia editors and enthusiasts. It was at Hex House, a community space and artist workshop in Bushwick. The first night we had a series of great talks about art, code, and Wikipedia, and I left feeling very inspired to get started on my game.
 
 The next day, we started work on the project in earnest. I had partnered with my friends Lucy and Justin on a murder mystery game. The idea came from a text Lucy sent me right before the event.
 
