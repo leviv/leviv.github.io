@@ -3,7 +3,7 @@ layout: post
 title: "WikiMystery"
 image: /assets/img/2025-11-09-wikimystery/wikigame.png
 category: projects
-tag: projects
+tag: personal
 ---
 
 
