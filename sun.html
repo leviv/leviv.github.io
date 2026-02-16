@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daylight</title>
+  </head>
+  <body>
+    <button onclick="getLocation()">Fetch Data</button>
+
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+
+    <p>Date: <span id="date"></span></p>
+    <p>Sunrise: <span id="sunrise"></span></p>
+    <p>Sunset: <span id="sunset"></span></p>
+    <p>Daylight change: <span id="daylightChange"></span></p>
+  </body>
+
+  <script>
+    const latitudeElement = document.getElementById('latitude');
+    const longitudeElement = document.getElementById('longitude');
+    const dateElement = document.getElementById('date');
+    const sunriseElement = document.getElementById('sunrise');
+    const sunsetElement = document.getElementById('sunset');
+    const daylightChangeElement = document.getElementById('daylightChange');
+
+    let latitude = 0;
+    let longitude = 0;
+
+    /**
+     * Get the user's current location using the Geolocation API.
+     */
+    async function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          // Success function
+
+          console.log(position);
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+
+          latitudeElement.innerHTML = latitude;
+          longitudeElement.innerHTML = longitude;
+
+          // Get todays sunset times
+          let date = new Date()
+          const [sunriseToday, sunsetToday] = await fetchSunData(date);
+          sunriseElement.innerHTML = sunriseToday;
+          sunsetElement.innerHTML = sunsetToday;
+          const daylightToday = new Date(sunsetToday) - new Date(sunriseToday);
+
+          // Fetch sunrise data from yesterday
+          date.setDate(date.getDate() - 1);
+          const [sunriseYesterday, sunsetYesterday] = await fetchSunData(date);
+          const daylightYesterday = new Date(sunsetYesterday) - new Date(sunriseYesterday);
+
+          // Calculate daylight change
+          const daylightChange = daylightToday - daylightYesterday;
+          daylightChangeElement.innerHTML = `${(daylightChange / (1000 * 60)).toFixed(2)} minutes`;
+        }, () => {
+          // Error function
+          latitudeElement.innerHTML = "Unable to retrieve your location.";
+          longitudeElement.innerHTML = "Unable to retrieve your location.";
+        });
+      } else { 
+        latitudeElement.innerHTML = "Geolocation is not supported by this browser.";
+        longitudeElement.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    /**
+     * Fetch sunrise and sunset data from the Sunrise-Sunset API.
+     */
+    async function fetchSunData(date) {
+      const dateString = date ? date.toISOString().split('T')[0] : 'today';
+      const apiUrl = `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0&date=${dateString}`;
+
+      return fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          const sunrise = data.results.sunrise;
+          const sunset = data.results.sunset;
+
+          console.log("Sunrise:", sunrise);
+          console.log("Sunset:", sunset);
+          return [sunrise, sunset];
+        })
+        .catch(error => {
+          console.error('Error fetching sun data:', error);
+        });
+    }
+  </script>
+</html>
