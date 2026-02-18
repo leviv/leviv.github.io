@@ -5,9 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daylight</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌅</text></svg>">
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        transition: background 2s ease;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+      
+      #sunTimes {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 48px;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+      
+      #sunTimes .time-label {
+        font-size: 24px;
+        opacity: 0.8;
+        font-weight: 400;
+      }
+    </style>
   </head>
   <body>
     <button onclick="getLocation()">Fetch Data</button>
+
+    <div id="sunTimes">
+      <div><span class="time-label">Sunrise</span></div>
+      <div id="sunriseDisplay">--:--</div>
+      <div><span class="time-label">Sunset</span></div>
+      <div id="sunsetDisplay">--:--</div>
+    </div>
 
     <p>Latitude: <span id="latitude"></span></p>
     <p>Longitude: <span id="longitude"></span></p>
@@ -16,6 +52,9 @@
     <p>Sunrise: <span id="sunrise"></span></p>
     <p>Sunset: <span id="sunset"></span></p>
     <p>Daylight change: <span id="daylightChange"></span></p>
+    
+    <p>Notifications: <span id="notificationStatus"></span></p>
+    <p id="scheduledNotifications"></p>
   </body>
 
   <script>
@@ -24,10 +63,323 @@
     const dateElement = document.getElementById('date');
     const sunriseElement = document.getElementById('sunrise');
     const sunsetElement = document.getElementById('sunset');
+    const sunriseDisplayElement = document.getElementById('sunriseDisplay');
+    const sunsetDisplayElement = document.getElementById('sunsetDisplay');
     const daylightChangeElement = document.getElementById('daylightChange');
+    const notificationStatusElement = document.getElementById('notificationStatus');
+    const scheduledNotificationsElement = document.getElementById('scheduledNotifications');
 
     let latitude = 0;
     let longitude = 0;
+
+    /**
+     * Format ISO time string to 12-hour format
+     */
+    function formatTo12Hour(isoString) {
+      const date = new Date(isoString);
+      let hours = date.getHours();
+      const minutes = date.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      
+      hours = hours % 12;
+      hours = hours ? hours : 12; // 0 should be 12
+      const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+      
+      return `${hours}:${minutesStr} ${ampm}`;
+    }
+
+    /**
+     * Request notification permission from the user.
+     */
+    async function requestNotificationPermission() {
+      if (!("Notification" in window)) {
+        notificationStatusElement.innerHTML = "This browser does not support notifications";
+        return false;
+      }
+
+      if (Notification.permission === "granted") {
+        notificationStatusElement.innerHTML = "Notifications enabled ✓";
+        return true;
+      }
+
+      if (Notification.permission === "denied") {
+        notificationStatusElement.innerHTML = "Notifications blocked (check browser settings)";
+        return false;
+      }
+
+      // Permission is "default" - need to request
+      try {
+        const permission = await Notification.requestPermission();
+        if (permission === "granted") {
+          notificationStatusElement.innerHTML = "Notifications enabled ✓";
+          return true;
+        } else if (permission === "denied") {
+          notificationStatusElement.innerHTML = "Notifications blocked";
+          return false;
+        } else {
+          // User dismissed the prompt
+          notificationStatusElement.innerHTML = "Notification permission needed (click Fetch Data again)";
+          return false;
+        }
+      } catch (error) {
+        notificationStatusElement.innerHTML = "Could not request notification permission";
+        return false;
+      }
+    }
+
+    /**
+     * Schedule a notification at a specific time with an optional callback.
+     */
+    function scheduleNotification(title, body, targetTime, onFire) {
+      const now = new Date();
+      const delay = targetTime - now;
+
+      if (delay > 0) {
+        setTimeout(() => {
+          new Notification(title, { body });
+          if (onFire) {
+            onFire();
+          }
+        }, delay);
+        return delay;
+      }
+      return null;
+    }
+
+    /**
+     * Format milliseconds into a human-readable time string.
+     */
+    function formatTimeDifference(ms) {
+      const totalSeconds = Math.abs(Math.floor(ms / 1000));
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      
+      if (minutes > 0 && seconds > 0) {
+        return `${minutes} minute${minutes !== 1 ? 's' : ''} and ${seconds} second${seconds !== 1 ? 's' : ''}`;
+      } else if (minutes > 0) {
+        return `${minutes} minute${minutes !== 1 ? 's' : ''}`;
+      } else {
+        return `${seconds} second${seconds !== 1 ? 's' : ''}`;
+      }
+    }
+
+    // Color palette for the sky gradient
+    const skyColors = [
+      '#1F214D', // Deep night
+      '#50366F', // Purple night
+      '#BF3475', // Pink dawn
+      '#EE6C45', // Orange sunrise
+      '#FFCE61', // Golden day
+      '#FFE58A'  // Bright noon
+    ];
+
+    /**
+     * Convert hex color to RGB object
+     */
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    }
+
+    /**
+     * Interpolate between two RGB colors
+     */
+    function interpolateColor(color1, color2, factor) {
+      const c1 = hexToRgb(color1);
+      const c2 = hexToRgb(color2);
+      
+      const r = Math.round(c1.r + factor * (c2.r - c1.r));
+      const g = Math.round(c1.g + factor * (c2.g - c1.g));
+      const b = Math.round(c1.b + factor * (c2.b - c1.b));
+      
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    /**
+     * Get color based on time of day relative to sunrise/sunset
+     */
+    function getColorForTime(currentTime, sunriseTime, sunsetTime) {
+      const sunrise = new Date(sunriseTime);
+      const sunset = new Date(sunsetTime);
+      const now = currentTime;
+
+      // Calculate key times
+      const solarNoon = new Date((sunrise.getTime() + sunset.getTime()) / 2);
+      
+      // Calculate previous sunset and next sunrise for night calculations
+      const prevSunset = new Date(sunset);
+      prevSunset.setDate(prevSunset.getDate() - 1);
+      const nextSunrise = new Date(sunrise);
+      nextSunrise.setDate(nextSunrise.getDate() + 1);
+
+      let progress;
+      
+      if (now >= sunrise && now <= sunset) {
+        // Daytime: from sunrise to sunset
+        const dayLength = sunset - sunrise;
+        const timeSinceSunrise = now - sunrise;
+        progress = timeSinceSunrise / dayLength;
+        
+        // Map progress (0 to 1) to color indices (0 to 5 and back to 0)
+        // 0 at sunrise, 5 at solar noon, 0 at sunset
+        let colorProgress;
+        if (progress <= 0.5) {
+          // Morning: sunrise to noon (colors 0 to 5)
+          colorProgress = progress * 2 * (skyColors.length - 1);
+        } else {
+          // Afternoon: noon to sunset (colors 5 to 0)
+          colorProgress = (2 - progress * 2) * (skyColors.length - 1);
+        }
+        
+        return colorProgress;
+      } else {
+        // Nighttime: stay at darkest color
+        return 0;
+      }
+    }
+
+    /**
+     * Update the background gradient based on current time
+     */
+    function updateBackgroundGradient(sunriseTime, sunsetTime) {
+      const now = new Date();
+      const colorProgress = getColorForTime(now, sunriseTime, sunsetTime);
+      
+      // Get the two colors to interpolate between
+      const colorIndex = Math.floor(colorProgress);
+      const nextColorIndex = Math.min(colorIndex + 1, skyColors.length - 1);
+      const factor = colorProgress - colorIndex;
+      
+      // Get base color
+      const baseColor = interpolateColor(skyColors[colorIndex], skyColors[nextColorIndex], factor);
+      
+      // Create gradient effect: more blue at top, more yellow at bottom
+      // Shift top color toward earlier (bluer) and bottom toward later (yellower)
+      const topColorIndex = Math.max(0, colorIndex - 0.5);
+      const bottomColorIndex = Math.min(skyColors.length - 1, colorIndex + 1);
+      
+      const topIndex = Math.floor(topColorIndex);
+      const topNextIndex = Math.min(topIndex + 1, skyColors.length - 1);
+      const topFactor = topColorIndex - topIndex;
+      const topColor = interpolateColor(skyColors[topIndex], skyColors[topNextIndex], topFactor);
+      
+      const bottomIndex = Math.floor(bottomColorIndex);
+      const bottomNextIndex = Math.min(bottomIndex + 1, skyColors.length - 1);
+      const bottomFactor = bottomColorIndex - bottomIndex;
+      const bottomColor = interpolateColor(skyColors[bottomIndex], skyColors[bottomNextIndex], bottomFactor);
+      
+      // Apply gradient
+      document.body.style.background = `linear-gradient(to bottom, ${topColor}, ${bottomColor})`;
+    }
+
+    /**
+     * Fetch sun data and schedule notifications for daylight changes.
+     */
+    async function fetchAndScheduleNotifications() {
+      if (!latitude || !longitude) {
+        console.error('Location not set');
+        return;
+      }
+
+      // Get today's sunset times
+      let date = new Date();
+      const [sunriseToday, sunsetToday] = await fetchSunData(date);
+      sunriseElement.innerHTML = sunriseToday;
+      sunsetElement.innerHTML = sunsetToday;
+      sunriseDisplayElement.innerHTML = formatTo12Hour(sunriseToday);
+      sunsetDisplayElement.innerHTML = formatTo12Hour(sunsetToday);
+      const daylightToday = new Date(sunsetToday) - new Date(sunriseToday);
+
+      // Start updating the background gradient
+      updateBackgroundGradient(sunriseToday, sunsetToday);
+
+      // Fetch sunrise data from yesterday
+      date.setDate(date.getDate() - 1);
+      const [sunriseYesterday, sunsetYesterday] = await fetchSunData(date);
+      const daylightYesterday = new Date(sunsetYesterday) - new Date(sunriseYesterday);
+
+      // Calculate daylight change
+      const daylightChange = daylightToday - daylightYesterday;
+      daylightChangeElement.innerHTML = `${(daylightChange / (1000 * 60)).toFixed(2)} minutes`;
+
+      // Schedule notifications if enabled
+      if (Notification.permission === "granted") {
+        const sunriseTodayDate = new Date(sunriseToday);
+        const sunriseYesterdayDate = new Date(sunriseYesterday);
+        const sunsetTodayDate = new Date(sunsetToday);
+        const sunsetYesterdayDate = new Date(sunsetYesterday);
+
+        const sunriseDiff = sunriseTodayDate - sunriseYesterdayDate;
+        const sunsetDiff = sunsetTodayDate - sunsetYesterdayDate;
+
+        let scheduledMessages = [];
+        let latestNotificationTime = null;
+
+        // Schedule sunrise notification
+        if (sunriseDiff !== 0) {
+          const isGaining = sunriseDiff < 0; // Earlier sunrise = gaining daylight
+          const message = isGaining
+            ? `Your extra ${formatTimeDifference(sunriseDiff)} of morning sunlight starts now, enjoy it!`
+            : `You just lost ${formatTimeDifference(sunriseDiff)} of morning sunlight.`;
+          
+          const notificationTime = isGaining ? sunriseYesterdayDate : sunriseTodayDate;
+          const delay = scheduleNotification("Sunrise Change", message, notificationTime, () => {
+            // After notification fires, check if this is the last one
+            const now = new Date();
+            if (!latestNotificationTime || now >= latestNotificationTime) {
+              // Fetch new data for tomorrow's notifications
+              fetchAndScheduleNotifications();
+            }
+          });
+          
+          if (delay) {
+            scheduledMessages.push(`Sunrise notification scheduled in ${formatTimeDifference(delay)}`);
+            if (!latestNotificationTime || notificationTime > latestNotificationTime) {
+              latestNotificationTime = notificationTime;
+            }
+          } else {
+            scheduledMessages.push(`Sunrise notification time has passed`);
+          }
+        }
+
+        // Schedule sunset notification
+        if (sunsetDiff !== 0) {
+          const isGaining = sunsetDiff > 0; // Later sunset = gaining daylight
+          const message = isGaining
+            ? `Your extra ${formatTimeDifference(sunsetDiff)} of evening sunlight starts now, enjoy it!`
+            : `You just lost ${formatTimeDifference(sunsetDiff)} of evening sunlight.`;
+          
+          const notificationTime = isGaining ? sunsetYesterdayDate : sunsetTodayDate;
+          const delay = scheduleNotification("Sunset Change", message, notificationTime, () => {
+            // After notification fires, check if this is the last one
+            const now = new Date();
+            if (!latestNotificationTime || now >= latestNotificationTime) {
+              // Fetch new data for tomorrow's notifications
+              fetchAndScheduleNotifications();
+            }
+          });
+          
+          if (delay) {
+            scheduledMessages.push(`Sunset notification scheduled in ${formatTimeDifference(delay)}`);
+            if (!latestNotificationTime || notificationTime > latestNotificationTime) {
+              latestNotificationTime = notificationTime;
+            }
+          } else {
+            scheduledMessages.push(`Sunset notification time has passed`);
+          }
+        }
+
+        if (scheduledMessages.length > 0) {
+          scheduledNotificationsElement.innerHTML = scheduledMessages.join('<br>');
+        } else {
+          scheduledNotificationsElement.innerHTML = 'No daylight change today';
+        }
+      }
+    }
 
     /**
      * Get the user's current location using the Geolocation API.
@@ -36,7 +388,6 @@
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
           // Success function
-
           console.log(position);
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
@@ -44,21 +395,17 @@
           latitudeElement.innerHTML = latitude;
           longitudeElement.innerHTML = longitude;
 
-          // Get todays sunset times
-          let date = new Date()
-          const [sunriseToday, sunsetToday] = await fetchSunData(date);
-          sunriseElement.innerHTML = sunriseToday;
-          sunsetElement.innerHTML = sunsetToday;
-          const daylightToday = new Date(sunsetToday) - new Date(sunriseToday);
+          // Request notification permission
+          await requestNotificationPermission();
 
-          // Fetch sunrise data from yesterday
-          date.setDate(date.getDate() - 1);
-          const [sunriseYesterday, sunsetYesterday] = await fetchSunData(date);
-          const daylightYesterday = new Date(sunsetYesterday) - new Date(sunriseYesterday);
+          // Fetch data and schedule notifications
+          await fetchAndScheduleNotifications();
 
-          // Calculate daylight change
-          const daylightChange = daylightToday - daylightYesterday;
-          daylightChangeElement.innerHTML = `${(daylightChange / (1000 * 60)).toFixed(2)} minutes`;
+          // Update gradient every minute
+          setInterval(() => {
+            const now = new Date();
+            updateBackgroundGradient(sunriseElement.innerHTML, sunsetElement.innerHTML);
+          }, 60000);
         }, () => {
           // Error function
           latitudeElement.innerHTML = "Unable to retrieve your location.";
