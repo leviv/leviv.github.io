@@ -40,7 +40,7 @@ We found another interested classmate, Anna, and started planning the game.
 
 We started with a brainstorming whiteboard to align on the vibe, mechanics, and story for the game.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/ybiwNvEvJJFOrrt5GSTGtU/Game-Dev-brainstorm?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/board/ybiwNvEvJJFOrrt5GSTGtU/Game-Dev-brainstorm?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
 Some of the core decision points included:
 
