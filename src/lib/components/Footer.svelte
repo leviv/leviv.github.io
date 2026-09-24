@@ -42,6 +42,7 @@
 
 			<div class="footer-col footer-col-3">
 				<p>{description}</p>
+				<p><a href="https://forms.gle/aDZnNEM8pXLVUhkY8" target="_blank">Subscribe to my email list</a></p>
 			</div>
 		</div>
 	</div>

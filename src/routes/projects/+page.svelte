@@ -24,6 +24,8 @@
 </svelte:head>
 
 <div class="home">
+	<a href="https://forms.gle/aDZnNEM8pXLVUhkY8" target="_blank" class="subscribe-link">Subscribe to my email list</a>
+
 	<h2 class="post-list-heading">Projects</h2>
 
 	<div class="filter-buttons">
@@ -79,6 +81,12 @@
 </div>
 
 <style>
+	.subscribe-link {
+		display: inline-block;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+
 	.post-list {
 		display: flex;
 		flex-wrap: wrap;

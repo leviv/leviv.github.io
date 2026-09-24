@@ -22,6 +22,8 @@
 </svelte:head>
 
 <div class="home">
+	<a href="https://forms.gle/aDZnNEM8pXLVUhkY8" target="_blank" class="subscribe-link">Subscribe to my email list</a>
+
 	<h2 class="post-list-heading">Posts</h2>
 
 	<p>
@@ -73,6 +75,12 @@
 </div>
 
 <style>
+	.subscribe-link {
+		display: inline-block;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+
 	.post-list-heading {
 		font-size: 28px;
 		margin-top: 30px;
