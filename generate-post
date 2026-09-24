@@ -82,6 +82,7 @@ with open(path_to_file) as post_file:
     elif not first_line_skipped:
       first_line_skipped = True
 
+
     img_match = re.findall(r"!\[(.*?)\]\((.*?)\)", line) # Check for pattern ![alt](path)
     if len(img_match) > 0:
       alt_tag = img_match[0][0].replace("-", " ").replace("_", " ")
