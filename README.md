@@ -1,46 +1,42 @@
-# leviv.github.io
+# sv
 
-A repository to hold all of my past and current projects and blog posts.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-View the site here: https://leviv.cool/.
+## Creating a project
 
-## Prerequisites
+If you're seeing this, you've probably already done this step. Congrats!
 
-In order to compile the styles for this project, you need to have [Jekyll](https://jekyllrb.com/) installed.
-
-Install [Homebrew](https://brew.sh/)
-
-```bash
-brew install ruby
-sudo gem install bundler jekyll
+```sh
+# create a new project
+npx sv create my-app
 ```
 
-If you have issues, run through [this setup guide](https://jekyllrb.com/docs/installation/macos/) to ensure you have the correct dependencies.
+To recreate this project with the same configuration:
 
-Also running these commmands helped:
-
-```
-bundle update
-bundle install
+```sh
+# recreate this project
+npx sv@0.17.0 create --template minimal --no-types --add prettier eslint mdsvex sveltekit-adapter="adapter:static" --install npm .
 ```
 
-## Getting started
+## Developing
 
-To clone the repository to your local machine
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-git clone git@github.com:leviv/leviv.github.io.git
+```sh
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-Then run the app with the following commands
+## Building
 
-```bash
-cd leviv.github.io
-bundle exec jekyll serve --livereload
+To create a production version of your app:
+
+```sh
+npm run build
 ```
 
-and open http://127.0.0.1:4000/
+You can preview the production build with `npm run preview`.
 
-## Development
-
-Edit any of the theme files and the page should automatically be rebuilt and reloaded.
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

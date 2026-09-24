@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+import os
+import shutil
+import sys
+import re
+from datetime import date
+
+# Print a help message if user types no arguments or -h/--help
+if len(sys.argv) == 1 or sys.argv[1] == '-h' or sys.argv[1] == '--help':
+  print("Usage: ./generate-post path/to/md/file.md post_category")
+  sys.exit()
+
+# Check we have both arguments
+if len(sys.argv) < 3:
+  print("Must provide a path to the file and a post category")
+  sys.exit()
+
+path_to_file = sys.argv[1]
+post_category = sys.argv[2]
+
+# Check if the file exists and is a markdown file
+if not os.path.exists(path_to_file):
+  print("Provided file path does not exist")
+  sys.exit()
+if not path_to_file.endswith(".md"):
+  print("Provided file does not have a .md extension")
+  sys.exit()
+
+# Extract the file name
+match = re.search(r".*/(.*)\.md", path_to_file)
+if match:
+  file_name = match.group(1)
+else:
+  file_name = path_to_file.replace(".md", "")
+
+file_name_sanitized = file_name.replace(" ", "-").replace("_", "-")
+title = file_name.replace("-", " ").replace("_", " ")
+
+# Sometimes I add a title in the md file, sometimes I dont
+# If I added a title (h1) to the document, use that for the file name
+with open(path_to_file) as post_file:
+    line = post_file.readline().rstrip()
+    if line.startswith("# "):
+       title = line[2:]
+       file_name_sanitized = title.replace(" ", "-").replace("_", "-")
+
+# Get todays date correctly formatted
+todays_date = date.today()
+day = '{:02d}'.format(todays_date.day)
+month = '{:02d}'.format(todays_date.month)
+year = todays_date.year
+new_file_name = f"{year}-{month}-{day}-{file_name_sanitized}"
+
+# Paths for new SvelteKit setup
+static_img_dir = f"./static/assets/img/{new_file_name}/"
+md_img_path_prefix = f"/assets/img/{new_file_name}/"
+new_file_path = f"./src/lib/posts/{post_category}/"
+
+# Create post directory if doesn't exist
+if not os.path.exists(new_file_path):
+  os.makedirs(new_file_path)
+
+out_file_path = os.path.join(new_file_path, f"{new_file_name}.md")
+f = open(out_file_path, "w")
+
+# Write the template header
+f.write("---\n")
+f.write("layout: post\n")
+f.write(f"title: \"{title}\"\n")
+f.write(f"category: {post_category}\n")
+f.write(f"tag: {post_category}\n")
+f.write("---\n\n")
+
+# Loop through file to find images
+with open(path_to_file) as post_file:
+  first_line_skipped = False
+  for line in post_file:
+    # Skip the H1 title if it exists on the first line
+    if not first_line_skipped and line.startswith("# "):
+      first_line_skipped = True
+      continue
+    elif not first_line_skipped:
+      first_line_skipped = True
+
+    img_match = re.findall(r"!\[(.*?)\]\((.*?)\)", line) # Check for pattern ![alt](path)
+    if len(img_match) > 0:
+      alt_tag = img_match[0][0].replace("-", " ").replace("_", " ")
+      img_path = img_match[0][1]
+      
+      img_name_match = re.search(r".*/(.*\..*)", img_path)
+      if img_name_match:
+          img_name = img_name_match.group(1)
+      else:
+          img_name = img_path
+          
+      img_name_sanitized = img_name.replace(" ", "-").replace("_", "-")
+
+      # Create image directory if doesn't exist
+      if not os.path.exists(static_img_dir):
+        os.makedirs(static_img_dir)
+
+      new_static_img_path = os.path.join(static_img_dir, img_name_sanitized)
+
+      # Handle image paths correctly
+      md_dir = os.path.dirname(path_to_file)
+      if md_dir:
+          src_img_path = os.path.join(md_dir, img_path)
+      else:
+          src_img_path = img_path
+
+      if os.path.exists(src_img_path):
+        shutil.move(src_img_path, new_static_img_path)
+      else:
+        print(f"Warning: Image {src_img_path} not found. Skipping move.")
+
+      # Write the new image code
+      md_img_path = md_img_path_prefix + img_name_sanitized
+      f.write(f"![{alt_tag}]({md_img_path})\n")
+      # custom class (.caption) to style the text under images
+      f.write("\nCAPTION GOES HERE\n")
+      f.write("{{: .caption}}\n")
+    else:
+      f.write(line)
+
+# Close file stream
+f.close()
+print("Blog post successfully generated! Nice work :)")
+print(f"Created: {out_file_path}")

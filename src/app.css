@@ -1,0 +1,118 @@
+@import 'prism-themes/themes/prism-one-light.css';
+@import 'prism-themes/themes/prism-one-dark.css' screen and (prefers-color-scheme: dark);
+
+:root {
+	--primaryColor: #a259ff;
+	--primaryColor--dark: #c89cff;
+	--primaryDarker: #2d3c5c;
+	--primaryDarker--dark: #eee;
+	--secondaryColor: #fff;
+	--bgColor: #fff;
+	--bgColor--dark: #2c303a;
+	--small: 768px;
+}
+
+html,
+body {
+	background: var(--secondaryColor);
+	font-family: 'Source Sans Pro', sans-serif;
+	height: 100%;
+	margin: 0;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: dark) {
+	html,
+	body {
+		background: var(--bgColor--dark);
+		color: var(--bgColor);
+	}
+}
+
+body {
+	position: relative;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Oxygen', sans-serif;
+}
+
+a {
+	color: var(--primaryColor) !important;
+	transition: all 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+	a {
+		color: var(--primaryColor--dark) !important;
+	}
+}
+
+a:hover {
+	color: var(--primaryDarker) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+	a:hover {
+		color: var(--primaryDarker--dark) !important;
+	}
+}
+
+a.hover {
+	color: black;
+	text-decoration: none;
+	position: relative;
+}
+
+a.hover:before,
+a.hover:after {
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	bottom: 0%;
+	background: var(--primaryDarker);
+}
+
+a.hover:after {
+	right: 0px;
+	transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+a.hover:hover:before {
+	background: var(--primaryDarker);
+	width: 100%;
+	transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+	a.hover:hover:before {
+		background: var(--primaryDarker--dark);
+	}
+}
+
+a.hover:hover:after {
+	background: transparent;
+	width: 100%;
+	transition: 0s;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 960px;
+}
+
+.site-footer {
+	border-top: 1px solid var(--primaryDarker);
+}
+
+@media (prefers-color-scheme: dark) {
+	.site-footer {
+		border-color: var(--primaryDarker--dark);
+	}
+}
