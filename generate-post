@@ -51,7 +51,7 @@ month = '{:02d}'.format(todays_date.month)
 year = todays_date.year
 new_file_name = f"{year}-{month}-{day}-{file_name_sanitized}"
 
-# Paths for new SvelteKit setup
+# Paths for Svelte setup
 static_img_dir = f"./static/assets/img/{new_file_name}/"
 md_img_path_prefix = f"/assets/img/{new_file_name}/"
 new_file_path = f"./src/lib/posts/{post_category}/"
@@ -81,7 +81,6 @@ with open(path_to_file) as post_file:
       continue
     elif not first_line_skipped:
       first_line_skipped = True
-
 
     img_match = re.findall(r"!\[(.*?)\]\((.*?)\)", line) # Check for pattern ![alt](path)
     if len(img_match) > 0:
