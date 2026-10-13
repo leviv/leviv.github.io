@@ -1,0 +1,3 @@
+[submodule "stories"]
+	path = stories
+	url = https://github.com/leviv/stories.git

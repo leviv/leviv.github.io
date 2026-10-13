@@ -3,6 +3,9 @@
 
 	let activeFilter = $state('all');
 
+	let currentPage = $state(1);
+	const itemsPerPage = 8;
+
 	let allProjects = $derived(
 		data.posts.filter((p) => p.meta.categories && p.meta.categories.includes('projects'))
 	);
@@ -12,6 +15,18 @@
 			? allProjects
 			: allProjects.filter((p) => (p.meta.tags || []).includes(activeFilter))
 	);
+
+	$effect(() => {
+		// Reset to page 1 when filter changes
+		activeFilter;
+		currentPage = 1;
+	});
+
+	let paginatedProjects = $derived(
+		filteredProjects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+	);
+
+	let totalPages = $derived(Math.ceil(filteredProjects.length / itemsPerPage));
 
 	const formatDate = (dateString) => {
 		const options = { month: 'short', day: 'numeric', year: 'numeric' };
@@ -57,7 +72,7 @@
 	</div>
 
 	<ul class="post-list">
-		{#each filteredProjects as post}
+		{#each paginatedProjects as post}
 			<li class="post-item">
 				<span class="post-meta">{formatDate(post.meta.date)}</span>
 				<h3>
@@ -78,6 +93,38 @@
 			</li>
 		{/each}
 	</ul>
+
+	{#if totalPages > 1}
+		<div class="pagination">
+			<button
+				disabled={currentPage === 1}
+				onclick={() => currentPage--}
+				class="pagination-button"
+			>
+				Previous
+			</button>
+
+			<div class="page-numbers">
+				{#each Array.from({ length: totalPages }, (_, i) => i + 1) as pageNum}
+					<button
+						class="pagination-button page-number"
+						class:active={currentPage === pageNum}
+						onclick={() => (currentPage = pageNum)}
+					>
+						{pageNum}
+					</button>
+				{/each}
+			</div>
+
+			<button
+				disabled={currentPage === totalPages}
+				onclick={() => currentPage++}
+				class="pagination-button"
+			>
+				Next
+			</button>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -189,5 +236,35 @@
 		text-decoration: none;
 		margin-top: 5px;
 		margin-bottom: 5px;
+	}
+
+	.pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-top: 40px;
+		margin-bottom: 20px;
+		flex-wrap: wrap;
+	}
+
+	.page-numbers {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.pagination-button {
+		padding: 8px 16px;
+		font-size: 16px;
+	}
+
+	.page-number {
+		padding: 8px 12px;
+	}
+
+	.pagination-button:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 </style>

@@ -4,6 +4,7 @@ title: 'Giving and Taking'
 image:
 category: ima
 miscellaneous: ima
+tag: archive
 ---
 
 Before I even started [grad school at NYU](https://itp.nyu.edu/lowres/), I had assignments due. One of them was 'Exploration 01 - Gifting'. This is for my [Exploratory Making](https://www.exploratorymaking.art/) course - a class born out of the IMA low-res program centered around creating to learn.

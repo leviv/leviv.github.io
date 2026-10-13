@@ -7,18 +7,22 @@
 	let { children } = $props();
 </script>
 
-<Header />
-
-{#if $page.url.pathname === '/'}
+{#if $page.url.pathname.startsWith('/scooter')}
 	{@render children()}
 {:else}
-	<main class="page-content" aria-label="Content">
-		<div class="wrapper">
-			{@render children()}
-		</div>
-	</main>
+	<Header />
 
-	<Footer />
+	{#if $page.url.pathname === '/'}
+		{@render children()}
+	{:else}
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				{@render children()}
+			</div>
+		</main>
+
+		<Footer />
+	{/if}
 {/if}
 
 <style>

@@ -3,6 +3,7 @@ layout: post
 title: 'Interface Labs - Playing with circuits'
 image:
 category: miscellaneous
+tag: archive
 ---
 
 This was my first set of labs assigned as part of my 'Interface Labs' class

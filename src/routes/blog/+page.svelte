@@ -5,10 +5,11 @@
 		(p) =>
 			!p.meta.categories.includes('leetcode') &&
 			!p.meta.categories.includes('archive') &&
-			!p.meta.categories.includes('projects')
+			!p.meta.categories.includes('projects') &&
+			!p.meta.tags.includes('archive')
 	));
 	let archivePosts = $derived(data.posts.filter(
-		(p) => p.meta.categories.includes('leetcode') || p.meta.categories.includes('archive')
+		(p) => p.meta.categories.includes('leetcode') || p.meta.categories.includes('archive') || p.meta.tags.includes('archive')
 	));
 
 	const formatDate = (dateString) => {

@@ -3,7 +3,7 @@ layout: post
 title: 'Critical Experiences Project 1'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 1. What is your guide?

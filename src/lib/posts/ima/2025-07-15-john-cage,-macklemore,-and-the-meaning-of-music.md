@@ -4,6 +4,7 @@ title: 'John Cage, Macklemore, and the meaning of music'
 image:
 category: ima
 miscellaneous: ima
+tag: archive
 ---
 
 When I first discovered the legendery avant-garde American composer John Cage, I was trying to create an ultra-clean Mormon friendly version of the song _Thrift Shop_ by Macklemore.

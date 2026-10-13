@@ -3,7 +3,7 @@ layout: post
 title: 'Clocks I like'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 ## SBB Clocks

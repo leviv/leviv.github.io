@@ -3,7 +3,7 @@ layout: post
 title: 'Daily Practice'
 image:
 category: ima
-tag: ima
+tag: archive
 ---
 
 This week for Critical Experiences we were challenged to commit to a ~30 minute daily ritual to do for the next week. I have previously [written about the benefits of undertaking a daily 100-day practice](https://leviv.cool/projects/2025/09/07/100-days,-200-cats.html).However, this week, work was incredibly stressful, I had other homework to tackle, and my extracurricular commitments were piling up. In fact, its wasn't until I went upstate on Friday to Dia Beacon and saw the endurance performance artist [Tehching Hsieh's lifework exhibit](https://diaart.org/exhibition/exhibitions-projects/tehching-hsieh-lifeworks-19781999-exhibition) that I realized I had completely forgotten about my assignment.

@@ -3,7 +3,7 @@ layout: post
 title: 'Systems thinking'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 This week I read a very engaging [blog post that examined from a systems thinking perspective the protest of GMO crop experiments in the United Kingdom](https://www.easterbrook.ca/steve/2012/05/systems-thinking-and-genetically-modified-food/). Even though it was written in 2012, I really liked the approach.

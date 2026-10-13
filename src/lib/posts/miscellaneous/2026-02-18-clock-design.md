@@ -3,7 +3,7 @@ layout: post
 title: 'Clock design'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 ![bird clock](/assets/img/2026-02-18-clock-design/bird-clock.png)

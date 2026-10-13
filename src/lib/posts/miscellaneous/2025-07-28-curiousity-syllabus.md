@@ -4,6 +4,7 @@ title: 'Curiousity Syllabus'
 image:
 category: miscellaneous
 miscellaneous: miscellaneous
+tag: archive
 ---
 
 I'm halfway through my summer class Exploratory Making!

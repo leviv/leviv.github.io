@@ -3,7 +3,7 @@ layout: post
 title: 'Hedonism and Taxidermy'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 This week for my class _Critical Experiences_ I was assigned excerpts from the book _Emergent Strategy: Shaping Change, Changing Worlds_ by Adrienne Maree Brown. On its face, this book seemed extremely unappealing to me: a nebulous, vaguely-self help style book full of empty platitudes and fetishization of indigenous practices and cultures. Written by an author who by their own admission does not have data to support any of their conclusions. As I read more, I can't say my opinion changed much, but that doesn't mean there was nothing to reflect on or learn from.

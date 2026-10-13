@@ -77,7 +77,7 @@ window.start3DAnimation = function() {
   const baseHeight = 4;
   const cylinderInnerRadius = (circumference * block) / 2 / Math.PI;
   const cylinderOuterRadius = cylinderInnerRadius + pillarDim * block;
-  const numCurves = 16;
+  const numCurves = 24;
 
   // Base
   const extrudeSettings = {
@@ -133,13 +133,13 @@ window.start3DAnimation = function() {
     const vertices = [];
     const outerVertices = outerPillarShape.extractPoints().shape;
     const innerVertices = innerPillarShape.extractPoints().shape.reverse();
-    for (let i = 0; i < outerVertices.length; i += Math.floor(numCurves / 2)) {
-      vertices.push(outerVertices[i]);
-    }
+    // Extract the start and end points of the arc to form a straight edge
+    // that aligns perfectly with the 24-sided base polygon.
+    vertices.push(outerVertices[0]);
+    vertices.push(outerVertices[outerVertices.length - 1]);
 
-    for (let i = 0; i < outerVertices.length; i += Math.floor(numCurves / 2)) {
-      vertices.push(innerVertices[i]);
-    }
+    vertices.push(innerVertices[0]);
+    vertices.push(innerVertices[innerVertices.length - 1]);
 
     const pillarShape = new THREE.Shape(vertices);
     const pillarGeo = new THREE.ExtrudeGeometry(

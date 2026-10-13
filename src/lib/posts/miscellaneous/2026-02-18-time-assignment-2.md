@@ -3,7 +3,7 @@ layout: post
 title: 'Time assignment 2'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 I tried to implement an idea I've hard for a while where you get notified of the daylight gained each day so you can appreciate the days getting longer. I used a sunset/sunrise API along with built-in javascript location and notification services. I think it mostly works

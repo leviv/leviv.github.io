@@ -3,7 +3,7 @@ layout: post
 title: 'Attention'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 In high school I remember being shown the short film 'HYPER-REALITY' by Keiichi Matsuda. The futuristic overstimulating six minutes had stuck with me throughout the years, and it was a piece of media that I found myself recalling every time that I was faced with extremely agregious forms of advertising - like the first time I went to Times Square.

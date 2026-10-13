@@ -31,7 +31,8 @@ export const fetchPosts = async () => {
 					...metadata,
 					title: metadata.title || slug.replace(/-/g, ' '),
 					date: date,
-					categories
+					categories,
+					tags: metadata.tags || (metadata.tag ? [metadata.tag] : [])
 				},
 				path: postPath,
 				originalPath: path,

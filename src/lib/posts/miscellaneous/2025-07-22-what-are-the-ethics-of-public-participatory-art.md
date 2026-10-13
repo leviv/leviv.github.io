@@ -4,6 +4,7 @@ title: 'What are the ethics of public participatory art?'
 image:
 category: miscellaneous
 miscellaneous: miscellaneous
+tag: archive
 ---
 
 I recently read the book _Uncanny Valley_ by Anna Wiener, which talks about tech company culture in San Francisco in the early 2000s. She describes her time working at the company Mixpanel, which does data collection and analytics. To me, her most insightful description of that time is the discussion of 'God mode', where employees of the then private company could have near unlimited and unrestricted access to the analytics of any of their customers. She enumerates the many possible ways that this power could be abused by employees, and the laissez faire attitude that coworkers took towards that privileged access.

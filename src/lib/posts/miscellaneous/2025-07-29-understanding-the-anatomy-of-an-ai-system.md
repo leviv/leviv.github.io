@@ -4,6 +4,7 @@ title: 'Understanding the Anatomy of an AI System'
 image:
 category: miscellaneous
 miscellaneous: miscellaneous
+tag: archive
 ---
 
 ![Bayan Obo Rare Earth Mine, Inner Mongolia, China](/assets/img/2025-07-29-understanding-the-anatomy-of-an-ai-system/Image-1-Bayan-Obo-rare-earth-mine.jpg)

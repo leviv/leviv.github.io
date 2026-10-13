@@ -4,6 +4,7 @@ title: 'Sensing Senors'
 image:
 category: ima
 miscellaneous: ima
+tag: archive
 ---
 
 In our first class for Interface Lab - we discussed a fundamental question that addresses the name of the class.

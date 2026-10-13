@@ -3,7 +3,7 @@ layout: post
 title: 'Metaphors'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 This week for Critical Experiences I read excerpts from the book _Metaphors We Live By_ by Lakoff and Johnson.

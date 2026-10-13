@@ -3,7 +3,7 @@ layout: post
 title: 'Exploratory making final project'
 image:
 category: miscellaneous
-tag: miscellaneous
+tag: archive
 ---
 
 This project was a bit of a mess!! If this was not required for class I don't think that I would be doing a write up for this. However, something about documenting failures and progress etc. etc.
